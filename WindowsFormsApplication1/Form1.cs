@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,5 +108,10 @@ namespace WindowsFormsApplication1
         private void folderBrowserDialog2_HelpRequest(object sender, EventArgs e)
         {
                     }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
