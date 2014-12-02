@@ -13,6 +13,13 @@ namespace WindowsFormsApplication1
 {
     static class Program
     {
+        // static variabler
+        static String baseCase = "";
+        static String newCase = "";
+        static String destFolder = "";
+        static String filename = "";
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -21,7 +28,30 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+
+            var form = new Form1();
+            var result = form.ShowDialog();
+            if (result == DialogResult.OK) {
+                baseCase = form.baseCase;
+                newCase = form.newCase;
+                destFolder = form.destFolder;
+                filename = form.filename;
+            }
+            else {
+                Application.Exit();
+            }
+            
+
+          
+            // read files
+            // select area/busses
+            // make database
+            // compare
+
+            // call drawing tool
+            DrawTool dTool = new DrawTool(destFolder, filename);
+            dTool.drawCanned();
         }
     }
 

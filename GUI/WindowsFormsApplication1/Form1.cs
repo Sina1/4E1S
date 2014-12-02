@@ -16,6 +16,13 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        // public variables
+        public String baseCase   = "";
+        public String newCase    = "";
+        public String destFolder = "";
+        public String filename   = "";
+
+
         public Form1()
         {
             InitializeComponent();
@@ -33,39 +40,54 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // base case
+
             //Process.Start("explorer.exe", "-p");
-            OpenFileDialog x = new OpenFileDialog();
-            x.Multiselect = true;
-            x.ShowDialog();
-            string[] result = x.FileNames;
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.ShowDialog();
+            string[] result = fileDialog.FileNames;
 
             //foreach (string y in result)
                 //MessageBox.Show(y, "Selected Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            foreach (string y in result)
-                textBox1.Text = y;
+            foreach (string filenameString in result)
+            {
+                textBox1.Text = filenameString;
+                this.baseCase = filenameString;
+                break;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog x = new OpenFileDialog();
-            x.Multiselect = true;
-            x.ShowDialog();
-            string[] result = x.FileNames;
+            // New case
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.ShowDialog();
+            string[] result = fileDialog.FileNames;
 
-            foreach (string y in result)
-                textBox2.Text = y;
+            foreach (string filenameString in result) {
+                textBox2.Text = filenameString;
+                this.newCase = filenameString;
+                break;
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            OpenFileDialog x = new OpenFileDialog();
-            x.Multiselect = true;
-            x.ShowDialog();
-            string[] result = x.FileNames;
+            // folder path
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.ShowDialog();
+            string[] result = fileDialog.FileNames;
 
-            foreach (string y in result)
-                textBox3.Text = y;
+            foreach (string filenameString in result)
+            {
+                textBox2.Text = filenameString;
+                this.destFolder = filenameString;
+                break;
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -80,6 +102,13 @@ namespace WindowsFormsApplication1
             if (result == DialogResult.OK)
             {
                 var folderName = folderBrowserDialog1.SelectedPath;
+
+                textBox4.Text = folderName;
+
+                // do path validation here
+
+
+
                 //if (!filenotOpened)
                 //{
                 //    // No file is opened, bring up openFileDialog in selected path.
@@ -118,6 +147,34 @@ namespace WindowsFormsApplication1
         private void button1_Click_1(object sender, EventArgs e)
         {
             //Brett Check to see if the file location are .raw if yes return false
+            this.filename = textBox5.Text;
+            this.Close();
+        
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
