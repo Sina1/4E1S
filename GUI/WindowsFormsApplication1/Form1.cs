@@ -107,11 +107,17 @@ namespace WindowsFormsApplication1
 
         private void folderBrowserDialog2_HelpRequest(object sender, EventArgs e)
         {
-                    }
+          
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //Brett Check to see if the file location are .raw if yes return false
         }
     }
 }
