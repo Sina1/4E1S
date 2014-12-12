@@ -18,10 +18,10 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         // public variables
-        public String baseCase   = "";
-        public String newCase    = "";
-        public String destFolder = "";
-        public String filename   = "";
+        public String baseCase   {get;set;}
+        public String newCase    {get;set;}
+        public String destFolder {get;set;}
+        public String filename   {get;set;}
 
 
         public Form1()
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
 
             foreach (string filenameString in result)
             {
-                newMap.Text = filenameString;
+                //newMap.Text = filenameString;
                 this.destFolder = filenameString;
                 break;
             }
@@ -149,22 +149,22 @@ namespace WindowsFormsApplication1
         {
             //Brett Check to see if the file location are .raw if yes return false
             this.filename = saveName.Text;
-
-
-            string location = saveLocationFolder.Text;
-            string name = saveName.Text;
-
-
+            this.destFolder = saveLocationFolder.Text;
+            
 
             if (testTextBoxes())
             {
                 Console.Write("This Passed Brett");
                 loadingIcon.Show();
-                //dummyTest.StartMockProject(location, name);
+
+
+                dummyTest.StartMockProject(destFolder, filename );
                 
                 loadingIcon.Hide();
-                MessageBox.Show("Completed. File Saved to \n " + location + "\\" + name, "Complete", MessageBoxButtons.OK);
-
+                
+                
+                MessageBox.Show("Completed. File Saved to \n " + this.destFolder + "\\" + this.filename + ".vsd", "Complete", MessageBoxButtons.OK);
+                this.Close();
             }
             else
             {
@@ -216,5 +216,8 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+
+
     }
 }

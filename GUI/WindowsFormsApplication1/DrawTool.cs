@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
-
+using System.Windows.Forms;
+using System.Threading;
 
 namespace WindowsFormsApplication1
 {
     class DrawTool
     {
         // config
-        static String visioPath = "C:/Program Files/Microsoft Office/Visio10/Visio.exe"; // modify this to match visio path on your computer
-        static String pythonPath = "C:\\Python33\\python.exe";
+        static String visioPath = ""; // modify this to match visio path on your computer
+        static String pythonPath = "";
 
         // variables
         static String filepath = "";
@@ -41,8 +42,19 @@ namespace WindowsFormsApplication1
             FakeGraphViz();
 
             // copy fake files
-            Process.Start("copy", "dummy.VDX " + Regex.Replace(filepath, @"\\", @"\\") + "\\" + filename);
+            var currentDirectory = Directory.GetCurrentDirectory();
+            //Process.Start("copy", "Drawing1.vsd"  + filepath + "\\" + filename);
+            try
+            {
 
+                File.Copy(Path.Combine(currentDirectory, "Drawing1.vsd"), Path.Combine(filepath, filename + ".vsd"));
+            }
+            catch (System.IO.IOException e)
+            {
+                // TODO: handle this properly
+                MessageBox.Show("File already exists. Exiting\n" + filepath + "\\" + filename+ ".vsd", "Complete", MessageBoxButtons.OK);
+                Application.Exit();
+            }
 
             //Process.Start("C:/python27/python.exe -c 'print(\"python\")\ninput(\"Press a key\")' "); // make sure that 
             //Process.Start(visioPath + " " + filename);
@@ -56,7 +68,7 @@ namespace WindowsFormsApplication1
             // call python module
            // Process p = Process.Start(pythonPath, "temp.py");
            // p.WaitForExit();
-
+           
 
 
             return 1;

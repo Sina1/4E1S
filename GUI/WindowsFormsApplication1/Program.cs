@@ -14,10 +14,10 @@ namespace WindowsFormsApplication1
     static class Program
     {
         // static variabler
-        static String baseCase = "";
-        static String newCase = "";
-        static String destFolder = "";
-        static String filename = "";
+        //static String baseCase = "";
+        //static String newCase = "";
+        //static String destFolder = "";
+        //static String filename = "";
 
 
         /// <summary>
@@ -31,10 +31,17 @@ namespace WindowsFormsApplication1
             //Application.Run(new Form1());
 
             var form = new Form1();
-            form.ShowDialog();
+            var result = form.ShowDialog();
             /* Brett has commented this out because it was hard to work around
              * He is planning to delete this later 
-             * 
+             *  -----> Don't remove this
+             
+           
+            var baseCase = "";
+            var newCase = "";
+            var destFolder = "";
+            var filename = "";
+
             if (result == DialogResult.OK) {
                 baseCase = form.baseCase;
                 newCase = form.newCase;
@@ -53,9 +60,17 @@ namespace WindowsFormsApplication1
             // compare
 
             // call drawing tool
+
+            //temp
+            MessageBox.Show("Completed. File Saved to \n " + destFolder + "\\" + filename, "Complete", MessageBoxButtons.OK);
+
             DrawTool dTool = new DrawTool(destFolder, filename);
-            dTool.drawCanned();
-             */
+            //dTool.drawCanned();
+            
+            // Roshaan: moved the completed dialog box here
+            MessageBox.Show("Completed. File Saved to \n " + destFolder + "\\" + filename, "Complete", MessageBoxButtons.OK);
+            */
+
         }
     }
 
