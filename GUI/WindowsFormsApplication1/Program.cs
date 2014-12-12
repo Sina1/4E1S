@@ -31,7 +31,10 @@ namespace WindowsFormsApplication1
             //Application.Run(new Form1());
 
             var form = new Form1();
-            var result = form.ShowDialog();
+            form.ShowDialog();
+            /* Brett has commented this out because it was hard to work around
+             * He is planning to delete this later 
+             * 
             if (result == DialogResult.OK) {
                 baseCase = form.baseCase;
                 newCase = form.newCase;
@@ -52,9 +55,20 @@ namespace WindowsFormsApplication1
             // call drawing tool
             DrawTool dTool = new DrawTool(destFolder, filename);
             dTool.drawCanned();
+             */
         }
     }
 
+    static class dummyTest
+    {
+        public static void StartMockProject(string destFolder, string filename)
+        {
+
+            // call drawing tool
+            DrawTool dTool = new DrawTool(destFolder, filename);
+            dTool.drawCanned();
+        }
+    }
 
     static class FileReader
     {

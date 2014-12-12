@@ -12,6 +12,7 @@ using System.Diagnostics;
 
 
 
+
 namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
@@ -53,7 +54,7 @@ namespace WindowsFormsApplication1
 
             foreach (string filenameString in result)
             {
-                textBox1.Text = filenameString;
+                originalMap.Text = filenameString;
                 this.baseCase = filenameString;
                 break;
             }
@@ -68,7 +69,7 @@ namespace WindowsFormsApplication1
             string[] result = fileDialog.FileNames;
 
             foreach (string filenameString in result) {
-                textBox2.Text = filenameString;
+                newMap.Text = filenameString;
                 this.newCase = filenameString;
                 break;
             }
@@ -84,7 +85,7 @@ namespace WindowsFormsApplication1
 
             foreach (string filenameString in result)
             {
-                textBox2.Text = filenameString;
+                newMap.Text = filenameString;
                 this.destFolder = filenameString;
                 break;
             }
@@ -103,7 +104,7 @@ namespace WindowsFormsApplication1
             {
                 var folderName = folderBrowserDialog1.SelectedPath;
 
-                textBox4.Text = folderName;
+                saveLocationFolder.Text = folderName;
 
                 // do path validation here
 
@@ -147,9 +148,43 @@ namespace WindowsFormsApplication1
         private void button1_Click_1(object sender, EventArgs e)
         {
             //Brett Check to see if the file location are .raw if yes return false
-            this.filename = textBox5.Text;
-            this.Close();
-        
+            this.filename = saveName.Text;
+
+
+            string location = saveLocationFolder.Text;
+            string name = saveName.Text;
+
+
+
+            if (testTextBoxes())
+            {
+                Console.Write("This Passed Brett");
+                loadingIcon.Show();
+                //dummyTest.StartMockProject(location, name);
+                
+                loadingIcon.Hide();
+                MessageBox.Show("Completed. File Saved to \n " + location + "\\" + name, "Complete", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                MessageBox.Show("Please Fill in All Areas", "Empty Variables", MessageBoxButtons.OK);
+            }
+
+
+        }
+
+        //Brett move or delete this alter
+        private bool testTextBoxes()
+        {
+            if (String.IsNullOrWhiteSpace(saveLocationFolder.Text)) return false;
+            if (String.IsNullOrWhiteSpace(saveName.Text)) return false;
+            if (String.IsNullOrWhiteSpace(newMap.Text)) return false;
+            if (String.IsNullOrWhiteSpace(originalMap.Text)) return false;
+
+            return true;
+
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -173,6 +208,11 @@ namespace WindowsFormsApplication1
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

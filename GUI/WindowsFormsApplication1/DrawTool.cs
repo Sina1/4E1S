@@ -54,8 +54,8 @@ namespace WindowsFormsApplication1
         static int FakeGraphViz()
         {
             // call python module
-            Process p = Process.Start(pythonPath, "temp.py");
-            p.WaitForExit();
+           // Process p = Process.Start(pythonPath, "temp.py");
+           // p.WaitForExit();
 
 
 
