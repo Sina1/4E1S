@@ -22,8 +22,8 @@ namespace WindowsFormsApplication1
         public String newCase    {get;set;}
         public String destFolder {get;set;}
         public String filename   {get;set;}
-
-
+        public bool HelpButton   {get; set;}
+      
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +31,7 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+     
 
         }
 
@@ -163,12 +164,12 @@ namespace WindowsFormsApplication1
                 loadingIcon.Hide();
                 
                 
-                MessageBox.Show("Completed. File Saved to \n " + this.destFolder + "\\" + this.filename + ".vsd", "Complete", MessageBoxButtons.OK);
+                MessageBox.Show("Your file has been successfully saved to the following location: \n\n " + this.destFolder + "\\" + this.filename + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Please Fill in All Areas", "Empty Variables", MessageBoxButtons.OK);
+                MessageBox.Show("Please fill in all fields of this form!", "Missing Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
 
 
@@ -217,7 +218,47 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
 
+        }
+    
+        private void originalMap_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void hELPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void newMap_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+      
 
     }
 }

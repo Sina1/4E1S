@@ -34,3 +34,12 @@ C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\W
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
