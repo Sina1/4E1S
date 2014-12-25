@@ -153,13 +153,14 @@ namespace WindowsFormsApplication1
             this.destFolder = saveLocationFolder.Text;
             
 
-            if (testTextBoxes())
+            if (true)//testTextBoxes())
             {
-                Console.Write("This Passed Brett");
+                
                 loadingIcon.Show();
 
 
-                dummyTest.StartMockProject(destFolder, filename );
+              
+                
                 
                 loadingIcon.Hide();
                 

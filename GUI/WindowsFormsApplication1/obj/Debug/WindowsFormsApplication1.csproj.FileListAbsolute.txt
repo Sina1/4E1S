@@ -43,3 +43,5 @@ C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\Windows
 C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf

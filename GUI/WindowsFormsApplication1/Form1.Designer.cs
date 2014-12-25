@@ -36,8 +36,8 @@
             this.BussesList = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.loadingIcon = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -140,6 +140,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "BUS NUMBERS";
             // 
+            // loadingIcon
+            // 
+            this.loadingIcon.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.loadingIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loadingIcon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.loadingIcon.Image = global::WindowsFormsApplication1.Properties.Resources.ajax_loader_blue_512;
+            this.loadingIcon.Location = new System.Drawing.Point(64, 407);
+            this.loadingIcon.Name = "loadingIcon";
+            this.loadingIcon.Size = new System.Drawing.Size(92, 63);
+            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.loadingIcon.TabIndex = 15;
+            this.loadingIcon.TabStop = false;
+            this.loadingIcon.Visible = false;
+            this.loadingIcon.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -150,21 +165,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Place a comma following every bus number entry\r\nExample: 1,3,5\r\n\r\n";
             this.label5.Click += new System.EventHandler(this.label5_Click_1);
-            // 
-            // loadingIcon
-            // 
-            this.loadingIcon.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.loadingIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loadingIcon.Cursor = System.Windows.Forms.Cursors.Default;
-            this.loadingIcon.Image = global::WindowsFormsApplication1.Properties.Resources.ajax_loader_blue_512;
-            this.loadingIcon.Location = new System.Drawing.Point(54, 426);
-            this.loadingIcon.Name = "loadingIcon";
-            this.loadingIcon.Size = new System.Drawing.Size(92, 63);
-            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loadingIcon.TabIndex = 15;
-            this.loadingIcon.TabStop = false;
-            this.loadingIcon.Visible = false;
-            this.loadingIcon.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox2
             // 
@@ -360,8 +360,8 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.CancelButton = this.button4;
             this.ClientSize = new System.Drawing.Size(398, 486);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.loadingIcon);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
