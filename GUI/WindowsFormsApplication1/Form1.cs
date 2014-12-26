@@ -153,10 +153,15 @@ namespace WindowsFormsApplication1
             this.destFolder = saveLocationFolder.Text;
             
 
-            if (true)//testTextBoxes())
+            if (testTextBoxes())
             {
                 
                 loadingIcon.Show();
+
+                CompareTool.StartCompareTool(originalMap.Text, "dummyTest");
+
+                CompareTool.ClearData();
+
 
 
               

@@ -27,7 +27,13 @@ namespace WindowsFormsApplication1
         public static void StartCompareTool(string beforePath, string afterPath)
         {
             beforeBusCase = new FileReader(beforePath);
-            afterBusCase = new FileReader(afterPath);
+            //afterBusCase = new FileReader(afterPath);
+        }
+
+        public static void ClearData()
+        {
+            beforeBusCase.ClearTables();
+
         }
 
 
@@ -39,6 +45,13 @@ namespace WindowsFormsApplication1
     */ 
     class FileReader
     {
+
+        //List of sections that have data
+        private static List<string> sectionList = new List<string> ();
+
+        //List of DataConnection
+        private static List<DataBaseConnection> dataConnectionList = new List<DataBaseConnection>();
+
         private static string currentSection = "Bus_Data";
 
         /* Note:
@@ -54,24 +67,61 @@ namespace WindowsFormsApplication1
 
         private static void ConvertFileToDatabases(StreamReader rawFile)
         {
-            //Brett come back and do it for all sections
-            ConvertSectionToDataBase(rawFile);
+            string line;
+            bool firstSection = true;
+            bool firstEntrie = true;
+            DataBaseConnection currentDBConnection;
+
+            //Move the section to the first entrie
+            //Brett Test to see if this works with all raw files
+            for(int i = 0; i < 3; i++) line = rawFile.ReadLine();
+
+            line = rawFile.ReadLine();
+            while(!LineConverter.FileEnd(line))
+            {
+
+                //Skip this onces
+                if (!firstSection)
+                {
+                    currentSection = LineConverter.GetNextSection(line);          
+                    line = rawFile.ReadLine();    
+                }
+                else { firstSection = false; }
+
+
+                while (!LineConverter.EndSectionString(line) )
+                {
+                    //This test to see if a section has an entrie into the database
+                    if (firstEntrie)
+                    {
+                        sectionList.Add(currentSection);
+                        currentDBConnection = new DataBaseConnection(currentSection);
+                        dataConnectionList.Add(currentDBConnection);
+                        firstEntrie = false;
+                    }
+
+                    //Where we convert lines and add to the database
+                    System.Console.WriteLine(line);
+                    line = rawFile.ReadLine();           
+                }
+                firstEntrie = true;
+            }
+           
         }
 
-        /* Note:
-        * Input:
-        * Output:
-        */ 
-        private static void ConvertSectionToDataBase(StreamReader rawFile)
+        public virtual void ClearTables()
         {
-            //Brett Create db and then add to it
+            dataConnectionList.ForEach(delegate(DataBaseConnection database)
+            {
+                database.clearAllDataBase();
+            });
         }
     }
 
 
     /* Note:
     */ 
-    static class Converter
+    static class LineConverter
     {
 
         /*This will convert a single line
@@ -79,7 +129,7 @@ namespace WindowsFormsApplication1
          * Output: Array of strings
          * Error: You can't enter lines that are not suppose to be converted
          */
-        public static string[] ConverterString(string line)
+        public static string[] ConverterLine(string line)
         {
             //Remove unwanted char and convert into array
             line = line.Replace(" ", string.Empty);
@@ -88,29 +138,37 @@ namespace WindowsFormsApplication1
             return words;
         }
 
-        /*Checks to see if this is a proper convertable string
-         *Input: line- the line to be tested
-         *Output: True - if the string is properly convertable
-         *        False - Something is wrong with this string
-         */
-        public static bool TestString(string line)
+        public static string GetNextSection(string line)
         {
-            if (false)
-            {
-                return false;
-            }
-            return true;
+            int pos = line.LastIndexOf("BEGIN");
+            if (pos <= 0) return "";
+
+
+            string nextSection = line.Substring(pos + 5);
+            nextSection = nextSection.Trim().Replace(" ", "_");
+
+            return nextSection;
+        }
+
+        /*
+         *Input: 
+         *Output: 
+         */
+        public static bool FileEnd(string line)
+        {
+            if (line.StartsWith("Q")) { Console.WriteLine("End Passes");  return true; }
+            return false;
         }
 
         /* Note:
         * Input:
         * Output:
         */ 
-        public static bool EndString(string line)
+        public static bool EndSectionString(string line)
         {
             line = line.Replace(" ", string.Empty);
             //Test to see if this is the section ender
-            if (line.StartsWith("0/")) return true;
+            if (line.StartsWith("0/") || line.StartsWith("Q")) return true;
 
             return false;
         }
@@ -145,8 +203,6 @@ namespace WindowsFormsApplication1
             var currentDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             con = new SqlConnection(String.Format("Data Source=(LocalDB)\\v11.0;AttachDbFilename={0}\\DrawToolDB.mdf;Integrated Security=True",currentDir));
             tableName = newTableName;
-            Console.WriteLine(currentDir);
-
        
             try
             {
@@ -194,6 +250,24 @@ namespace WindowsFormsApplication1
         public virtual void getFromDataBase()
         {
 
+        }
+
+        public virtual void clearAllDataBase()
+        {
+            /* Brett need to fix this
+            con.Open();
+            try
+            {
+                var commandStr = String.Format("DELETE * FROM {0}", tableName);
+                using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+
+            con.Close();
+             */
         }
     }
 }
