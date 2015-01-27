@@ -12,10 +12,10 @@ namespace WindowsFormsApplication1
 {
 
     /* Note: This will convert the files into the database and compare what the drawtool needs
-    */ 
+    */
     static class CompareTool
     {
-        
+
         private static FileReader beforeBusCase;
         private static FileReader afterBusCase;
 
@@ -32,37 +32,40 @@ namespace WindowsFormsApplication1
 
         public static void ClearData()
         {
-            beforeBusCase.ClearTables();
+            //beforeBusCase.ClearTables();
 
         }
 
 
     }
-    
+
     /* Note:
     * Input:
     * Output:
-    */ 
+    */
     class FileReader
     {
 
         //List of sections that have data
-        private static List<string> sectionList = new List<string> ();
+        private static List<string> sectionList = new List<string>();
 
         //List of DataConnection
         private static List<DataBaseConnection> dataConnectionList = new List<DataBaseConnection>();
 
-        private static string currentSection = "Bus_Data";
+        private static DataBaseConnection compareDB = new DataBaseConnection();
+
+        //The first section
+        private static string currentSection = "BUS_DATA";
 
         /* Note:
         * Input:
         * Output:
-        */ 
+        */
         public FileReader(string path)
         {
             StreamReader rawFile = new StreamReader(path);
             ConvertFileToDatabases(rawFile);
-            
+
         }
 
         private static void ConvertFileToDatabases(StreamReader rawFile)
@@ -74,53 +77,72 @@ namespace WindowsFormsApplication1
 
             //Move the section to the first entrie
             //Brett Test to see if this works with all raw files
-            for(int i = 0; i < 3; i++) line = rawFile.ReadLine();
+            for (int i = 0; i < 3; i++) line = rawFile.ReadLine();
 
             line = rawFile.ReadLine();
-            while(!LineConverter.FileEnd(line))
+            while (!LineConverter.FileEnd(line))
             {
 
-                //Skip this onces
+
+
+                //Will skip the first section because we already know it
                 if (!firstSection)
                 {
-                    currentSection = LineConverter.GetNextSection(line);          
-                    line = rawFile.ReadLine();    
+                    currentSection = LineConverter.GetNextSection(line);
+                    line = rawFile.ReadLine();
+
                 }
                 else { firstSection = false; }
 
 
-                while (!LineConverter.EndSectionString(line) )
+                while (!LineConverter.EndSectionString(line))
                 {
-                    //This test to see if a section has an entrie into the database
-                    if (firstEntrie)
-                    {
-                        sectionList.Add(currentSection);
-                        currentDBConnection = new DataBaseConnection(currentSection);
-                        dataConnectionList.Add(currentDBConnection);
-                        firstEntrie = false;
-                    }
 
-                    //Where we convert lines and add to the database
-                    System.Console.WriteLine(line);
-                    line = rawFile.ReadLine();           
+                    if (currentSection.CompareTo("BRANCH_DATA") == 0)
+                    {
+                
+                   
+                        //This test to see if a section has an entrie into the database
+                        if (firstEntrie)
+                        {
+                            sectionList.Add(currentSection);
+                            //temp section Brett
+                            compareDB = new DataBaseConnection();
+                            compareDB.CreateConnectionDatabase(currentSection);
+
+                            //-----------------------/
+                            
+                            //currentDBConnection =  new DataBaseConnection();
+                            dataConnectionList.Add(compareDB);
+                            firstEntrie = false;
+                        }
+
+                        string[] lineArr = LineConverter.ConverterLine(line);
+    
+                        compareDB.CompareTableFirstRun( lineArr[0], lineArr[1]);
+                        //Where we convert lines and add to the database
+                    }
+                    line = rawFile.ReadLine();
                 }
                 firstEntrie = true;
             }
+            compareDB.clearAllData();
            
+
         }
 
-        public virtual void ClearTables()
-        {
-            dataConnectionList.ForEach(delegate(DataBaseConnection database)
-            {
-                database.clearAllDataBase();
-            });
-        }
+         public virtual  void ClearTables()
+         {
+             dataConnectionList.ForEach(delegate(DataBaseConnection database)
+             {
+                 database.clearAllData();
+             });
+         }
     }
 
 
     /* Note:
-    */ 
+    */
     static class LineConverter
     {
 
@@ -140,6 +162,7 @@ namespace WindowsFormsApplication1
 
         public static string GetNextSection(string line)
         {
+            line = line.ToUpper();
             int pos = line.LastIndexOf("BEGIN");
             if (pos <= 0) return "";
 
@@ -156,14 +179,14 @@ namespace WindowsFormsApplication1
          */
         public static bool FileEnd(string line)
         {
-            if (line.StartsWith("Q")) { Console.WriteLine("End Passes");  return true; }
+            if (line.StartsWith("Q")) { Console.WriteLine("End Passes"); return true; }
             return false;
         }
 
         /* Note:
         * Input:
         * Output:
-        */ 
+        */
         public static bool EndSectionString(string line)
         {
             line = line.Replace(" ", string.Empty);
@@ -177,23 +200,24 @@ namespace WindowsFormsApplication1
     /* Note:
     * Input:
     * Output:
-    */ 
+    */
     class DataBaseConnection
     {
         /*List of items to improve on Brett
          * -Create the table
          * -Add to it
          * 
-         */ 
-      
+         */
+
         private static string tableName;
         private static SqlConnection con;
 
         /* Note:
         * Input:
         * Output:
-        */ 
-        public DataBaseConnection(string newTableName)
+        */
+        //Brett we need to test what we can do with this
+        public virtual void CreateConnectionDatabase(string newTableName)
         {
             //Brett come back to this Might cause issues
             /*Things to test for
@@ -201,15 +225,15 @@ namespace WindowsFormsApplication1
              * What if we have the same db (Clear and replace)
              */
             var currentDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            con = new SqlConnection(String.Format("Data Source=(LocalDB)\\v11.0;AttachDbFilename={0}\\DrawToolDB.mdf;Integrated Security=True",currentDir));
+            con = new SqlConnection(String.Format("Data Source=(LocalDB)\\v11.0;AttachDbFilename={0}\\DrawToolDB.mdf;Integrated Security=True", currentDir));
             tableName = newTableName;
-       
+
             try
             {
-                    
+
                 con.Open();
 
-                var commandStr = String.Format("If not exists (select name from sysobjects where name = '{0}') CREATE TABLE {0}(First_Name char(50),Last_Name char(50),Address char(50),City char(50),Country char(25),Birth_Date datetime)", newTableName);
+                var commandStr = String.Format("If not exists (select name from sysobjects where name = '{0}') CREATE TABLE {0}(Bus_From char(50),Bus_To char(50),Connection_Status char(50))", newTableName);
                 using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
 
             }
@@ -218,22 +242,26 @@ namespace WindowsFormsApplication1
                 System.Console.WriteLine(ex.Message);
             }
 
-            con.Close();            
-      
+            con.Close();
+
         }
 
         /* Note:
          * Input:
          * Output:
          */
-        public virtual void AddToDataBase()
+        //A temp to make the demo work
+        public virtual void CompareTableFirstRun(string busFrom, string busTo)
         {
+            string status = "nChange";
+
             
-            //Insert into the db
             con.Open();
-            try{
-            var commandStr = String.Format("Insert into {0} (First_Name, Last_Name) values ('Brett', 'Pel')", tableName);
-            using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
+            try
+            {
+                string test = String.Format("Insert into {0} (Bus_From,Bus_To,Connection_Status) values ({1},{2},'{3}')", tableName, busFrom, busTo, status);
+                var commandStr = test;
+                using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -252,13 +280,15 @@ namespace WindowsFormsApplication1
 
         }
 
-        public virtual void clearAllDataBase()
+        public virtual void clearAllData()
         {
-            /* Brett need to fix this
+            
+            //Brett need to fix this
+            
             con.Open();
             try
             {
-                var commandStr = String.Format("DELETE * FROM {0}", tableName);
+                var commandStr = String.Format("delete from {0}", tableName);
                 using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -267,7 +297,9 @@ namespace WindowsFormsApplication1
             }
 
             con.Close();
-             */
+            con.Dispose();
+            
         }
     }
 }
+

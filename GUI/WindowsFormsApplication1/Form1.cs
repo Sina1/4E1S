@@ -156,7 +156,6 @@ namespace WindowsFormsApplication1
             if (testTextBoxes())
             {
                 
-                loadingIcon.Show();
 
                 CompareTool.StartCompareTool(originalMap.Text, "dummyTest");
 
