@@ -157,7 +157,7 @@ namespace WindowsFormsApplication1
             {
                 
 
-                CompareTool.StartCompareTool(originalMap.Text, "dummyTest");
+                CompareTool.StartCompareTool(originalMap.Text, newMap.Text, BussesList.Text);
 
                 CompareTool.ClearData();
 

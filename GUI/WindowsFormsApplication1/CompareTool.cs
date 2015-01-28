@@ -24,9 +24,9 @@ namespace WindowsFormsApplication1
          *      afterPath - the after bus case path to the raw file
         * Output: Nothing
         */
-        public static void StartCompareTool(string beforePath, string afterPath)
+        public static void StartCompareTool(string beforePath, string afterPath, string busSection)
         {
-            beforeBusCase = new FileReader(beforePath);
+            beforeBusCase = new FileReader(beforePath, afterPath, busSection);
             //afterBusCase = new FileReader(afterPath);
         }
 
@@ -54,6 +54,10 @@ namespace WindowsFormsApplication1
 
         private static DataBaseConnection compareDB = new DataBaseConnection();
 
+        private static List<string> busList = new List<string>();
+
+
+
         //The first section
         private static string currentSection = "BUS_DATA";
 
@@ -61,14 +65,24 @@ namespace WindowsFormsApplication1
         * Input:
         * Output:
         */
-        public FileReader(string path)
+        public FileReader(string pathFirst, string pathSecond, string busSet)
         {
-            StreamReader rawFile = new StreamReader(path);
-            ConvertFileToDatabases(rawFile);
+            busList.AddRange(LineConverter.ConverterLine(busSet));
+            StreamReader rawFileFirst  = new StreamReader(pathFirst);
+            StreamReader rawFileSecond  = new StreamReader(pathSecond);
+            //Brett ----------------------------------------------
+            compareDB = new DataBaseConnection();
+            compareDB.setBusList(busSet);
+            ConvertFilesToDatabases(rawFileFirst, true);
+            ConvertFilesToDatabases(rawFileSecond, false);
+
+            //Call to get the function
+            compareDB.getBusList();
 
         }
 
-        private static void ConvertFileToDatabases(StreamReader rawFile)
+      
+        private static void ConvertFilesToDatabases(StreamReader rawFile, bool firstRun)
         {
             string line;
             bool firstSection = true;
@@ -105,28 +119,29 @@ namespace WindowsFormsApplication1
                         //This test to see if a section has an entrie into the database
                         if (firstEntrie)
                         {
-                            sectionList.Add(currentSection);
-                            //temp section Brett
-                            compareDB = new DataBaseConnection();
-                            compareDB.CreateConnectionDatabase(currentSection);
+                            //sectionList.Add(currentSection);
 
-                            //-----------------------/
+                            //compareDB.CreateConnectionDatabase(currentSection);
+
                             
                             //currentDBConnection =  new DataBaseConnection();
-                            dataConnectionList.Add(compareDB);
+                            //dataConnectionList.Add(compareDB);
                             firstEntrie = false;
                         }
 
                         string[] lineArr = LineConverter.ConverterLine(line);
-    
-                        compareDB.CompareTableFirstRun( lineArr[0], lineArr[1]);
-                        //Where we convert lines and add to the database
+
+                        if (busList.Contains(lineArr[0]) && busList.Contains(lineArr[1]))
+                        {
+                            if (firstRun) compareDB.CompareTableFirstRun(lineArr[0], lineArr[1]);
+                            else compareDB.CompareTableSecondRun(lineArr[0], lineArr[1]);
+                        }
+   
                     }
                     line = rawFile.ReadLine();
                 }
                 firstEntrie = true;
             }
-            compareDB.clearAllData();
            
 
         }
@@ -179,6 +194,7 @@ namespace WindowsFormsApplication1
          */
         public static bool FileEnd(string line)
         {
+            if (String.IsNullOrEmpty(line)) return true;
             if (line.StartsWith("Q")) { Console.WriteLine("End Passes"); return true; }
             return false;
         }
@@ -211,6 +227,11 @@ namespace WindowsFormsApplication1
 
         private static string tableName;
         private static SqlConnection con;
+
+        private static List<Dictionary<string, string>> busList = new List<Dictionary<string,string>>();
+        private static List<Dictionary<string, string>> connectionList = new List<Dictionary<string, string>>();
+
+       
 
         /* Note:
         * Input:
@@ -246,45 +267,110 @@ namespace WindowsFormsApplication1
 
         }
 
-        /* Note:
-         * Input:
-         * Output:
-         */
+
+
+
+       public virtual void setBusList(string list)
+        {
+           string[] busSet = LineConverter.ConverterLine(list);
+
+           for (int i = 0; i < busSet.Length; i++ )
+           {
+               busList.Add(new Dictionary<string,string>());
+               busList[i].Add("name", busSet[i]);
+               busList[i].Add("description", busSet[i]);
+               busList[i].Add("status", ".");
+           }
+
+
+
+        }
         //A temp to make the demo work
         public virtual void CompareTableFirstRun(string busFrom, string busTo)
         {
-            string status = "nChange";
+            string status = "-";
 
-            
-            con.Open();
-            try
+            connectionList.Add(new Dictionary<string, string>());
+            connectionList.Last().Add("1", busFrom);
+            connectionList.Last().Add("2", busTo);
+            connectionList.Last().Add("status", status);
+
+
+        }
+
+        public virtual void CompareTableSecondRun(string busFrom, string busTo)
+        {
+            bool inSystem = false;
+            foreach(var entry in connectionList)
             {
-                string test = String.Format("Insert into {0} (Bus_From,Bus_To,Connection_Status) values ({1},{2},'{3}')", tableName, busFrom, busTo, status);
-                var commandStr = test;
-                using (SqlCommand cmd = new SqlCommand(commandStr, con)) cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                System.Console.WriteLine(ex.Message);
+                if (entry.ContainsValue(busFrom) && entry.ContainsValue(busTo))
+                {
+                    entry["status"] = ".";
+                    inSystem = true;
+                }
             }
 
-            con.Close();
+            if (!inSystem)
+            {
+                connectionList.Add(new Dictionary<string, string>());
+                connectionList.Last().Add("1", busFrom);
+                connectionList.Last().Add("2", busTo);
+                connectionList.Last().Add("status", "+");
+            }
+
+        
         }
 
         /* Note:
         * Input:
         * Output:
         */
-        public virtual void getFromDataBase()
+        public virtual void getBusConnection()
         {
 
+           /* con.Open();
+            try
+            {
+                string commandStr = String.Format("SELECT * FROM {0}", tableName);
+                using (SqlCommand cmd = new SqlCommand(commandStr, con))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+
+
+                           // Console.WriteLine(reader.GetString(i));
+                        
+                    }
+
+                }
+                   
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+            }
+            con.Close();*/
         }
 
-        public virtual void clearAllData()
+        public virtual List<Dictionary<string, string>> getBusList()
         {
-            
-            //Brett need to fix this
-            
+            return busList;
+        }
+        public virtual List<Dictionary<string, string>> getConnectionList() 
+        {
+            return connectionList;
+        }
+
+
+        //This is now the removed from database Brett update
+        private static void dataBaseCommand(/**/)
+        {
+
+            //This inserts into
+            //string test = String.Format("Insert into {0} (Bus_From,Bus_To,Connection_Status) values ({1},{2},'{3}')", tableName, busFrom, busTo, status);
+      
             con.Open();
             try
             {
@@ -298,8 +384,19 @@ namespace WindowsFormsApplication1
 
             con.Close();
             con.Dispose();
+        }
+
+        public virtual void clearAllData()
+        {      
+            
+            
+            
+            
             
         }
+
     }
+
+
 }
 
