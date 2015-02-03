@@ -17,17 +17,19 @@ namespace WindowsFormsApplication1
     {
 
         private static FileReader beforeBusCase;
-        private static FileReader afterBusCase;
+
 
         /* Note: This will take in the 2 path files and create the fileReaders that are need when the compare tool is started
         * Input: beforePath - the before bus cases path to the raw file 
          *      afterPath - the after bus case path to the raw file
         * Output: Nothing
         */
-        public static void StartCompareTool(string beforePath, string afterPath, string busSection)
+        public static void StartCompareTool(string compareFilePath1, string compareFilePath2, string busSection, string savePath, string saveName )
         {
-            beforeBusCase = new FileReader(beforePath, afterPath, busSection);
-            //afterBusCase = new FileReader(afterPath);
+            beforeBusCase = new FileReader(compareFilePath1, compareFilePath2, busSection, savePath, saveName);
+            
+
+            
         }
 
         public static void ClearData()
@@ -65,19 +67,24 @@ namespace WindowsFormsApplication1
         * Input:
         * Output:
         */
-        public FileReader(string pathFirst, string pathSecond, string busSet)
+        public FileReader(string compareFilePath1, string compareFilePath2, string busSet, string savePath, string saveName )
         {
             busList.AddRange(LineConverter.ConverterLine(busSet));
-            StreamReader rawFileFirst  = new StreamReader(pathFirst);
-            StreamReader rawFileSecond  = new StreamReader(pathSecond);
+            StreamReader rawFileFirst = new StreamReader(compareFilePath1);
+            StreamReader rawFileSecond = new StreamReader(compareFilePath2);
             //Brett ----------------------------------------------
             compareDB = new DataBaseConnection();
             compareDB.setBusList(busSet);
             ConvertFilesToDatabases(rawFileFirst, true);
             ConvertFilesToDatabases(rawFileSecond, false);
 
-            //Call to get the function
-            compareDB.getBusList();
+            //Call to get the function Roshaan Add here
+
+            //Fucntion( compareDB.getBus();
+            compareDB.getBusList(); //Bust informatin list
+           compareDB.getConnectionList(); //connection between busses
+           //savePath; //file path 
+            //saveName;//file name
 
         }
 
@@ -195,7 +202,7 @@ namespace WindowsFormsApplication1
         public static bool FileEnd(string line)
         {
             if (String.IsNullOrEmpty(line)) return true;
-            if (line.StartsWith("Q")) { Console.WriteLine("End Passes"); return true; }
+            if (line.StartsWith("Q")) { return true; }
             return false;
         }
 
@@ -325,7 +332,7 @@ namespace WindowsFormsApplication1
         * Input:
         * Output:
         */
-        public virtual void getBusConnection()
+        /*public virtual void getBusConnection()
         {
 
            /* con.Open();
@@ -351,8 +358,8 @@ namespace WindowsFormsApplication1
             {
                 System.Console.WriteLine(ex.Message);
             }
-            con.Close();*/
-        }
+            con.Close();
+        }*/
 
         public virtual List<Dictionary<string, string>> getBusList()
         {
@@ -360,6 +367,22 @@ namespace WindowsFormsApplication1
         }
         public virtual List<Dictionary<string, string>> getConnectionList() 
         {
+           /*foreach (var output in connectionList)
+            {
+                var busFrom = output["1"];
+                var busTo = output["2"];
+                var status = output["status"];
+                string statusOf = " ";
+                if( status.CompareTo(".") == 0)
+                    statusOf = "Connected";
+                else if( status.CompareTo("+") == 0)
+                    statusOf = "Added";
+                else
+                    statusOf = "Removed";
+
+
+                Console.WriteLine(output.ToString());//"Bus From " + busFrom + " to " + busTo + " is " + statusOf);
+            }*/
             return connectionList;
         }
 
