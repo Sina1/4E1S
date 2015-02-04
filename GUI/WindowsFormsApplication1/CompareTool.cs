@@ -79,11 +79,11 @@ namespace WindowsFormsApplication1
             ConvertFilesToDatabases(rawFileSecond, false);
 
             //Call to get the function Roshaan Add here
-
+            DrawTool dTool = new DrawTool(savePath, saveName);
             //Fucntion( compareDB.getBus();
-            compareDB.getBusList(); //Bust informatin list
-           compareDB.getConnectionList(); //connection between busses
-           //savePath; //file path 
+            
+            dTool.drawGraph(compareDB.getBusList(), compareDB.getConnectionList());
+            //savePath; //file path 
             //saveName;//file name
 
         }

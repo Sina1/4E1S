@@ -45,3 +45,7 @@ C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\Windows
 C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
+C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
+C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
+C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml

@@ -70,16 +70,16 @@ namespace WindowsFormsApplication1
         }
     }
 
-    static class dummyTest
-    {
-        public static void StartMockProject(string destFolder, string filename)
-        {
-
-            // call drawing tool
-            DrawTool dTool = new DrawTool(destFolder, filename);
-            dTool.drawCanned();
-        }
-    }
+    //static class dummyTest
+    //{
+    //    public static void StartMockProject(string destFolder, string filename)
+    //    {
+    //
+    //        // call drawing tool
+    //        DrawTool dTool = new DrawTool(destFolder, filename);
+    //        dTool.d();
+    //    }
+    //}
 
    
 }
