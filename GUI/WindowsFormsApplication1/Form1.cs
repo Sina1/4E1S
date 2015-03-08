@@ -155,22 +155,11 @@ namespace WindowsFormsApplication1
 
             if (testTextBoxes())
             {
-                
-
-                CompareTool.StartCompareTool(originalMap.Text, newMap.Text, BussesList.Text, saveLocationFolder.Text , saveName.Text );
-
-                CompareTool.ClearData();
 
 
-
-              
+                busSelection busListSelect = new busSelection(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
+                busListSelect.ShowDialog();
                 
-                
-                loadingIcon.Hide();
-                
-                
-                MessageBox.Show("Your file has been successfully saved to the following location: \n\n " + this.destFolder + "\\" + this.filename + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
             else
             {

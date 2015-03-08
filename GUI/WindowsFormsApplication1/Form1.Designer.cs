@@ -33,11 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.newMap = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.BussesList = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.loadingIcon = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,8 +51,6 @@
             this.sLDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -105,15 +99,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // BussesList
-            // 
-            this.BussesList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BussesList.Location = new System.Drawing.Point(12, 28);
-            this.BussesList.Name = "BussesList";
-            this.BussesList.Size = new System.Drawing.Size(110, 20);
-            this.BussesList.TabIndex = 6;
-            this.BussesList.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,46 +111,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.BussesList);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(0, 198);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 66);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "BUS NUMBERS";
-            // 
-            // loadingIcon
-            // 
-            this.loadingIcon.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.loadingIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loadingIcon.Cursor = System.Windows.Forms.Cursors.Default;
-            this.loadingIcon.Image = global::WindowsFormsApplication1.Properties.Resources.ajax_loader_blue_512;
-            this.loadingIcon.Location = new System.Drawing.Point(64, 407);
-            this.loadingIcon.Name = "loadingIcon";
-            this.loadingIcon.Size = new System.Drawing.Size(92, 63);
-            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loadingIcon.TabIndex = 15;
-            this.loadingIcon.TabStop = false;
-            this.loadingIcon.Visible = false;
-            this.loadingIcon.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(137, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(237, 39);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Place a comma following every bus number entry\r\nExample: 1,3,5\r\n\r\n";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DarkSlateBlue;
@@ -176,7 +121,7 @@
             this.groupBox2.Controls.Add(this.saveLocationFolder);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(0, 282);
+            this.groupBox2.Location = new System.Drawing.Point(0, 206);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(398, 147);
             this.groupBox2.TabIndex = 11;
@@ -227,7 +172,7 @@
             // button4
             // 
             this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Location = new System.Drawing.Point(313, 447);
+            this.button4.Location = new System.Drawing.Point(313, 371);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 13;
@@ -238,7 +183,7 @@
             // button1
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(224, 447);
+            this.button1.Location = new System.Drawing.Point(224, 371);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -257,7 +202,7 @@
             this.groupBox3.Controls.Add(this.originalMap);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox3.Location = new System.Drawing.Point(0, 27);
+            this.groupBox3.Location = new System.Drawing.Point(0, 36);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(398, 154);
             this.groupBox3.TabIndex = 14;
@@ -357,25 +302,23 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.DimGray;
             this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(398, 486);
-            this.Controls.Add(this.loadingIcon);
+            this.ClientSize = new System.Drawing.Size(398, 405);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CDUP Tool";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -393,9 +336,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox newMap;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox BussesList;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox saveLocationFolder;
         private System.Windows.Forms.Button button4;
@@ -407,14 +348,12 @@
         private System.Windows.Forms.TextBox saveName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox loadingIcon;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fILEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sLDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTopicsToolStripMenuItem;
-        private System.Windows.Forms.Label label5;
     }
 }
 
