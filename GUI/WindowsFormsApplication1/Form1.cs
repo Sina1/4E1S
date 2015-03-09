@@ -157,8 +157,10 @@ namespace WindowsFormsApplication1
             {
 
 
-                busSelection busListSelect = new busSelection(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
+                //busSelection busListSelect = new busSelection(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
+                enterBus busListSelect = new enterBus(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
                 busListSelect.ShowDialog();
+                
                 
             }
             else
