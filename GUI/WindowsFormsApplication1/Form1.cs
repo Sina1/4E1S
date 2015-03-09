@@ -320,6 +320,7 @@ namespace WindowsFormsApplication1
             string invFilePath = null;
             
             if (testTextBoxes())
+<<<<<<< HEAD
             {   
                 //Adding more error checks here: 
                 if (!File.Exists(BaseCaseFile)){
@@ -414,6 +415,16 @@ namespace WindowsFormsApplication1
                     {
                         MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
                     }   
+=======
+            {
+
+
+                //busSelection busListSelect = new busSelection(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
+                enterBus busListSelect = new enterBus(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
+                busListSelect.ShowDialog();
+                
+                
+>>>>>>> origin/master
             }
 
             else
