@@ -320,11 +320,11 @@ namespace WindowsFormsApplication1
             string invFilePath = null;
             
             if (testTextBoxes())
-<<<<<<< HEAD
             {   
                 //Adding more error checks here: 
                 if (!File.Exists(BaseCaseFile)){
                     errStr = errStr+"\nBaseCase File does not exist at the selected location:\n"; //+ originalMap.Text);
+                    //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     foreach (char C in BaseCaseFile)
                     {
                         if ((C == '/') | (C == '*') | (C == '_') | (C == '^') | (C == '&') | (C == '<') | (C == '>') | (C == '?'))
@@ -338,6 +338,8 @@ namespace WindowsFormsApplication1
                 }
                 if (!(File.Exists(newCaseFile))){
                      errStr = errStr+"\nNewCase File does not exist at the selected location:\n";// + newMap.Text);
+                     //this.newMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
+
                      foreach (char C in filePath2)
                      {
                          if ((C == '/') | (C == '*') | (C == '_') | (C == '^') | (C == '&') | (C == '<') | (C == '>') | (C == '?'))
@@ -350,6 +352,7 @@ namespace WindowsFormsApplication1
                 if (!Directory.Exists(this.destFolder))
                 {
                      errStr = errStr+"\nThe Folder does not exist at the selected dirctory:\n";// + saveLocationFolder.Text);
+                     //this.saveLocationFolder.BackColor = System.Drawing.SystemColors.ActiveCaption;
                         //Directory.CreateDirectory(saveFolder);
                      foreach (char c in filePath3)
                      {
@@ -369,6 +372,7 @@ namespace WindowsFormsApplication1
                     | (c == '\t') | (c == ' ') | (c == '.'))
                     {
                         badCharStr4 = badCharStr4 + c;
+                        this.saveName.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     }
                 }
 
@@ -378,6 +382,7 @@ namespace WindowsFormsApplication1
                     {
                         s1 = "\nBad Char " + badCharStr1 + " in " + "<"+ filePath1+"> for Base Case\n" ;
                         errMsg = errMsg + s1;
+                        //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     }
                     if (badCharStr2 != null)
                     {
@@ -401,30 +406,45 @@ namespace WindowsFormsApplication1
                     {
                         if (!(badCharStr4 != null))
                         {
+                            this.originalMap.BackColor = System.Drawing.SystemColors.Window;
+                            this.saveLocationFolder.BackColor = System.Drawing.SystemColors.Window;
+                            this.newMap.BackColor = System.Drawing.SystemColors.Window;
+                            this.saveName.BackColor = System.Drawing.SystemColors.Window;
                             MessageBox.Show("\nYour file has been successfully saved to the following location: \n\n "
                             + this.destFolder + "\\" + this.filename + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
                         {
+                            this.originalMap.BackColor = System.Drawing.SystemColors.Window;
+                            this.saveLocationFolder.BackColor = System.Drawing.SystemColors.Window;
+                            this.newMap.BackColor = System.Drawing.SystemColors.Window;
+                            this.saveName.BackColor = System.Drawing.SystemColors.ActiveCaption;
                             MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
                         }
                     }
     
                     else
                     {
+                        if (!(File.Exists(BaseCaseFile)))
+                            this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                        else
+                            this.originalMap.BackColor = System.Drawing.SystemColors.Window;
+                        if (!(File.Exists(newCaseFile)))
+                        this.newMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                        else
+                            this.newMap.BackColor = System.Drawing.SystemColors.Window;
+
+                        if (!(Directory.Exists(this.destFolder)))
+                        this.saveLocationFolder.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                        else
+                            this.saveLocationFolder.BackColor = System.Drawing.SystemColors.Window;
+                        if ((badCharStr4 != null))
+                        this.saveName.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                        else
+                            this.saveName.BackColor = System.Drawing.SystemColors.Window;
                         MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
                     }   
-=======
-            {
-
-
-                //busSelection busListSelect = new busSelection(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
-                enterBus busListSelect = new enterBus(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
-                busListSelect.ShowDialog();
-                
-                
->>>>>>> origin/master
             }
 
             else
@@ -611,7 +631,7 @@ namespace WindowsFormsApplication1
             "HARDWARE: Window PC, 4GB RAM, 2 Core CPU\n"+
             "SOFTWARE: Window OS 7 or higher, Visio 2010, Python 3.xx installed.\n"+
 
-            "\nABOUT\n"+
+            "\nABOUT\n" +
              "This program is a customized software tool designed to process AESO base case files to identify any changes in connections between specific busses and\n"+ 
             "generate a Visio file that will contain the single line diagram reflecting the changes between the two cases. The Visio file will be editable\n"+ 
             "in Microsoft Visio 2010 for further modifications. The base case files are in *.raw format.\n"+
@@ -621,8 +641,9 @@ namespace WindowsFormsApplication1
             "For troubleshooting, and/or other technical support in relation to the use of this software please consult your IT department. Firewall, Virus, Spyware and other\n"+ 
             "security issues that may arise as a result of use of this program must be reviewed prior to installing this program.\n"+
             "For program malfunction, modification, improvements, and software upgrades please contact the developer team @: xxx.xxx@xxx.com\n\n";
-            
+
             MessageBox.Show(fullUserGuide);
+            
         }
 
         private void toolStripComboBox3_Click(object sender, EventArgs e)
