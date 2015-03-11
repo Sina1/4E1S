@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class enterBus
+    partial class BusSelectionForm
     {
         /// <summary>
         /// Required designer variable.

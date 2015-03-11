@@ -46,7 +46,7 @@ namespace WindowsFormsApplication1
             toolTip1.SetToolTip(this.originalMap, "Type the path to base case or click Base Case button");
             toolTip1.SetToolTip(this.newMap, "Type the path to new case or click New Case button");
             //toolTip1.SetToolTip(this.menuStrip1, "Help > Instructions");
-            toolTip1.SetToolTip(this.BussesList, "Select a bus list for comparison");
+           
             toolTip1.SetToolTip(this.saveLocationFolder, "Select a folder to save result of comparison");
             toolTip1.SetToolTip(this.saveName, "Select a name for the compared case");
 
@@ -292,7 +292,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //Brett Check to see if the file location are .raw if yes return false
+            
             this.filename = saveName.Text;
             this.destFolder = saveLocationFolder.Text;
 
@@ -410,9 +410,9 @@ namespace WindowsFormsApplication1
                             this.saveLocationFolder.BackColor = System.Drawing.SystemColors.Window;
                             this.newMap.BackColor = System.Drawing.SystemColors.Window;
                             this.saveName.BackColor = System.Drawing.SystemColors.Window;
-                            MessageBox.Show("\nYour file has been successfully saved to the following location: \n\n "
-                            + this.destFolder + "\\" + this.filename + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+
+                            BusSelectionForm busSelection = new BusSelectionForm(originalMap.Text, originalMap.Text, saveLocationFolder.Text, saveName.Text);
+                            busSelection.ShowDialog();
                         }
                         else
                         {
@@ -458,7 +458,7 @@ namespace WindowsFormsApplication1
         {
             throw new NotImplementedException();
         }
-        //Brett move or delete this alter
+
 
         private bool testTextBoxes()
         {
@@ -466,8 +466,7 @@ namespace WindowsFormsApplication1
             if (String.IsNullOrWhiteSpace(saveName.Text)) return false;
             if (String.IsNullOrWhiteSpace(newMap.Text)) return false;
             if (String.IsNullOrWhiteSpace(originalMap.Text)) return false;
-            if (String.IsNullOrWhiteSpace(BussesList.Text)) return false;
-
+           
             return true;
         }
 

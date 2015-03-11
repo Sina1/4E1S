@@ -34,12 +34,7 @@
             this.newMap = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.loadingIcon = new System.Windows.Forms.PictureBox();
-=======
->>>>>>> origin/master
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +50,6 @@
             this.nEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.sssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
@@ -64,10 +58,6 @@
             this.technicalSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingIcon)).BeginInit();
-=======
->>>>>>> origin/master
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -129,21 +119,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-<<<<<<< HEAD
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.BussesList);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(0, 198);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 66);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "BUS NUMBERS";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -155,27 +130,9 @@
             this.label5.Text = "Place a comma following every bus number entry\r\nExample: 1,3,5\r\n\r\n";
             this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
-            // loadingIcon
-            // 
-            this.loadingIcon.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.loadingIcon.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.loadingIcon.Cursor = System.Windows.Forms.Cursors.Default;
-            this.loadingIcon.Image = global::WindowsFormsApplication1.Properties.Resources.ajax_loader_blue_512;
-            this.loadingIcon.Location = new System.Drawing.Point(306, 84);
-            this.loadingIcon.Name = "loadingIcon";
-            this.loadingIcon.Size = new System.Drawing.Size(92, 63);
-            this.loadingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.loadingIcon.TabIndex = 15;
-            this.loadingIcon.TabStop = false;
-            this.loadingIcon.Visible = false;
-            this.loadingIcon.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-=======
->>>>>>> origin/master
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.groupBox2.Controls.Add(this.loadingIcon);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.saveName);
@@ -606,28 +563,16 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(407, 477);
+            this.ClientSize = new System.Drawing.Size(407, 412);
             this.Controls.Add(this.menuStrip1);
-=======
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.DimGray;
-            this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(398, 405);
->>>>>>> origin/master
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
-<<<<<<< HEAD
-=======
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
->>>>>>> origin/master
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -663,18 +608,15 @@
         private System.Windows.Forms.TextBox saveName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-<<<<<<< HEAD
-        private System.Windows.Forms.PictureBox loadingIcon;
+
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-=======
-        private System.Windows.Forms.MenuStrip menuStrip1;
->>>>>>> origin/master
+
         private System.Windows.Forms.ToolStripMenuItem fILEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTopicsToolStripMenuItem;
-<<<<<<< HEAD
+
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem sssToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
@@ -683,8 +625,7 @@
         private System.Windows.Forms.ToolStripMenuItem technicalSupportToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         public System.Windows.Forms.MenuStrip menuStrip1;
-=======
->>>>>>> origin/master
+
     }
 }
 

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class enterBus : Form
+    public partial class BusSelectionForm : Form
     {
         string startPath, EndPath, savePath, saveName;
-        public enterBus(string path1, string path2, string sPath, string sName)
+        public BusSelectionForm(string path1, string path2, string sPath, string sName)
         {
             InitializeComponent();
             startPath = path1;

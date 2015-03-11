@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{ "filepath":"C:/Users/Sina/Documents/GitHub/4E1S/Tests/dummy" , "busList": [{"name":"200","description":"200","status":"."},{"name":"201","description":"201","status":"."}], "connectionList": []}
-=======
-{ "filepath":"C:/Users/Brett/Desktop/test222" , "busList": [{"name":"141","description":"141","status":"."},{"name":"142","description":"142","status":"."},{"name":"201","description":"201","status":"."},{"name":"203","description":"203","status":"."}], "connectionList": []}
->>>>>>> origin/master
+{ "filepath":"C:/Users/Brett/Desktop/test" , "busList": [{"name":"142","description":"142","status":"."},{"name":"141","description":"141","status":"."},{"name":"201","description":"201","status":"."},{"name":"202","description":"202","status":"."}], "connectionList": []}
