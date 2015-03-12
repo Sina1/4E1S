@@ -11,7 +11,6 @@ using System.Data.SqlClient;
 namespace WindowsFormsApplication1
 {
 
-   
 
 
     static class CompareTool
@@ -163,6 +162,23 @@ namespace WindowsFormsApplication1
         
         }
 
+        private static void createIDev(string savePath)
+        {
+            if (!File.Exists(savePath))
+            {
+                using (StreamWriter sw = File.CreateText(savePath))
+                {
+                    sw.WriteLine("Hello");
+                    sw.WriteLine("And");
+                    sw.WriteLine("Welcome");
+                    sw.Close();
+                }	
+                
+            }
+            else Console.WriteLine("Create Dev File issues");
+        }
+
+
     }
 
 
@@ -223,7 +239,6 @@ namespace WindowsFormsApplication1
         }
 
     }
-
 
 
 
