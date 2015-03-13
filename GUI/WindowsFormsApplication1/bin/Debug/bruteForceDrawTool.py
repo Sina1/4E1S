@@ -50,6 +50,18 @@ def main():
     text_file = open("temp.dot", "w")
     text_file.write(gString)
     text_file.close()
+
+    # write gString to file for later use
+    text_file = open("C:/Users/Roshaan/Desktop/test-output/poll/out.txt", "w")
+    text_file.write(gString)
+    text_file.close()
+
+    # write gString to file for later use
+    text_file = open("C:/Users/Roshaan/Desktop/test-output/poll/dest.txt", "w")
+    text_file.write(config['destPath'])
+    text_file.close()
+
+    
     
     command = '"' + config['graphvizPath'] + '" ' + config['dotCommand'] \
               + "temp.dot > " + config['destPath'] + ".png" 
@@ -80,11 +92,11 @@ def make_graphviz_string(busList,connectionList):
 
     if not skipBus:
         for bus in busList:
-            middleS = middleS + make_bus(bus['name'], bus['description'])
+            middleS = middleS + make_bus(bus['name'], bus['description'],bus['status'])
 
     if not skipConnection:    
         for connection in connectionList:
-            middleS += make_connection(connection["1"],connection["2"])
+            middleS += make_connection(connection["1"],connection["2"],connection['status'])
     
 
 
@@ -92,17 +104,27 @@ def make_graphviz_string(busList,connectionList):
     return finalS
 
 
-def make_bus(name, description):
+def make_bus(name, description,status):
     busString = "\t\t" + name + '[shape=polygon sides=4 width=.1 image="shapes/bus.png "'
     busString = busString + 'xlabel="' + description + '" fontsize=72 label="" '
+    #if status == '.':
+    #    busString = busString + 'color ="red"];\n';
+    #elif status == '-':
+    #    busString = busString + 'color ="green"];\n';
+    #else:
 
     busString = busString + '];\n';
-    
+
     return busString
 
-def make_connection(bus1, bus2):
-    return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none ] ;\n'
-
+def make_connection(bus1, bus2, status):
+    if status == '.-':
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none color ="green"] ;\n'
+    elif status == '+':
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none color ="red"] ;\n'
+    else:
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none ] ;\n'
+    
 def make_rank(busList):
     i = 0
     s = ""

@@ -1,17 +1,14 @@
 digraph G {
             graph [splines=ortho, nodesep=8 ranksep=5 margin=1];
             edge [arrowhead=none,arrowtail=none ];
-		{ rank=same bus1 bus2 bus3 ;}
-{ rank=same bus4 bus5 ;}
-		bus1[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="6kV" fontsize=72 label="" ];
-		bus2[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="12kV" fontsize=72 label="" ];
-		bus3[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="18kV" fontsize=72 label="" ];
-		bus4[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="22kV" fontsize=72 label="" ];
-		bus5[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="54kV" fontsize=72 label="" ];
-		bus1 -> bus2 [penwidth=3 shape=none ] ;
-		bus2 -> bus3 [penwidth=3 shape=none ] ;
-		bus1 -> bus3 [penwidth=3 shape=none ] ;
-		bus4 -> bus1 [penwidth=3 shape=none ] ;
-		bus5 -> bus1 [penwidth=3 shape=none ] ;
+		{ rank=same 152 201 202 ;}
+{ rank=same 153 151 ;}
+		152[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="152" fontsize=72 label="" ];
+		201[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="201" fontsize=72 label="" ];
+		202[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="202" fontsize=72 label="" ];
+		153[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="153" fontsize=72 label="" ];
+		151[shape=polygon sides=4 width=.1 image="shapes/bus.png "xlabel="151" fontsize=72 label="" ];
+		151 -> 201 [penwidth=3 shape=none ] ;
+		152 -> 202 [penwidth=3 shape=none ] ;
 
 }
