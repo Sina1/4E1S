@@ -50,13 +50,9 @@
             this.nEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpTopicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.sssToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox5 = new System.Windows.Forms.ToolStripComboBox();
             this.technicalSupportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox4 = new System.Windows.Forms.ToolStripComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -293,8 +289,6 @@
             // helpTopicsToolStripMenuItem
             // 
             this.helpTopicsToolStripMenuItem.BackColor = System.Drawing.Color.DimGray;
-            this.helpTopicsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1});
             this.helpTopicsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.helpTopicsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.helpTopicsToolStripMenuItem.Name = "helpTopicsToolStripMenuItem";
@@ -303,242 +297,29 @@
             this.helpTopicsToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.helpTopicsToolStripMenuItem.Click += new System.EventHandler(this.helpTopicsToolStripMenuItem_Click);
             // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.AccessibleDescription = "";
-            this.toolStripComboBox1.AccessibleName = "";
-            this.toolStripComboBox1.AutoSize = false;
-            this.toolStripComboBox1.AutoToolTip = true;
-            this.toolStripComboBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.toolStripComboBox1.DropDownHeight = 450;
-            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox1.DropDownWidth = 600;
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.toolStripComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.toolStripComboBox1.IntegralHeight = false;
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "",
-            "",
-            "HOW TO RUN THE PROGRAM:",
-            "Step 1: ",
-            "Select an old base *.raw file by clicking on the brows button \"Base Case\" or type" +
-                " the path to the location ",
-            "where the *.raw file is stored",
-            "Step 2: ",
-            "Select a new base *.raw file by clicking on brows button \"New Case\" or type the p" +
-                "ath to its location",
-            "Step 3: ",
-            "Select a list of busses from the old and new cases to be compared for any changes" +
-                "",
-            "Step 4: ",
-            "Select a location by clicking on the \"Select\" button or type the path to for stor" +
-                "ing the change file that will ",
-            "contain the result of comparison. ",
-            "Step 5: ",
-            "Select a valid file name for the change file; file name must be alpha-numeric;  s" +
-                "pecial characters such as",
-            " \\ ? / ^ % > < | * are not allowed in the file name; allowed special chars  _ ,  " +
-                "- .",
-            "Step 6: ",
-            "Click on \"OK\" button to run the program. If any of the fields not filled properly" +
-                ",or left blank will cause an ",
-            "error message prompting the user to fix before proceeding",
-            "Step 7:\t",
-            "At any time click \"Cancel\" button or press <esc> key on the keyboard to cancel th" +
-                "e program session and exit",
-            "",
-            "MENU DESCRITION:",
-            "HELP: ",
-            "Information on how to use the program, hardware-software platform requirements fo" +
-                "r the program to ",
-            "be able to run on, general description the program, and contact info for tech sup" +
-                "port or troubleshooting. ",
-            "OPTIONS:",
-            "Provides the user with option to open the Full Program User Guide in a separate  " +
-                "window  ",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""});
-            this.toolStripComboBox1.MaxDropDownItems = 100;
-            this.toolStripComboBox1.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(600, 23);
-            this.toolStripComboBox1.Tag = "";
-            this.toolStripComboBox1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.toolStripComboBox1.ToolTipText = "How to Use the Program";
-            // 
             // sssToolStripMenuItem
             // 
             this.sssToolStripMenuItem.AutoToolTip = true;
-            this.sssToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox2});
             this.sssToolStripMenuItem.Name = "sssToolStripMenuItem";
             this.sssToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.sssToolStripMenuItem.Text = "Platform Requirements ";
             this.sssToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sssToolStripMenuItem.Click += new System.EventHandler(this.sssToolStripMenuItem_Click);
             // 
-            // toolStripComboBox2
-            // 
-            this.toolStripComboBox2.AutoToolTip = true;
-            this.toolStripComboBox2.DropDownHeight = 500;
-            this.toolStripComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox2.DropDownWidth = 450;
-            this.toolStripComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.toolStripComboBox2.IntegralHeight = false;
-            this.toolStripComboBox2.Items.AddRange(new object[] {
-            "",
-            "",
-            "For Optimal Operation of the Program:",
-            "HARDWARE:",
-            "Window PC, 4GB RAM, 2 Core CPU",
-            "",
-            "SOFTWARE:",
-            "Window OS 7 or higher, Visio 2010, Python 3.xx installed.",
-            "",
-            ""});
-            this.toolStripComboBox2.MaxDropDownItems = 100;
-            this.toolStripComboBox2.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(450, 23);
-            this.toolStripComboBox2.ToolTipText = "Platform Requirements";
-            // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox5});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // toolStripComboBox5
-            // 
-            this.toolStripComboBox5.AutoSize = false;
-            this.toolStripComboBox5.AutoToolTip = true;
-            this.toolStripComboBox5.DropDownHeight = 360;
-            this.toolStripComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox5.DropDownWidth = 600;
-            this.toolStripComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.toolStripComboBox5.IntegralHeight = false;
-            this.toolStripComboBox5.Items.AddRange(new object[] {
-            "",
-            "This program is a customized software tool designed to process AESO base case fil" +
-                "es to indentify ",
-            "any changes in connections between specific busses and generate a visio file that" +
-                " will contain ",
-            "the single line diagram reflecting the changes between the two cases. The visio f" +
-                "ile will be editable",
-            "in Microsoft  Visio 2010 for further modifications. The base case files are in *." +
-                "raw format.",
-            "",
-            "All rights to this software belong to its developers and are protected by law und" +
-                "er the group ",
-            "license with permission for AESO for use in their company. ",
-            "",
-            "March 08, 2015",
-            ""});
-            this.toolStripComboBox5.MaxDropDownItems = 100;
-            this.toolStripComboBox5.Name = "toolStripComboBox5";
-            this.toolStripComboBox5.Size = new System.Drawing.Size(550, 23);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // technicalSupportToolStripMenuItem
             // 
-            this.technicalSupportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox4});
             this.technicalSupportToolStripMenuItem.Name = "technicalSupportToolStripMenuItem";
             this.technicalSupportToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.technicalSupportToolStripMenuItem.Text = "Technical Support";
             this.technicalSupportToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // toolStripComboBox4
-            // 
-            this.toolStripComboBox4.AutoToolTip = true;
-            this.toolStripComboBox4.DropDownHeight = 350;
-            this.toolStripComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.toolStripComboBox4.DropDownWidth = 550;
-            this.toolStripComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
-            this.toolStripComboBox4.IntegralHeight = false;
-            this.toolStripComboBox4.Items.AddRange(new object[] {
-            "",
-            "",
-            "For troubleshooting, and/or other technical support in relation to the use of thi" +
-                "s software ",
-            "please consutl your IT department. Firewall, Virus, Spyware and other security is" +
-                "sues that may",
-            "arise as a result of use of this program must be reviewed prior to installing thi" +
-                "s program.",
-            "",
-            "For program malfunction, modification, improvements, and software upgrades please" +
-                " contact ",
-            "the developer team @: xxx.xxx@xxx.com",
-            ""});
-            this.toolStripComboBox4.MaxDropDownItems = 100;
-            this.toolStripComboBox4.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.toolStripComboBox4.Name = "toolStripComboBox4";
-            this.toolStripComboBox4.Size = new System.Drawing.Size(500, 23);
-            this.toolStripComboBox4.ToolTipText = "Technical Support Info";
+            this.technicalSupportToolStripMenuItem.Click += new System.EventHandler(this.technicalSupportToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -616,14 +397,9 @@
         private System.Windows.Forms.ToolStripMenuItem nEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpTopicsToolStripMenuItem;
-
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem sssToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox5;
         private System.Windows.Forms.ToolStripMenuItem technicalSupportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox4;
         public System.Windows.Forms.MenuStrip menuStrip1;
 
     }
