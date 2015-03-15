@@ -6,7 +6,15 @@ C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Wind
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+<<<<<<< HEAD
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.busSelection.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.enterBus.resources
+>>>>>>> origin/master
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.busSelection.resources
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.enterBus.resources
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BusSelectionForm.resources

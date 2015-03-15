@@ -567,12 +567,34 @@ namespace WindowsFormsApplication1
 
         private void sssToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            String platFromReq = "\n" +
+            "\nHARDWARE:" +
+            "\nWindow PC, 4GB RAM, 2 Core CPU" +
+            "\n\nSOFTWARE:" +
+            "\nWindow OS 7 or higher, Visio 2010, Python 3.xx installed.\n";
+            MessageBox.Show(platFromReq);
         }
 
         private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            String howToUseTheProgram = "\n" +
+        "\nHOW TO RUN THE PROGRAM:\n" +
+"\nStep 1:\n" +
+"Select an old base *.raw file by clicking on the brows button \"Base Case\" or type the path to the location where the *.raw file is stored" +
+"\nStep 2:\n" +
+"Select a new base *.raw file by clicking on brows button \"New Case\" or type the path to its location" +
+"\nStep 3:\n" +
+"Select a list of busses from the old and new cases to be compared for any changes" +
+"\nStep 4:\n" +
+"Select a location by clicking on the \"Select\" button or type the path to for storing the change file that will contain the result of comparison." +
+"\nStep 5:\n" +
+"Select a file name; file name must be alpha-numeric; special characters \\ ? / ^ % > < | * are not allowed; allowed special chars are  _ ,  - ." +
+"\nStep 6:\n" +
+"Click on \"OK\" button to run the program. Any of the fields not filled properly or left blank will cause error; the user to fix before proceeding" +
+"\nStep 7:\n" +
+"At any time click \"Cancel\" button or press <esc> key on the keyboard to cancel the program session and exit" +
+"\n";
+            MessageBox.Show(howToUseTheProgram);
         }
 
         private void userGuideToolStripMenuItem_Click(object sender, EventArgs e)
@@ -662,6 +684,36 @@ namespace WindowsFormsApplication1
 
         private void button5_Click_2(object sender, EventArgs e)
         {
+
+        }
+
+        private void toolStripComboBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string about = "\n" +
+                "This program is a customized software tool designed to process AESO base case files to indentify" +
+                "any changes in connections between specific busses and generate a visio file that will contain" +
+                "the single line diagram reflecting the changes between the two cases. The visio file will be editable" +
+                "in Microsoft  Visio 2010 for further modifications. The base case files are in *.raw format." +
+
+                "\n\nAll rights to this software belong to its developers and are protected by law under the group" +
+                "license with permission for AESO for use in their company.\n";
+            MessageBox.Show(about);
+        }
+
+        private void technicalSupportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string techReq = "\n" +
+           "For troubleshooting, and/or other technical support in relation to the use of this software " +
+           "please consutl your IT department. Firewall, Virus, Spyware and other security issues that may" +
+           "arise as a result of use of this program must be reviewed prior to installing this program." +
+           "\n\nFor program malfunction, modification, improvements, and software upgrades please contact " +
+           "the developer team @: xxx.xxx@xxx.com.\n";
+            MessageBox.Show(techReq);
 
         }
 

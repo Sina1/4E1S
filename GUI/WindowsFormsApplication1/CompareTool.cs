@@ -66,8 +66,8 @@ namespace WindowsFormsApplication1
             ConvertFilesAndStore(rawFileSecond, false);
 
             //Call to get the function Roshaan Add here
-           // DrawTool dTool = new DrawTool(savePath, saveName);
-           // dTool.drawGraph(busList, connectionList);
+           DrawTool dTool = new DrawTool(savePath, saveName);
+           dTool.drawGraph(busList, connectionList);
 
             //Clear all lists
             stringBusList.Clear();
