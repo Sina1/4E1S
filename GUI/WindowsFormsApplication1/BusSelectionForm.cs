@@ -12,12 +12,12 @@ namespace WindowsFormsApplication1
 {
     public partial class BusSelectionForm : Form
     {
-        string startPath, EndPath, savePath, saveName;
-        public BusSelectionForm(string path1, string path2, string sPath, string sName)
+        string firstRawPath, SectionRawPath, savePath, saveName;
+        public BusSelectionForm(string firstRaw, string secondRaw, string sPath, string sName)
         {
             InitializeComponent();
-            startPath = path1;
-            EndPath = path2;
+            firstRawPath = firstRaw;
+            SectionRawPath = secondRaw;
             savePath = sPath;
             saveName = sName;
         }
@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
             string[] list = busList.Items.Cast<string>().ToArray();
             if (list.Length != 0)
             {
-                CompareTool.StartCompareTool(startPath, EndPath, list, savePath, saveName);
+                CompareTool.StartCompareTool(firstRawPath, SectionRawPath, list, savePath, saveName);
                 MessageBox.Show("Your file has been successfully saved to the following location: \n\n " + savePath + "\\" + saveName + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

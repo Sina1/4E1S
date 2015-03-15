@@ -1,111 +1,12 @@
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-c:\users\edmond\documents\visual studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Brett\Documents\GitHub\4E1S\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BusSelectionForm.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Nathan Yu\Documents\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-<<<<<<< HEAD
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-test\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB.mdf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\DrawToolDB_log.ldf
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-C:\Users\Sina\Documents\,\10 Smstr\4E1S-Final-2\4E1S-Final\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-=======
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.busSelection.resources
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.enterBus.resources
->>>>>>> origin/master
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.busSelection.resources
-C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.enterBus.resources
-C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BusSelectionForm.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
