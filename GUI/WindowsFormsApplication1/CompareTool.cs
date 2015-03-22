@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         
         //lists   
         private static List<string> stringBusList = new List<string>();
-        private static List<Dictionary<string, string>> busList = new List<Dictionary<string,string>>();
+        private static List<Dictionary<string, string>> nodeList = new List<Dictionary<string,string>>();
         private static List<Dictionary<string, string>> connectionList = new List<Dictionary<string, string>>();
 
 
@@ -66,12 +66,12 @@ namespace WindowsFormsApplication1
             ConvertFilesAndStore(rawFileSecond, false);
 
             //Call to get the function Roshaan Add here
-           DrawTool dTool = new DrawTool(savePath, saveName);
-           dTool.drawGraph(busList, connectionList);
+            DrawTool dTool = new DrawTool(savePath, saveName);
+            dTool.drawGraph(nodeList, connectionList);
 
             //Clear all lists
             stringBusList.Clear();
-            busList.Clear();
+            nodeList.Clear();
             connectionList.Clear();
 
         }
@@ -109,13 +109,17 @@ namespace WindowsFormsApplication1
                             lineArr[0] = lineArr[0].Replace("-", string.Empty);
                             if (stringBusList.Contains(lineArr[0]))
                             {
-                                if (firstRun) setBusListFirstRun(lineArr);
-                                else setBusListSecondRun(lineArr);
-
+                                BusNodeFunction(lineArr, firstRun);
                             }
-                            line = rawFile.ReadLine();
                             break;
-
+                        case "GENERATOR_DATA":
+                            lineArr = LineConverter.ConverterLine(line);
+                            lineArr[0] = lineArr[0].Replace("-", string.Empty);
+                             if (stringBusList.Contains(lineArr[0]))
+                            {
+                                GeneratorNodeFunction(lineArr, firstRun);
+                            }
+                            break;
                         case "BRANCH_DATA":
                             lineArr = LineConverter.ConverterLine(line);
                             lineArr[0] = lineArr[0].Replace("-", string.Empty);
@@ -123,17 +127,23 @@ namespace WindowsFormsApplication1
 
                             if (stringBusList.Contains(lineArr[0]) && stringBusList.Contains(lineArr[1]))
                             {
-                                if (firstRun) CompareTableFirstRun(lineArr[0], lineArr[1]);
-                                else CompareTableSecondRun(lineArr[0], lineArr[1]);
+                                BranchConnectionNode(lineArr, firstRun);
                             }
-  
-                            line = rawFile.ReadLine();
                             break;
+                        case "TRANSFORMER_DATA":
+                            lineArr = LineConverter.ConverterLine(line);
+                            lineArr[0] = lineArr[0].Replace("-", string.Empty);
+                            lineArr[1] = lineArr[1].Replace("-", string.Empty);
+                            if (stringBusList.Contains(lineArr[0]) && stringBusList.Contains(lineArr[1]))
+                            {
+                                TransformerNodeFunction(lineArr, firstRun);
+                            }
 
+                            break;
                         default:
-                            line = rawFile.ReadLine();
                             break;
                     }
+                    line = rawFile.ReadLine();
 
 
                     
@@ -145,69 +155,140 @@ namespace WindowsFormsApplication1
         }
         
 
-        private static void setBusListFirstRun(string[] rawBusInfo)
-        {
-            var busInformation = new Dictionary<string, string>();
-            busInformation.Add("name", rawBusInfo[0]);
-            busInformation.Add("description", rawBusInfo[2] + " kV");
-            busInformation.Add("status", "-");
-            busList.Add(busInformation);      
-        }
-
-        private static void setBusListSecondRun(string[] rawBusInfo)
+        private static void BusNodeFunction(string[] rawBusInfo, bool firstRun)
         {
             bool inSystem = false;
-            foreach (var bus in busList)
+
+            if (!firstRun)
             {
-                if (bus.ContainsValue(rawBusInfo[0]))
+                foreach (var node in nodeList)
                 {
-                    bus["status"] = ".";
-                    inSystem = true;
-                    break;
+                    //Checks to see if this connection has the 2 bus numbers and the id
+                    if (node.ContainsValue(rawBusInfo[0]) && string.Compare(node["type"], "bus", true) == 0) 
+                    {
+                        node["status"] = ".";
+                        inSystem = true;
+                        break;
+                    }
                 }
             }
 
-            if (!inSystem)
+            if (firstRun || !inSystem)
             {
+                string status = (firstRun) ? "-" : "+";
                 var busInformation = new Dictionary<string, string>();
+                busInformation.Add("type", "bus");
                 busInformation.Add("name", rawBusInfo[0]);
                 busInformation.Add("description", rawBusInfo[2] + " kV");
-                busInformation.Add("status", "+");
-                busList.Add(busInformation);
+                busInformation.Add("status", status);
+                busInformation.Add("codeFrom", rawBusInfo[9]);
+                nodeList.Add(busInformation);   
+               
             }
         }
 
-        private static void CompareTableFirstRun(string busFrom, string busTo)
+        private static void BranchConnectionNode(string[] rawConnectInfo, bool firstRun)
         {
-            string status = "-";
-
-            connectionList.Add(new Dictionary<string, string>());
-            connectionList.Last().Add("1", busFrom);
-            connectionList.Last().Add("2", busTo);
-            connectionList.Last().Add("status", status);
-        }
-        private static void CompareTableSecondRun(string busFrom, string busTo)
-        {
+            
             bool inSystem = false;
-            foreach (var entry in connectionList)
+
+            if (!firstRun)
             {
-                if (entry.ContainsValue(busFrom) && entry.ContainsValue(busTo))
+                foreach (var connection in connectionList)
                 {
-                    entry["status"] = ".";
-                    inSystem = true;
+                    //Checks to see if this connection has the 2 bus numbers and the id
+                    if (connection.ContainsValue(rawConnectInfo[0])&& connection.ContainsValue(rawConnectInfo[1])&& connection.ContainsValue(rawConnectInfo[2]))
+                    {
+                        connection["status"] = ".";
+                        inSystem = true;
+                        break;
+                    }
                 }
             }
 
-            if (!inSystem)
+            if (firstRun || !inSystem)
             {
-                connectionList.Add(new Dictionary<string, string>());
-                connectionList.Last().Add("1", busFrom);
-                connectionList.Last().Add("2", busTo);
-                connectionList.Last().Add("status", "+");
+                string status = (firstRun) ? "-" : "+";
+                Dictionary<string, string> connection = new Dictionary<string, string>();
+                connection.Add("1", rawConnectInfo[0]);
+                connection.Add("2", rawConnectInfo[1]);
+                connection.Add("description", "");
+                connection.Add("status", status);
+                connection.Add("serviceFrom", rawConnectInfo[8]);
+                connection.Add("id", rawConnectInfo[2]);
+
+                connectionList.Add(connection);
+                
             }
         }
 
-        private static void createIDev(string savePath)
+       
+        private static void GeneratorNodeFunction(string[] rawGenInfo, bool firstRun)
+        {
+            bool inSystem = false;
+            
+            if(!firstRun)
+            {
+                       
+                foreach (var node in nodeList)
+                {
+                    //checks if the node has the same bus connection, if it is a generator type and has the same id
+                    if (node.ContainsValue(rawGenInfo[0]) && string.Compare(node["type"], "generator", true) == 0 && node.ContainsValue(rawGenInfo[1]))
+                    {
+                        node["status"] = ".";
+                        inSystem = true;
+                        break;
+                    }
+                }
+            }
+
+            if(firstRun || !inSystem)
+            {
+                string status = (firstRun) ? "-" : "+";
+                var generatorInfo = new Dictionary<string, string>();
+                generatorInfo.Add("type","generator");
+                generatorInfo.Add("name", rawGenInfo[0]);
+                generatorInfo.Add("id", rawGenInfo[1]);           
+                generatorInfo.Add("description", "");
+                generatorInfo.Add("status", status);
+                nodeList.Add(generatorInfo);
+            }
+        }
+
+        private static void TransformerNodeFunction(string[] rawTranInfo, bool firstRun)
+        {
+            bool inSystem = false;
+
+            if (!firstRun)
+            {
+
+                foreach (var node in nodeList)
+                {
+                    //checks if the node has the same bus connection, if it is a generator type and has the same id
+                    if (node.ContainsValue(rawTranInfo[0]) && node.ContainsValue(rawTranInfo[1]) && node.ContainsValue(rawTranInfo[2]) && string.Compare(node["type"], "transformer", true) == 0)
+                    {
+                        node["status"] = ".";
+                        inSystem = true;
+                        break;
+                    }
+                }
+            }
+
+            if (firstRun || !inSystem)
+            {
+                string status = (firstRun) ? "-" : "+";
+                var generatorInfo = new Dictionary<string, string>();
+                generatorInfo.Add("type", "transformer");
+                generatorInfo.Add("busFrom", rawTranInfo[0]);
+                generatorInfo.Add("busTo", rawTranInfo[1]);
+                generatorInfo.Add("description", "");
+                generatorInfo.Add("id", rawTranInfo[2]);
+                generatorInfo.Add("status", status);
+                nodeList.Add(generatorInfo);
+            }
+        }
+
+        private static void CreateIDev(string savePath)
         {
             if (!File.Exists(savePath))
             {
@@ -217,8 +298,8 @@ namespace WindowsFormsApplication1
                     sw.WriteLine("And");
                     sw.WriteLine("Welcome");
                     sw.Close();
-                }	
-                
+                }
+
             }
             else Console.WriteLine("Create Dev File issues");
         }

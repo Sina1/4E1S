@@ -18,3 +18,7 @@ C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\Wind
 C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.busSelection.resources
 C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.enterBus.resources
 C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BusSelectionForm.resources
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
