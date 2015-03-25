@@ -411,7 +411,7 @@ namespace WindowsFormsApplication1
                             this.newMap.BackColor = System.Drawing.SystemColors.Window;
                             this.saveName.BackColor = System.Drawing.SystemColors.Window;
 
-                            BusSelectionForm busSelection = new BusSelectionForm(originalMap.Text, originalMap.Text, saveLocationFolder.Text, saveName.Text);
+                            BusSelectionForm busSelection = new BusSelectionForm(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
                             busSelection.ShowDialog();
                         }
                         else
