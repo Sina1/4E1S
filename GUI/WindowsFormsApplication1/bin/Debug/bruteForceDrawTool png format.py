@@ -85,8 +85,7 @@ def make_graphviz_string(busList,connectionList):
 
     upperS = '''digraph G {
             graph [splines=ortho, nodesep=8 ranksep=5 margin=1];
-            edge [arrowhead=none,arrowtail=none ];\n
-            forcelabels=true;'''
+            edge [arrowhead=none,arrowtail=none ];\n'''
 
     middleS = "\t\t" + make_rank(busList)
 
@@ -106,8 +105,8 @@ def make_graphviz_string(busList,connectionList):
 
 
 def make_bus(name, description,status):
-    busString = "\t\t" + name + '[ '
-    busString = busString + 'xlabel="' + description + '" fontsize=32 label="" '
+    busString = "\t\t" + name + '[shape=polygon sides=4 width=.1 image="shapes/bus.png "'
+    busString = busString + 'xlabel="' + description + '" fontsize=72 label="" '
     #if status == '.':
     #    busString = busString + 'color ="red"];\n';
     #elif status == '-':

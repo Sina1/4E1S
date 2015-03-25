@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{ "filepath":"C:/Users/Roshaan/Desktop/testRuns/test8" , "busList": [{"name":"152","description":"152","status":"."},{"name":"201","description":"201","status":"."},{"name":"202","description":"202","status":"."},{"name":"153","description":"153","status":"."},{"name":"151","description":"151","status":"."}], "connectionList": [{"1":"151","2":"201","status":"."},{"1":"152","2":"202","status":"."}]}
-=======
-{ "filepath":"C:/Users/Sina/Desktop/MMMMMMM" , "busList": [{"name":"1","description":"1","status":"."},{"name":"2","description":"2","status":"."}], "connectionList": []}
->>>>>>> b79b043725e34c6e942e98f3a626684cb80fa52f
+{ "filepath":"C:/Users/Roshaan/Desktop/testRuns/asdfg" , "busList": [{"name":"151","description":"151","status":"."},{"name":"152","description":"152","status":"."},{"name":"153","description":"153","status":"."},{"name":"201","description":"201","status":"."},{"name":"202","description":"202","status":"."}], "connectionList": [{"1":"151","2":"201","status":"."},{"1":"152","2":"202","status":"."}]}
