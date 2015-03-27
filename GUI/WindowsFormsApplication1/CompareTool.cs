@@ -67,19 +67,25 @@ namespace WindowsFormsApplication1
 
             ConvertFilesAndStore(rawFileFirst, true);
             ConvertFilesAndStore(rawFileSecond, false);
+            string saveFullPath = Path.Combine( savePath,saveFolder);
+
+            //Create the folder
+            if (!Directory.Exists(saveFullPath)) Directory.CreateDirectory(saveFullPath);
 
             if (produceVisio)
             {
+                string visFileName = "VisioFile_" + busSet.First() + "-" + busSet.Last();
                 //Call to get the function Roshaan Add here
-                string saveFullPath = savePath + "\\" + saveFolder;
-                //DrawTool dTool = new DrawTool(saveFullPath, "VisioFile");
+                //DrawTool dTool = new DrawTool(saveFullPath, fileName);
                 //dTool.drawGraph(nodeList, connectionList);
             }
 
             if(produceIdv)
             {
-
+                string idvFileName = "IdvFile_" + busSet.First() + "-" + busSet.Last();
+                CreateIDev(saveFullPath, idvFileName);
             }
+
             //Clear all lists
             stringBusList.Clear();
             nodeList.Clear();
@@ -176,8 +182,24 @@ namespace WindowsFormsApplication1
                     //Checks to see if this connection has the 2 bus numbers and the id
                     if (node.ContainsValue(rawBusInfo[0]) && string.Compare(node["type"], "bus", true) == 0) 
                     {
-                        if (Convert.ToInt32(node["codeFrom"]) <= 3 && Convert.ToInt32(rawBusInfo[3]) > 3) node["status"] = "-";
-                        else if (Convert.ToInt32(node["codeFrom"]) > 3 && Convert.ToInt32(rawBusInfo[3]) <= 3) node["status"] = "+";
+                        if (Convert.ToInt32(node["codeFrom"]) <= 3 && Convert.ToInt32(rawBusInfo[3]) > 3)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "bus");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            node["status"] = "-";
+                        }
+                        else if (Convert.ToInt32(node["codeFrom"]) > 3 && Convert.ToInt32(rawBusInfo[3]) <= 3)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "bus");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            node["status"] = "+";
+                        }
                         else node["status"] = ".";
 
                         node["reason"] = "norm";
@@ -225,7 +247,26 @@ namespace WindowsFormsApplication1
                     //Checks to see if this connection has the 2 bus numbers and the id
                     if (connection.ContainsValue(rawConnectInfo[0])&& connection.ContainsValue(rawConnectInfo[1])&& connection.ContainsValue(rawConnectInfo[2]))
                     {
-                        connection["status"] = ".";
+
+                        if(Convert.ToInt32(rawConnectInfo[15]) == 1 && Convert.ToInt32(connection["serviceFrom"]) == 0)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "bus");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            connection["status"] = "+";
+                        }
+                        else if (Convert.ToInt32(rawConnectInfo[15]) == 0 && Convert.ToInt32(connection["serviceFrom"]) == 1)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "bus");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            connection["status"] = "-";
+                        }
+                        else connection["status"] = ".";
                         inSystem = true;
                         break;
                     }
@@ -240,7 +281,7 @@ namespace WindowsFormsApplication1
                 connection.Add("2", rawConnectInfo[1]);
                 connection.Add("description", "");
                 connection.Add("status", status);
-                connection.Add("serviceFrom", rawConnectInfo[8]);
+                connection.Add("serviceFrom", rawConnectInfo[15]);
                 connection.Add("id", rawConnectInfo[2]);
 
                 connectionList.Add(connection);
@@ -269,7 +310,25 @@ namespace WindowsFormsApplication1
                     //checks if the node has the same bus connection, if it is a generator type and has the same id
                     if (node.ContainsValue(rawGenInfo[0]) && string.Compare(node["type"], "generator", true) == 0 && node.ContainsValue(rawGenInfo[1]))
                     {
-                        node["status"] = ".";
+                        if (Convert.ToInt32(rawGenInfo[14]) == 0 && Convert.ToInt32(node["beforeStatus"]) == 1)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "generator");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+                            node["status"] = "-";
+                        }
+                        else if (Convert.ToInt32(rawGenInfo[14]) == 1 && Convert.ToInt32(node["beforeStatus"]) == 0)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "generator");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            node["status"] = "+";
+                        }
+                        else node["status"] = ".";
+
                         inSystem = true;
                         break;
                     }
@@ -285,6 +344,7 @@ namespace WindowsFormsApplication1
                 generatorInfo.Add("id", rawGenInfo[1]);           
                 generatorInfo.Add("description", "");
                 generatorInfo.Add("status", status);
+                generatorInfo.Add("beforeStatus", rawGenInfo[14]);
                 nodeList.Add(generatorInfo);
 
                 if (!firstRun)
@@ -309,7 +369,24 @@ namespace WindowsFormsApplication1
                     //checks if the node has the same bus connection, if it is a generator type and has the same id
                     if (node.ContainsValue(rawTranInfo[0]) && node.ContainsValue(rawTranInfo[1]) && node.ContainsValue(rawTranInfo[2]) && string.Compare(node["type"], "transformer", true) == 0)
                     {
-                        node["status"] = ".";
+                        if (Convert.ToInt32(rawTranInfo[10]) == 0 && Convert.ToInt32(node["beforeStatus"]) == 1)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "transformer");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+                            node["status"] = "-";
+                        }
+                        else if (Convert.ToInt32(rawTranInfo[10]) == 1 && Convert.ToInt32(node["beforeStatus"]) == 0)
+                        {
+                            var idvLineInfo = new Dictionary<string, string>();
+                            idvLineInfo.Add("type", "transformer");
+                            idvLineInfo.Add("line", fullLine);
+                            idvList.Add(idvLineInfo);
+
+                            node["status"] = "+";
+                        }
+                        else node["status"] = ".";
                         inSystem = true;
                         break;
                     }
@@ -319,14 +396,16 @@ namespace WindowsFormsApplication1
             if (firstRun || !inSystem)
             {
                 string status = (firstRun) ? "-" : "+";
-                var generatorInfo = new Dictionary<string, string>();
-                generatorInfo.Add("type", "transformer");
-                generatorInfo.Add("busFrom", rawTranInfo[0]);
-                generatorInfo.Add("busTo", rawTranInfo[1]);
-                generatorInfo.Add("description", "");
-                generatorInfo.Add("id", rawTranInfo[2]);
-                generatorInfo.Add("status", status);
-                nodeList.Add(generatorInfo);
+                var tranformerInfo = new Dictionary<string, string>();
+                tranformerInfo.Add("type", "transformer");
+                tranformerInfo.Add("busFrom", rawTranInfo[0]);
+                tranformerInfo.Add("busTo", rawTranInfo[1]);
+                tranformerInfo.Add("description", "");
+                tranformerInfo.Add("id", rawTranInfo[2]);
+                tranformerInfo.Add("status", status);
+                tranformerInfo.Add("beforeStatus", rawTranInfo[10]);
+
+                nodeList.Add(tranformerInfo);
 
                 if (!firstRun)
                 {
@@ -338,78 +417,77 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private static void CreateIDev(string savePath)
+        private static void CreateIDev(string savePath, string saveName)
         {
 
-
-            if (!File.Exists(savePath))
+            string saveLocation = Path.Combine(savePath, saveName + ".idv");
+            if (File.Exists(saveLocation)) File.Delete(saveLocation);
+            
+            using (StreamWriter sw = File.CreateText(saveLocation))
             {
-                using (StreamWriter sw = File.CreateText(savePath))
+
+                foreach (var node in nodeList)
                 {
-
-                    foreach (var node in nodeList)
+                    if (String.Compare(node["type"], "bus", true) == 0 && String.Compare(node["reason"], "removed", true) == 0)
                     {
-                        if (String.Compare(node["type"], "bus", true) == 0 && String.Compare(node["reason"], "removed", true) == 0)
-                        {
-                            string line = "BAT_DSCN," + node["name"];
-                            sw.WriteLine(line);
-                        }
+                        string line = "BAT_DSCN," + node["name"];
+                        sw.WriteLine(line);
                     }
-                    foreach (var connect in connectionList)
+                }
+                foreach (var connect in connectionList)
+                {
+                    if (String.Compare(connect["status"], "-") == 0)
                     {
-                        if (String.Compare(connect["status"], "-") == 0)
-                        {
-                            string line = "BAT_PURGBRN," + connect["1"] + "," + connect["2"] + ",'" + connect["id"] + "'";
-                            sw.WriteLine(line);
-                        }
+                        string line = "BAT_PURGBRN," + connect["1"] + "," + connect["2"] + ",'" + connect["id"] + "'";
+                        sw.WriteLine(line);
                     }
-
-                    //------------------------------------
-                    sw.WriteLine("RDCH");
-                    sw.WriteLine("1");
-                    //Bus Added
-                    enterIdvSec(sw, "bus");      
-              
-                    sw.WriteLine("0/ END OF BUS DATA, BEGIN LOAD DATA");
-                    //Load data added
-
-                    sw.WriteLine("0/ END OF LOAD DATA, BEGIN FIXED SHUNT DATA");
-                    //Unknow at the moment
-
-                    sw.WriteLine("0/ END OF FIXED SHUNT DATA, BEGIN GENERATOR DATA");
-                    //Generators added
-                    enterIdvSec(sw, "generator");  
-
-                    sw.WriteLine("0/ END OF GENERATOR DATA, BEGIN BRANCH DATA");
-                    enterIdvSec(sw, "branch");                    
-
-                    sw.WriteLine("0/ END OF BRANCH DATA, BEGIN TRANSFORMER DATA");
-                    enterIdvSec(sw, "transformer"); 
-                   
-                    
-                    //This is what we can do later
-                    /* sw.WriteLine("0/ END OF TRANSFORMER DATA, BEGIN AREA DATA");
-                    sw.WriteLine("0/ END OF AREA DATA, BEGIN TWO-TERMINAL DC DATA");
-                    sw.WriteLine("0/ END OF TWO-TERMINAL DC DATA, BEGIN VSC DC LINE DATA");
-                    sw.WriteLine("0/ END OF VSC DC LINE DATA, BEGIN IMPEDANCE CORRECTION DATA");
-                    sw.WriteLine("0/ END OF IMPEDANCE CORRECTION DATA, BEGIN MULTI-TERMINAL DC DATA");
-                    sw.WriteLine("0/ END OF MULTI-TERMINAL DC DATA, BEGIN MULTI-SECTION LINE DATA");
-                    sw.WriteLine("0/ END OF MULTI-SECTION LINE DATA, BEGIN ZONE DATA");
-                    sw.WriteLine("0/ END OF ZONE DATA, BEGIN INTER-AREA TRANSFER DATA");
-                    sw.WriteLine("0/ END OF INTER-AREA TRANSFER DATA, BEGIN OWNER DATA");
-                    sw.WriteLine("0/ END OF OWNER DATA, BEGIN FACTS DEVICE DATA");
-                    sw.WriteLine("0/ END OF FACTS DEVICE DATA, BEGIN SWITCHED SHUNT DATA");
-                    sw.WriteLine("0/ END OF SWITCHED SHUNT DATA, BEGIN GNE DATA");
-                    sw.WriteLine("0/ END OF GNE DATA, BEGIN INDUCTION MACHINE DATA");
-                    sw.WriteLine("0/ END OF INDUCTION MACHINE DATA");*/
-
-                    sw.WriteLine("Q");
-
-                    sw.Close();
                 }
 
+                //------------------------------------
+                sw.WriteLine("RDCH");
+                sw.WriteLine("1");
+                //Bus Added
+                enterIdvSec(sw, "bus");
+
+                sw.WriteLine("0/ END OF BUS DATA, BEGIN LOAD DATA");
+                //Load data added
+
+                sw.WriteLine("0/ END OF LOAD DATA, BEGIN FIXED SHUNT DATA");
+                //Unknow at the moment
+
+                sw.WriteLine("0/ END OF FIXED SHUNT DATA, BEGIN GENERATOR DATA");
+                //Generators added
+                enterIdvSec(sw, "generator");
+
+                sw.WriteLine("0/ END OF GENERATOR DATA, BEGIN BRANCH DATA");
+                enterIdvSec(sw, "branch");
+
+                sw.WriteLine("0/ END OF BRANCH DATA, BEGIN TRANSFORMER DATA");
+                enterIdvSec(sw, "transformer");
+
+
+                //This is what we can do later
+                /* sw.WriteLine("0/ END OF TRANSFORMER DATA, BEGIN AREA DATA");
+                sw.WriteLine("0/ END OF AREA DATA, BEGIN TWO-TERMINAL DC DATA");
+                sw.WriteLine("0/ END OF TWO-TERMINAL DC DATA, BEGIN VSC DC LINE DATA");
+                sw.WriteLine("0/ END OF VSC DC LINE DATA, BEGIN IMPEDANCE CORRECTION DATA");
+                sw.WriteLine("0/ END OF IMPEDANCE CORRECTION DATA, BEGIN MULTI-TERMINAL DC DATA");
+                sw.WriteLine("0/ END OF MULTI-TERMINAL DC DATA, BEGIN MULTI-SECTION LINE DATA");
+                sw.WriteLine("0/ END OF MULTI-SECTION LINE DATA, BEGIN ZONE DATA");
+                sw.WriteLine("0/ END OF ZONE DATA, BEGIN INTER-AREA TRANSFER DATA");
+                sw.WriteLine("0/ END OF INTER-AREA TRANSFER DATA, BEGIN OWNER DATA");
+                sw.WriteLine("0/ END OF OWNER DATA, BEGIN FACTS DEVICE DATA");
+                sw.WriteLine("0/ END OF FACTS DEVICE DATA, BEGIN SWITCHED SHUNT DATA");
+                sw.WriteLine("0/ END OF SWITCHED SHUNT DATA, BEGIN GNE DATA");
+                sw.WriteLine("0/ END OF GNE DATA, BEGIN INDUCTION MACHINE DATA");
+                sw.WriteLine("0/ END OF INDUCTION MACHINE DATA");*/
+
+                sw.WriteLine("Q");
+
+                sw.Close();
+                
             }
-            else Console.WriteLine("Create Dev File issues");
+
         }
 
         private static void enterIdvSec(StreamWriter sw, string section )
