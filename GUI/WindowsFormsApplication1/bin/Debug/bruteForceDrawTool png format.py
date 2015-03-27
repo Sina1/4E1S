@@ -38,21 +38,14 @@ def main():
     fp.close()
     fp = open('jsonFile.txt')
     dataDict = json.loads(fp.read())
-    fp.close()
     
     # load data
-    nodeList = dataDict['busList']
+    busList = dataDict['busList']
     connectionList = dataDict['connectionList']
     config['destPath'] = dataDict['filepath']
     
-    gString = make_graphviz_string(nodeList, connectionList)
+    gString = make_graphviz_string(busList, connectionList)
 
-    # make node info list
-    nodeTypeDict = {}
-    for item in nodeList:
-        nodeTypeDict[item['name']] = item['type']
-
-    
     # write gString to file for later use
     text_file = open("temp.dot", "w")
     text_file.write(gString)
@@ -68,10 +61,6 @@ def main():
     text_file.write(config['destPath'])
     text_file.close()
 
-    # write node information
-    text_file = open("C:/Users/Roshaan/Desktop/test-output/poll/nodeInfo.txt", "w")
-    json.dump(nodeTypeDict,text_file)
-    text_file.close()
     
     
     command = '"' + config['graphvizPath'] + '" ' + config['dotCommand'] \
@@ -96,15 +85,14 @@ def make_graphviz_string(busList,connectionList):
 
     upperS = '''digraph G {
             graph [splines=ortho, nodesep=8 ranksep=5 margin=1];
-            edge [arrowhead=none,arrowtail=none ];\n
-            forcelabels=true;'''
+            edge [arrowhead=none,arrowtail=none ];\n'''
 
     middleS = "\t\t" + make_rank(busList)
 
 
     if not skipBus:
-        for node in busList:
-            middleS = middleS + make_nodes(node['name'], node['description'],node['status'], node['type'])
+        for bus in busList:
+            middleS = middleS + make_bus(bus['name'], bus['description'],bus['status'])
 
     if not skipConnection:    
         for connection in connectionList:
@@ -116,25 +104,26 @@ def make_graphviz_string(busList,connectionList):
     return finalS
 
 
-def make_nodes(name, description,status,type):
-    nodeString = "\t\t" + name + '[ '
-    nodeString = nodeString + 'xlabel="' + description + '" fontsize=32 label="" '
-    if status == '.':
-        nodeString = nodeString + 'color ="red"];\n'
-    elif status == '-':
-        nodeString = nodeString + 'color ="green"];\n'
-    else:
-        nodeString = nodeString + '];\n'
+def make_bus(name, description,status):
+    busString = "\t\t" + name + '[shape=polygon sides=4 width=.1 image="shapes/bus.png "'
+    busString = busString + 'xlabel="' + description + '" fontsize=72 label="" '
+    #if status == '.':
+    #    busString = busString + 'color ="red"];\n';
+    #elif status == '-':
+    #    busString = busString + 'color ="green"];\n';
+    #else:
 
-    return nodeString
+    busString = busString + '];\n';
 
-def make_connection(node1, node2, status):
+    return busString
+
+def make_connection(bus1, bus2, status):
     if status == '.-':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none color ="green"] ;\n'
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none color ="green"] ;\n'
     elif status == '+':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none color ="red"] ;\n'
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none color ="red"] ;\n'
     else:
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none ] ;\n'
+        return "\t\t" + bus1 + ' -> ' + bus2 + ' [penwidth=3 shape=none ] ;\n'
     
 def make_rank(busList):
     i = 0

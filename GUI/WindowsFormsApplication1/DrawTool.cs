@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
     // aliases
     using BusList = List<Dictionary<string, string>>;
     using ConnectionList = List<Dictionary<string, string>>;
-   
+
 
     class DrawTool
     {
@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
         static String filepath = "";
         static String filename = "";
 
-        
+
 
         public DrawTool(String _filepath, String _filename)
         {
@@ -39,7 +39,8 @@ namespace WindowsFormsApplication1
 
         public void drawGraph(BusList busList, ConnectionList connectionList)
         {
-            if (busList.Count() == 0 && connectionList.Count() == 0) { 
+            if (busList.Count() == 0 && connectionList.Count() == 0)
+            {
                 throw new Exception(@"[busList cannot be of size 0.]");
             }
 
@@ -53,7 +54,7 @@ namespace WindowsFormsApplication1
             // combine filename and file path to get the target destination for the output file
             var currentDirectory = Directory.GetCurrentDirectory();
             String destFilePath = Path.Combine(filepath, filename).Replace("\\", "/");
-            
+
             // seialize the connectionList and busList to JSON
             string jsonBusList = JsonConvert.SerializeObject(busList, Formatting.None);
             string jsonConnectionList = JsonConvert.SerializeObject(connectionList, Formatting.None);
@@ -67,7 +68,7 @@ namespace WindowsFormsApplication1
             Process.Start(pythonPath, "bruteForceDrawTool.py");
 
 
-            
+
             //String filename = ""; //absolute path to visio file
             //FakeGraphViz();
 
@@ -78,26 +79,26 @@ namespace WindowsFormsApplication1
             //try
             //{
             //    File.Copy(Path.Combine(currentDirectory, "Drawing1.vsd"), Path.Combine(filepath, filename + ".vsd"));
-           // }
+            // }
             //catch (System.IO.IOException e)
             //{
-             //   // TODO: handle this properly
-              //  MessageBox.Show("File already exists. Exiting\n" + filepath + "\\" + filename+ ".vsd", "Complete", MessageBoxButtons.OK);
-               // Application.Exit();
+            //   // TODO: handle this properly
+            //  MessageBox.Show("File already exists. Exiting\n" + filepath + "\\" + filename+ ".vsd", "Complete", MessageBoxButtons.OK);
+            // Application.Exit();
             //}
 
             //Process.Start("C:/python27/python.exe -c 'print(\"python\")\ninput(\"Press a key\")' "); // make sure that 
             //Process.Start(visioPath + " " + filename);
 
-            
+
         }
 
         static int FakeGraphViz()
         {
             // call python module
-           // Process p = Process.Start(pythonPath, "temp.py");
-           // p.WaitForExit();
-           
+            // Process p = Process.Start(pythonPath, "temp.py");
+            // p.WaitForExit();
+
 
 
             return 1;
