@@ -4,11 +4,11 @@ digraph G {
 
             forcelabels=true;		{ rank=same 151 152 153 ;}
 { rank=same 201 202 ;}
-		151[ xlabel="151" fontsize=32 label="" ];
-		152[ xlabel="152" fontsize=32 label="" ];
-		153[ xlabel="153" fontsize=32 label="" ];
-		201[ xlabel="201" fontsize=32 label="" ];
-		202[ xlabel="202" fontsize=32 label="" ];
+		151[ xlabel="151" fontsize=32 label="" color ="red"];
+		152[ xlabel="152" fontsize=32 label="" color ="red"];
+		153[ xlabel="153" fontsize=32 label="" color ="red"];
+		201[ xlabel="201" fontsize=32 label="" color ="red"];
+		202[ xlabel="202" fontsize=32 label="" color ="red"];
 		151 -> 201 [penwidth=3 shape=none ] ;
 		152 -> 202 [penwidth=3 shape=none ] ;
 
