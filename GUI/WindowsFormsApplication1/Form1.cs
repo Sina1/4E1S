@@ -411,8 +411,15 @@ namespace WindowsFormsApplication1
                             this.newMap.BackColor = System.Drawing.SystemColors.Window;
                             this.saveName.BackColor = System.Drawing.SystemColors.Window;
 
-                            BusSelectionForm busSelection = new BusSelectionForm(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text);
-                            busSelection.ShowDialog();
+                            if (this.IdvCheckBox.Checked || this.visioCheckBox.Checked)
+                            {
+                                BusSelectionForm busSelection = new BusSelectionForm(originalMap.Text, newMap.Text, saveLocationFolder.Text, saveName.Text, this.visioCheckBox.Checked, this.IdvCheckBox.Checked);
+                                busSelection.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("\n\tPlease Check A Item to Produce\n");
+                            }
                         }
                         else
                         {
@@ -714,6 +721,16 @@ namespace WindowsFormsApplication1
            "\n\nFor program malfunction, modification, improvements, and software upgrades please contact " +
            "the developer team @: xxx.xxx@xxx.com.\n";
             MessageBox.Show(techReq);
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
 

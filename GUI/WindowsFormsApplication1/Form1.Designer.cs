@@ -36,6 +36,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.IdvCheckBox = new System.Windows.Forms.CheckBox();
+            this.visioCheckBox = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.saveName = new System.Windows.Forms.TextBox();
@@ -76,7 +79,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.Location = new System.Drawing.Point(313, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(67, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Base Case";
             this.button2.UseVisualStyleBackColor = true;
@@ -97,7 +100,7 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Location = new System.Drawing.Point(313, 114);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(67, 23);
             this.button3.TabIndex = 4;
             this.button3.Text = "New Case";
             this.button3.UseVisualStyleBackColor = true;
@@ -109,7 +112,7 @@
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button6.Location = new System.Drawing.Point(313, 46);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(63, 23);
             this.button6.TabIndex = 9;
             this.button6.Text = "Select";
             this.button6.UseVisualStyleBackColor = true;
@@ -128,7 +131,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.groupBox2.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox2.Controls.Add(this.IdvCheckBox);
+            this.groupBox2.Controls.Add(this.visioCheckBox);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.saveName);
@@ -136,12 +142,44 @@
             this.groupBox2.Controls.Add(this.saveLocationFolder);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(0, 206);
+            this.groupBox2.Location = new System.Drawing.Point(12, 206);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(398, 147);
+            this.groupBox2.Size = new System.Drawing.Size(386, 200);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CHANGE FILE NAME";
+            // 
+            // IdvCheckBox
+            // 
+            this.IdvCheckBox.AutoSize = true;
+            this.IdvCheckBox.Location = new System.Drawing.Point(125, 168);
+            this.IdvCheckBox.Name = "IdvCheckBox";
+            this.IdvCheckBox.Size = new System.Drawing.Size(84, 25);
+            this.IdvCheckBox.TabIndex = 14;
+            this.IdvCheckBox.Text = "Idv File";
+            this.IdvCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // visioCheckBox
+            // 
+            this.visioCheckBox.AutoSize = true;
+            this.visioCheckBox.Location = new System.Drawing.Point(12, 168);
+            this.visioCheckBox.Name = "visioCheckBox";
+            this.visioCheckBox.Size = new System.Drawing.Size(98, 25);
+            this.visioCheckBox.TabIndex = 13;
+            this.visioCheckBox.Text = "Visio File";
+            this.visioCheckBox.UseVisualStyleBackColor = true;
+            this.visioCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 142);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Produce Items";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
@@ -149,9 +187,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Folder";
+            this.label4.Text = "Folder Path";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
@@ -160,9 +198,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "File Name";
+            this.label3.Text = "Folder Name";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // saveName
@@ -187,7 +225,7 @@
             // button4
             // 
             this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Location = new System.Drawing.Point(313, 371);
+            this.button4.Location = new System.Drawing.Point(313, 416);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 13;
@@ -198,7 +236,7 @@
             // button1
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(224, 371);
+            this.button1.Location = new System.Drawing.Point(232, 416);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -208,7 +246,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.groupBox3.BackColor = System.Drawing.Color.DimGray;
             this.groupBox3.Controls.Add(this.originalMap);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -217,9 +255,9 @@
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox3.Location = new System.Drawing.Point(0, 36);
+            this.groupBox3.Location = new System.Drawing.Point(12, 36);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 154);
+            this.groupBox3.Size = new System.Drawing.Size(386, 154);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MAPS";
@@ -323,7 +361,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.DimGray;
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fILEToolStripMenuItem,
@@ -348,7 +386,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.CancelButton = this.button4;
-            this.ClientSize = new System.Drawing.Size(407, 412);
+            this.ClientSize = new System.Drawing.Size(407, 451);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button4);
@@ -401,6 +439,9 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem technicalSupportToolStripMenuItem;
         public System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox visioCheckBox;
+        private System.Windows.Forms.CheckBox IdvCheckBox;
 
     }
 }

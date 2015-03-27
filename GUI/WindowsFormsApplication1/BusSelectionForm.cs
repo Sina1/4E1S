@@ -12,14 +12,17 @@ namespace WindowsFormsApplication1
 {
     public partial class BusSelectionForm : Form
     {
-        string firstRawPath, SectionRawPath, savePath, saveName;
-        public BusSelectionForm(string firstRaw, string secondRaw, string sPath, string sName)
+        string firstRawPath, SectionRawPath, savePath, folderName;
+        bool prodIdvFile, prodVisioFile;
+        public BusSelectionForm(string firstRaw, string secondRaw, string sPath, string sName, bool prodVisio = true, bool prodIdv = true)
         {
             InitializeComponent();
             firstRawPath = firstRaw;
             SectionRawPath = secondRaw;
             savePath = sPath;
-            saveName = sName;
+            folderName = sName;
+            prodVisioFile = prodVisio;
+            prodIdvFile = prodIdv;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -31,10 +34,11 @@ namespace WindowsFormsApplication1
         {
 
             string[] list = busList.Items.Cast<string>().ToArray();
+            Array.Sort<string>(list);
             if (list.Length != 0)
             {
-                CompareTool.StartCompareTool(firstRawPath, SectionRawPath, list, savePath, saveName);
-                MessageBox.Show("Your file has been successfully saved to the following location: \n\n " + savePath + "\\" + saveName + ".vsd", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CompareTool.StartCompareTool(firstRawPath, SectionRawPath, list, savePath, folderName, prodVisioFile, prodIdvFile);
+                MessageBox.Show("Your files has been successfully saved to the following location: \n\n " + savePath + "\\" + folderName, "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else MessageBox.Show("Please enter Items into the list", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
