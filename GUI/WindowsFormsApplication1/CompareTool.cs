@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 //ADDED
 using System.IO;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApplication1
 {
@@ -96,7 +97,6 @@ namespace WindowsFormsApplication1
   
 
             //Move the section to the first entrie
-            //Brett Test to see if this works with all raw files
             for (int i = 0; i < 3; i++) line = rawFile.ReadLine();
 
             line = rawFile.ReadLine();
@@ -176,7 +176,10 @@ namespace WindowsFormsApplication1
                     //Checks to see if this connection has the 2 bus numbers and the id
                     if (node.ContainsValue(rawBusInfo[0]) && string.Compare(node["type"], "bus", true) == 0) 
                     {
-                        node["status"] = ".";
+                        if (Convert.ToInt32(node["codeFrom"]) <= 3 && Convert.ToInt32(rawBusInfo[3]) > 3) node["status"] = "-";
+                        else if (Convert.ToInt32(node["codeFrom"]) > 3 && Convert.ToInt32(rawBusInfo[3]) <= 3) node["status"] = "+";
+                        else node["status"] = ".";
+
                         node["reason"] = "norm";
                         inSystem = true;
                         break;
@@ -186,15 +189,17 @@ namespace WindowsFormsApplication1
 
             if (firstRun || !inSystem)
             {
-                string status = (firstRun) ? "-" : "+";
-                string reason = (firstRun) ? "removed" : "Added";
+                string status = (firstRun) ? "-" : "+";            
                 var busInformation = new Dictionary<string, string>();
                 busInformation.Add("type", "bus");
                 busInformation.Add("name", rawBusInfo[0]);
                 busInformation.Add("description", rawBusInfo[2] + " kV");
                 busInformation.Add("status", status);
-                busInformation.Add("codeFrom", rawBusInfo[9]);
+                busInformation.Add("codeFrom", rawBusInfo[3]);
+
+                string reason = (firstRun) ? "removed" : "Added";
                 busInformation.Add("reason", reason); //This is used for the idv file (if changes made to this make sure to change the idv file)
+                
                 nodeList.Add(busInformation);   
 
                 if(!firstRun)
@@ -424,8 +429,7 @@ namespace WindowsFormsApplication1
 
 
     static class LineConverter
-        {
-
+    {
             /*This will convert a single line
              * Input: line - line of the string that can be converted
              * Output: Array of strings
@@ -433,12 +437,17 @@ namespace WindowsFormsApplication1
              */
             public static string[] ConverterLine(string line)
             {
+                
                 //Remove unwanted char and convert into array
                 line = line.Replace("\"", " ");
-                line = line.Replace("'", " ");
+                line = line.Replace("'", " ").Trim();
+                line = Regex.Replace(line, @"\s+", " ");
+                line = line.Replace(", ", ",");
+                line = line.Replace(" ,", ",");
                 line = line.Replace(",", " ");
-                string[] words = line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-               
+
+   
+                string[] words = line.Split(" ".ToCharArray());
                 return words;
             }
 
