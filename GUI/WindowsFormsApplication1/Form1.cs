@@ -397,14 +397,14 @@ namespace WindowsFormsApplication1
                     }
                     if (badCharStr3 != null)
                     {
-                        s3 = "\nInvalid Character " + badCharStr3 + " in " + "<" + filePath3 + "> for folder path.\n";
+                        s3 = "\nInvalid character " + badCharStr3 + " in " + "<" + filePath3 + "> for folder path.\n";
                         //s3 = "\nBad Charachter " + badCharStr3 + " in " + "<" + filePath3 + "> in Folde Path\n";
                         errMsg = errMsg + s3;
                     }
 
                     if (badCharStr4 != null)
                       {
-                          s4 = "\nInvalid Character " + badCharStr4 + " in " + "<" + saveNm + "> for file name.\n";  
+                          s4 = "\nInvalid character " + badCharStr4 + " in " + "<" + saveNm + "> for file name.\n";  
                         //s4 = "\nBad Charachter " + badCharStr4 + " in " + "<" + saveNm + "> in File Name\n";
                         errMsg = errMsg + s4;
                       }
