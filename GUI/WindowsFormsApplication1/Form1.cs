@@ -323,7 +323,7 @@ namespace WindowsFormsApplication1
             {   
                 //Adding more error checks here: 
                 if (!File.Exists(BaseCaseFile)){
-                    errStr = errStr+"\nBaseCase File does not exist at the selected location:\n"; //+ originalMap.Text);
+                    errStr = errStr+"\nBase Case File does not exist at the selected location:\n"; //+ originalMap.Text);
                     //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     foreach (char C in BaseCaseFile)
                     {
@@ -337,7 +337,7 @@ namespace WindowsFormsApplication1
                     }
                 }
                 if (!(File.Exists(newCaseFile))){
-                     errStr = errStr+"\nNewCase File does not exist at the selected location:\n";// + newMap.Text);
+                     errStr = errStr+"\nNew Case File does not exist at the selected location:\n";// + newMap.Text);
                      //this.newMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
 
                      foreach (char C in filePath2)
@@ -380,24 +380,24 @@ namespace WindowsFormsApplication1
 
                     if (badCharStr1 != null)
                     {
-                        s1 = "\nBad Char " + badCharStr1 + " in " + "<"+ filePath1+"> for Base Case\n" ;
+                        s1 = "\nBad Charachter " + badCharStr1 + " in " + "<"+ filePath1+"> in Base Case\n" ;
                         errMsg = errMsg + s1;
                         //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     }
                     if (badCharStr2 != null)
                     {
-                        s2 = "\nBad Char " + badCharStr2 + " in " + "<" + filePath2 + "> for New Case\n";
+                        s2 = "\nBad Charachter " + badCharStr2 + " in " + "<" + filePath2 + "> in New Case\n";
                         errMsg = errMsg + s2;
                     }
                     if (badCharStr3 != null)
                     {
-                        s3 = "\nBad Char " + badCharStr3 + " in " + "<" + filePath3 + "> for Folde Path\n";
+                        s3 = "\nBad Charachter " + badCharStr3 + " in " + "<" + filePath3 + "> in Folde Path\n";
                         errMsg = errMsg + s3;
                     }
 
                     if (badCharStr4 != null)
                       {
-                        s4 = "\nBad Char " + badCharStr4 + " in " + "<" + saveNm + "> for File Name\n" ;
+                          s4 = "\nBad Charachter " + badCharStr4 + " in " + "<" + saveNm + "> in File Name\n";
                         errMsg = errMsg + s4;
                       }
                 
@@ -648,7 +648,7 @@ namespace WindowsFormsApplication1
             "Step 4:	Select a location by clicking on the \"Select\" button or type the path to for storing the change file that will contain the result of comparison.\n"+ 
             "Step 5:	Select a file name for the change file; the name must be alpha-numeric; characters \\? / ^ % > < | * are not allowed in the"+
             "file name;\n"+
-            "Step 6:	Click on \"OK\" to run the program. If any of the fields filled incorrectly or left blank, will  it will cause an error message!\n"+
+            "Step 6:	Click on \"OK\" to run the program. If any of the fields filled incorrectly or left blank, it will cause an error message!\n"+
             "Step 7:	At any time click \"Cancel\" button or press <esc> key on the keyboard to cancel the program session and exit\n" +
             "\nMENU DESCRITION:\n"+
             "HELP:\n"+"Contains info on how to use the program, hardware-software platform requirements for the program to be able to run on, general description of the program,"+ 
