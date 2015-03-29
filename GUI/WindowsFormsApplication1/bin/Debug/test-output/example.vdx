@@ -1,0 +1,44 @@
+<VisioDocument>
+  <Masters>
+    <Master ID='0' NameU='RectMaster'>
+      <Shapes>
+        <Shape ID='4' Type='Shape'>
+          <XForm>
+            <PinX>0</PinX>
+            <PinY>0</PinY>
+            <Width>1</Width>
+            <Height>1</Height>
+          </XForm>
+          <Geom IX='0'>
+            <MoveTo IX='1'><X F='Width*0' /><Y F='Height*0' /></MoveTo>
+            <LineTo IX='2'><X F='Width*1' /><Y F='Height*0' /></LineTo>
+            <LineTo IX='3'><X F='Width*1' /><Y F='Height*1'/></LineTo>
+            <LineTo IX='4'><X F='Width*0' /><Y F='Height*1' /></LineTo>
+            <LineTo IX='5'><X F='Geometry1.X1' /><Y F='Geometry1.Y1'/></LineTo>
+          </Geom>
+          <Fill>
+            <FillForegnd F='RGB(255,0,0)' />
+          </Fill>
+        </Shape>
+      </Shapes>
+    </Master>
+  </Masters>
+  <Pages>
+    <Page ID='0' NameU='Page-1'>
+      <Shapes>
+        <Shape ID='1' Type='Shape' Master='0'>
+          <XForm>
+            <PinX>1</PinX>
+            <PinY>1</PinY>
+          </XForm>
+        </Shape>
+        <Shape ID='2' Type='Shape' Master='0'>
+          <XForm>
+            <PinX>3</PinX>
+            <PinY>3</PinY>
+          </XForm>
+        </Shape>
+      </Shapes>
+    </Page>
+  </Pages>
+</VisioDocument>
