@@ -106,7 +106,10 @@ namespace WindowsFormsApplication1
                                         
                                 }
                                 else
-                                    MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");                                
+                                    MessageBox.Show("Error!\n\nThis isn't a \".raw\" file:\n\n" + 
+                                        flileType + "\n\nPlease select a correct file type.",
+                                        "Incorrect File Type", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    //MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");                                
                             }
                         }
                     }
@@ -354,7 +357,7 @@ namespace WindowsFormsApplication1
                 //MessageBox.Show(File.Exists(BaseCaseFile) ? "File exists." : "File does not exist.");
                 if (!Directory.Exists(this.destFolder))
                 {
-                       errStr = errStr + "\nThe folder doesn't exist at the this directory!\n";// + saveLocationFolder.Text);
+                       errStr = errStr + "\nThe folder doesn't exist at this directory!\n";// + saveLocationFolder.Text);
                      //errStr = errStr+"\nThe Folder does not exist at the selected dirctory:\n";// + saveLocationFolder.Text);
                      //this.saveLocationFolder.BackColor = System.Drawing.SystemColors.ActiveCaption;
                         //Directory.CreateDirectory(saveFolder);
