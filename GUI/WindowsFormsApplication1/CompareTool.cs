@@ -267,6 +267,8 @@ namespace WindowsFormsApplication1
                             connection["status"] = "-";
                         }
                         else connection["status"] = ".";
+
+                        connection["removed"] = "norm";
                         inSystem = true;
                         break;
                     }
@@ -276,6 +278,7 @@ namespace WindowsFormsApplication1
             if (firstRun || !inSystem)
             {
                 string status = (firstRun) ? "-" : "+";
+                string reason = (firstRun) ? "removed" : "added";
                 Dictionary<string, string> connection = new Dictionary<string, string>();
                 connection.Add("1", rawConnectInfo[0]);
                 connection.Add("2", rawConnectInfo[1]);
@@ -283,7 +286,7 @@ namespace WindowsFormsApplication1
                 connection.Add("status", status);
                 connection.Add("serviceFrom", rawConnectInfo[15]);
                 connection.Add("id", rawConnectInfo[2]);
-
+                connection.Add("reason", reason);
                 connectionList.Add(connection);
 
                 if (!firstRun)
@@ -436,7 +439,7 @@ namespace WindowsFormsApplication1
                 }
                 foreach (var connect in connectionList)
                 {
-                    if (String.Compare(connect["status"], "-") == 0)
+                    if (String.Compare(connect["status"], "-") == 0 && String.Compare(connect["reason"], "removed", true) == 0)
                     {
                         string line = "BAT_PURGBRN," + connect["1"] + "," + connect["2"] + ",'" + connect["id"] + "'";
                         sw.WriteLine(line);
@@ -516,16 +519,26 @@ namespace WindowsFormsApplication1
             public static string[] ConverterLine(string line)
             {
                 
+                //Get discrition
+                string description = Regex.Match(line, @"\'([^)]*)\'").Groups[1].Value;
+                string desNoSpace = "";
+                if (!string.IsNullOrWhiteSpace(description)) desNoSpace = description.Replace(" ", string.Empty);
+                
+
+                
                 //Remove unwanted char and convert into array
-                line = line.Replace("\"", " ");
-                line = line.Replace("'", " ").Trim();
+                if(!string.IsNullOrEmpty(description)) line = line.Replace(description, desNoSpace);
+                line = line.Replace("\"", " ").Trim();
+                
                 line = Regex.Replace(line, @"\s+", " ");
                 line = line.Replace(", ", ",");
                 line = line.Replace(" ,", ",");
-                line = line.Replace(",", " ");
-
+                line = line.Replace("'", string.Empty);
+                line = line.Replace(" ", ",");
+                if (!string.IsNullOrEmpty(description) && !string.IsNullOrWhiteSpace(description)) line = line.Replace(desNoSpace, description);
    
-                string[] words = line.Split(" ".ToCharArray());
+                string[] words = line.Split(",".ToCharArray());
+                
                 return words;
             }
 
