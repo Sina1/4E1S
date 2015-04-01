@@ -10,10 +10,10 @@ config = {
         }
 penwidth = '1.5'
 fontsize = '16'
-nodesep  = '1'
+nodesep  = '0.5'
 ranksep  = '1'
-margin   = '0.5'
-
+margin   = '.1'
+rankMax = 4
 def main():
     #define busses, . means black, + means green, - means red
     #busList = [
@@ -52,7 +52,12 @@ def main():
     # add transformer name to node list
     for node in nodeList:
         if node['type'] == 'transformer':
-            node['name'] = node['busFrom'] + ',' + node['id'] + ',' + node['busTo']
+            #node['name'] = node['busFrom'] + '' + node['id'] + '' + node['busTo']
+            node['name'] = str(int(node['busFrom']) + int(node['busTo']))
+    # add transformer connections
+    for node in nodeList:
+        if node['type'] == 'transformer':
+            makeTransformerConnection(node, connectionList)
     
     gString = make_graphviz_string(nodeList, connectionList)
 
@@ -95,6 +100,14 @@ def main():
     returnCode = os.system(command)
     #os.remove("temp.dot")
     print (returnCode)
+
+def makeTransformerConnection(transformer, connectionList):
+    connection1 = {'1': transformer['busFrom'], '2': transformer['name'], 'status': transformer['status']}
+    connection2 = {'1': transformer['name'], '2': transformer['busTo'], 'status': transformer['status']}
+    connectionList.append(connection1)
+    connectionList.append(connection2)
+
+
     
 def make_graphviz_string(busList,connectionList):
 
@@ -154,7 +167,7 @@ def make_rank(busList):
     while (i < len(busList)):
         s = s + "{ rank=same "
         j=0
-        while (j<3 and i < len(busList)):
+        while (j<rankMax and i < len(busList)):
             s = s + busList[i]['name'] + " "
             j = j+1
             i = i+1

@@ -71,7 +71,7 @@
             this.originalMap.Name = "originalMap";
             this.originalMap.Size = new System.Drawing.Size(287, 20);
             this.originalMap.TabIndex = 3;
-            this.originalMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampletestorg.raw";
+            this.originalMap.Text = "C:\\Users\\Roshaan\\Desktop\\RawFiles\\sampletest.raw";
             this.originalMap.TextChanged += new System.EventHandler(this.originalMap_TextChanged);
             // 
             // button2
@@ -93,7 +93,7 @@
             this.newMap.Name = "newMap";
             this.newMap.Size = new System.Drawing.Size(287, 20);
             this.newMap.TabIndex = 3;
-            this.newMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampletest.raw";
+            this.newMap.Text = "C:\\Users\\Roshaan\\Desktop\\RawFiles\\sampletest-1.raw";
             this.newMap.TextChanged += new System.EventHandler(this.newMap_TextChanged);
             // 
             // button3
