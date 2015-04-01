@@ -15,10 +15,14 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <dsig:DigestValue>EeabifBE11D2xXt8BkAqMWUz8NXZcsN/FpLdRkEtfhA=</dsig:DigestValue>
 =======
         <dsig:DigestValue>t1jylRgXYjJOzEJM2O0lLvhjBEMxYQJOqtvzhY7Z6do=</dsig:DigestValue>
 >>>>>>> 8684a939bd94a38f779083e30bf57a4af064cc92
+=======
+        <dsig:DigestValue>3VuFRLLsk8Dm+bJfrQJgpb97AoCpydLtPljZ6sHzagY=</dsig:DigestValue>
+>>>>>>> 04e8b8bccaa42ca6f20525cbaea01012e9acde69
       </hash>
     </dependentAssembly>
   </dependency>
