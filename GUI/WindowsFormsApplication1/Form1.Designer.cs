@@ -71,6 +71,7 @@
             this.originalMap.Name = "originalMap";
             this.originalMap.Size = new System.Drawing.Size(287, 20);
             this.originalMap.TabIndex = 3;
+            this.originalMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampletestorg.raw";
             this.originalMap.TextChanged += new System.EventHandler(this.originalMap_TextChanged);
             // 
             // button2
@@ -92,6 +93,7 @@
             this.newMap.Name = "newMap";
             this.newMap.Size = new System.Drawing.Size(287, 20);
             this.newMap.TabIndex = 3;
+            this.newMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampletest.raw";
             this.newMap.TextChanged += new System.EventHandler(this.newMap_TextChanged);
             // 
             // button3
@@ -162,6 +164,8 @@
             // visioCheckBox
             // 
             this.visioCheckBox.AutoSize = true;
+            this.visioCheckBox.Checked = true;
+            this.visioCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.visioCheckBox.Location = new System.Drawing.Point(12, 168);
             this.visioCheckBox.Name = "visioCheckBox";
             this.visioCheckBox.Size = new System.Drawing.Size(98, 25);
@@ -198,9 +202,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Folder Name";
+            this.label3.Text = "File Name";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // saveName
@@ -210,6 +214,7 @@
             this.saveName.Name = "saveName";
             this.saveName.Size = new System.Drawing.Size(287, 20);
             this.saveName.TabIndex = 10;
+            this.saveName.Text = "test1";
             this.saveName.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // saveLocationFolder
@@ -220,6 +225,7 @@
             this.saveLocationFolder.Name = "saveLocationFolder";
             this.saveLocationFolder.Size = new System.Drawing.Size(287, 20);
             this.saveLocationFolder.TabIndex = 8;
+            this.saveLocationFolder.Text = "C:\\Users\\Roshaan\\Desktop\\";
             this.saveLocationFolder.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button4

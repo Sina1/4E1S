@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace WindowsFormsApplication1
 {
@@ -76,8 +77,8 @@ namespace WindowsFormsApplication1
             {
                 string visFileName = "VisioFile_" + busSet.First() + "-" + busSet.Last();
                 //Call to get the function Roshaan Add here
-                //DrawTool dTool = new DrawTool(saveFullPath, fileName);
-                //dTool.drawGraph(nodeList, connectionList);
+                DrawTool dTool = new DrawTool(saveFullPath, saveFullPath); 
+                dTool.drawGraph(nodeList, connectionList);
             }
 
             if(produceIdv)
@@ -169,12 +170,15 @@ namespace WindowsFormsApplication1
   
 
         }
-        
 
+        private static double d(string inVar)
+        {
+            return double.Parse(inVar, CultureInfo.InvariantCulture);
+        }
         private static void BusNodeFunction(string[] rawBusInfo, bool firstRun, string fullLine)
         {
             bool inSystem = false;
-
+            Console.Write(rawBusInfo);
             if (!firstRun)
             {
                 foreach (var node in nodeList)
@@ -182,7 +186,7 @@ namespace WindowsFormsApplication1
                     //Checks to see if this connection has the 2 bus numbers and the id
                     if (node.ContainsValue(rawBusInfo[0]) && string.Compare(node["type"], "bus", true) == 0) 
                     {
-                        if (Convert.ToInt32(node["codeFrom"]) <= 3 && Convert.ToInt32(rawBusInfo[3]) > 3)
+                        if (d(node["codeFrom"]) <= 3 && d(rawBusInfo[3]) > 3)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");
@@ -191,7 +195,7 @@ namespace WindowsFormsApplication1
 
                             node["status"] = "-";
                         }
-                        else if (Convert.ToInt32(node["codeFrom"]) > 3 && Convert.ToInt32(rawBusInfo[3]) <= 3)
+                        else if (d(node["codeFrom"]) > 3 && d(rawBusInfo[3]) <= 3)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");

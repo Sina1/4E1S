@@ -1,15 +1,33 @@
 digraph G {
-            graph [splines=ortho, nodesep=8 ranksep=5 margin=1];
+            graph [splines=ortho, nodesep=1 ranksep=1 margin=0.5];
             edge [arrowhead=none,arrowtail=none ];
 
-            forcelabels=true;		{ rank=same 151 152 153 ;}
-{ rank=same 201 202 ;}
-		151[ xlabel="151" fontsize=32 label="" color ="red"];
-		152[ xlabel="152" fontsize=32 label="" color ="red"];
-		153[ xlabel="153" fontsize=32 label="" color ="red"];
-		201[ xlabel="201" fontsize=32 label="" color ="red"];
-		202[ xlabel="202" fontsize=32 label="" color ="red"];
-		151 -> 201 [penwidth=3 shape=none ] ;
-		152 -> 202 [penwidth=3 shape=none ] ;
+            forcelabels=true;		{ rank=same 101 151 152 ;}
+{ rank=same 153 301 3003 ;}
+{ rank=same 3005 101 301 ;}
+{ rank=same 301 301 101,T1,151 ;}
+{ rank=same 152,T3,153 101,T2,151 ;}
+		101[ xlabel="101" fontsize=16 label="" ];
+		151[ xlabel="151" fontsize=16 label="" ];
+		152[ xlabel="152" fontsize=16 label="" ];
+		153[ xlabel="153" fontsize=16 label="" ];
+		301[ xlabel="301" fontsize=16 label="" ];
+		3003[ xlabel="3003" fontsize=16 label="" ];
+		3005[ xlabel="3005" fontsize=16 label="" ];
+		101[ xlabel="101" fontsize=16 label="" ];
+		301[ xlabel="301" fontsize=16 label="" ];
+		301[ xlabel="301" fontsize=16 label="" ];
+		301[ xlabel="301" fontsize=16 label="" ];
+		101,T1,151[ xlabel="101,T1,151" fontsize=16 label="" ];
+		152,T3,153[ xlabel="152,T3,153" fontsize=16 label="" ];
+		101,T2,151[ xlabel="101,T2,151" fontsize=16 label="" color ="red"];
+		101 -> 151 [penwidth=1.5 shape=none ] ;
+		151 -> 152 [penwidth=1.5 shape=none ] ;
+		151 -> 152 [penwidth=1.5 shape=none ] ;
+		152 -> 153 [penwidth=1.5 shape=none ] ;
+		3003 -> 3005 [penwidth=1.5 shape=none ] ;
+		3003 -> 3005 [penwidth=1.5 shape=none ] ;
+		151 -> 152 [penwidth=1.5 shape=none color ="red"] ;
+		101 -> 151 [penwidth=1.5 shape=none color ="red"] ;
 
 }

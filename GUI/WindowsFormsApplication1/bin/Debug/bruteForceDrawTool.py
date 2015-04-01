@@ -8,7 +8,11 @@ config = {
             'dotCommand'   : "dot -Tpng " 
 
         }
-
+penwidth = '1.5'
+fontsize = '16'
+nodesep  = '1'
+ranksep  = '1'
+margin   = '0.5'
 
 def main():
     #define busses, . means black, + means green, - means red
@@ -44,6 +48,11 @@ def main():
     nodeList = dataDict['busList']
     connectionList = dataDict['connectionList']
     config['destPath'] = dataDict['filepath']
+
+    # add transformer name to node list
+    for node in nodeList:
+        if node['type'] == 'transformer':
+            node['name'] = node['busFrom'] + ',' + node['id'] + ',' + node['busTo']
     
     gString = make_graphviz_string(nodeList, connectionList)
 
@@ -73,6 +82,10 @@ def main():
     json.dump(nodeTypeDict,text_file)
     text_file.close()
     
+    # write node list list
+    text_file = open("C:/Users/Roshaan/Desktop/test-output/poll/nodeList.txt", "w")
+    json.dump(nodeList,text_file)
+    text_file.close()
     
     command = '"' + config['graphvizPath'] + '" ' + config['dotCommand'] \
               + "temp.dot > " + config['destPath'] + ".png" 
@@ -87,7 +100,6 @@ def make_graphviz_string(busList,connectionList):
 
     skipBus = True
     skipConnection = True    
-
     
     if validateBusList(busList):
         skipBus = False
@@ -95,9 +107,9 @@ def make_graphviz_string(busList,connectionList):
         skipConnection = False
 
     upperS = '''digraph G {
-            graph [splines=ortho, nodesep=8 ranksep=5 margin=1];
+            graph [splines=ortho, nodesep=%s ranksep=%s margin=%s];
             edge [arrowhead=none,arrowtail=none ];\n
-            forcelabels=true;'''
+            forcelabels=true;'''%(nodesep, ranksep, margin)
 
     middleS = "\t\t" + make_rank(busList)
 
@@ -118,8 +130,8 @@ def make_graphviz_string(busList,connectionList):
 
 def make_nodes(name, description,status,type):
     nodeString = "\t\t" + name + '[ '
-    nodeString = nodeString + 'xlabel="' + description + '" fontsize=32 label="" '
-    if status == '.':
+    nodeString = nodeString + 'xlabel="' + name + '" fontsize=' + fontsize + ' label="" '
+    if status == '+':
         nodeString = nodeString + 'color ="red"];\n'
     elif status == '-':
         nodeString = nodeString + 'color ="green"];\n'
@@ -130,11 +142,11 @@ def make_nodes(name, description,status,type):
 
 def make_connection(node1, node2, status):
     if status == '.-':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none color ="green"] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="green"] ;\n'
     elif status == '+':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none color ="red"] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="red"] ;\n'
     else:
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=3 shape=none ] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none ] ;\n'
     
 def make_rank(busList):
     i = 0
@@ -150,13 +162,24 @@ def make_rank(busList):
         
     return s 
     
-def validateBusList(busList):
-    finalList = busList.copy()
-    for bus in busList:
-        if not bus['name'] == "":
+def validateBusList(nodeList):
+    finalList = nodeList.copy()
+    
+    for node in nodeList:
+        transformerCount = 0
+        # check to see if node name and type exist
+        try:
+            node['type']
+        except:
             continue
-        else:
-            finalList.remove(bus)
+        # insert a dummy name for transformer
+        # if node['type'] == 'transformer':
+        #    transformerCount = transformerCount + 1
+        #    node['name'] = 't' + str(transformerCount)
+        #if not node['type'] == "":
+        #    continue
+        #else:
+            finalList.remove(node)
     
     if len(finalList) == 0:
         return False
