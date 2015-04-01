@@ -247,8 +247,18 @@ namespace WindowsFormsApplication1
                     //Checks to see if this connection has the 2 bus numbers and the id
                     if (connection.ContainsValue(rawConnectInfo[0])&& connection.ContainsValue(rawConnectInfo[1])&& connection.ContainsValue(rawConnectInfo[2]))
                     {
+                        int nothing, before;
+                        if (int.TryParse(rawConnectInfo[13], out nothing))
+                        {
+                            before = Convert.ToInt32(rawConnectInfo[13]);
+                        }
+                        else if (int.TryParse(rawConnectInfo[15], out nothing))
+                        {
+                            before = Convert.ToInt32(rawConnectInfo[15]);
+                        }
+                        else before = 1;
 
-                        if(Convert.ToInt32(rawConnectInfo[13]) == 1 && Convert.ToInt32(connection["serviceFrom"]) == 0)
+                        if (before == 1 && Convert.ToInt32(connection["serviceFrom"]) == 0)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");
@@ -257,7 +267,7 @@ namespace WindowsFormsApplication1
 
                             connection["status"] = "+";
                         }
-                        else if (Convert.ToInt32(rawConnectInfo[13]) == 0 && Convert.ToInt32(connection["serviceFrom"]) == 1)
+                        else if (before == 0 && Convert.ToInt32(connection["serviceFrom"]) == 1)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");
@@ -284,7 +294,19 @@ namespace WindowsFormsApplication1
                 connection.Add("2", rawConnectInfo[1]);
                 connection.Add("description", "");
                 connection.Add("status", status);
-                connection.Add("serviceFrom", rawConnectInfo[13]);
+
+                int nothing;
+                if (int.TryParse(rawConnectInfo[13], out nothing))
+                {
+                    connection.Add("serviceFrom", rawConnectInfo[13]);
+                }
+                else if (int.TryParse(rawConnectInfo[15], out nothing))
+                {
+                    connection.Add("serviceFrom", rawConnectInfo[15]);
+                }
+                else connection.Add("serviceFrom", "1");
+
+                
                 connection.Add("id", rawConnectInfo[2]);
                 connection.Add("reason", reason);
                 connectionList.Add(connection);
