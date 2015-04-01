@@ -252,7 +252,7 @@ namespace WindowsFormsApplication1
                     if (connection.ContainsValue(rawConnectInfo[0])&& connection.ContainsValue(rawConnectInfo[1])&& connection.ContainsValue(rawConnectInfo[2]))
                     {
 
-                        if(Convert.ToInt32(rawConnectInfo[15]) == 1 && Convert.ToInt32(connection["serviceFrom"]) == 0)
+                        if(Convert.ToInt32(rawConnectInfo[13]) == 1 && Convert.ToInt32(connection["serviceFrom"]) == 0)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");
@@ -261,7 +261,7 @@ namespace WindowsFormsApplication1
 
                             connection["status"] = "+";
                         }
-                        else if (Convert.ToInt32(rawConnectInfo[15]) == 0 && Convert.ToInt32(connection["serviceFrom"]) == 1)
+                        else if (Convert.ToInt32(rawConnectInfo[13]) == 0 && Convert.ToInt32(connection["serviceFrom"]) == 1)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "bus");
@@ -288,7 +288,7 @@ namespace WindowsFormsApplication1
                 connection.Add("2", rawConnectInfo[1]);
                 connection.Add("description", "");
                 connection.Add("status", status);
-                connection.Add("serviceFrom", rawConnectInfo[15]);
+                connection.Add("serviceFrom", rawConnectInfo[13]);
                 connection.Add("id", rawConnectInfo[2]);
                 connection.Add("reason", reason);
                 connectionList.Add(connection);
@@ -376,7 +376,18 @@ namespace WindowsFormsApplication1
                     //checks if the node has the same bus connection, if it is a generator type and has the same id
                     if (node.ContainsValue(rawTranInfo[0]) && node.ContainsValue(rawTranInfo[1]) && node.ContainsValue(rawTranInfo[2]) && string.Compare(node["type"], "transformer", true) == 0)
                     {
-                        if (Convert.ToInt32(rawTranInfo[10]) == 0 && Convert.ToInt32(node["beforeStatus"]) == 1)
+                        int nothing, before;
+                        if (int.TryParse(rawTranInfo[10], out nothing))
+                        {
+                            before =Convert.ToInt32(rawTranInfo[10]);
+                        }
+                        else if (int.TryParse(rawTranInfo[11], out nothing))
+                        {
+                            before = Convert.ToInt32(rawTranInfo[11]);
+                        }
+                        else  before = 1;
+
+                        if (before == 0 && Convert.ToInt32(node["beforeStatus"]) == 1)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "transformer");
@@ -384,7 +395,7 @@ namespace WindowsFormsApplication1
                             idvList.Add(idvLineInfo);
                             node["status"] = "-";
                         }
-                        else if (Convert.ToInt32(rawTranInfo[10]) == 1 && Convert.ToInt32(node["beforeStatus"]) == 0)
+                        else if (before == 1 && Convert.ToInt32(node["beforeStatus"]) == 0)
                         {
                             var idvLineInfo = new Dictionary<string, string>();
                             idvLineInfo.Add("type", "transformer");
@@ -410,7 +421,16 @@ namespace WindowsFormsApplication1
                 tranformerInfo.Add("description", "");
                 tranformerInfo.Add("id", rawTranInfo[2]);
                 tranformerInfo.Add("status", status);
-                tranformerInfo.Add("beforeStatus", rawTranInfo[10]);
+                int nothing;
+                if(int.TryParse(rawTranInfo[10], out nothing))
+                {
+                    tranformerInfo.Add("beforeStatus", rawTranInfo[10]);
+                }
+                else if(int.TryParse(rawTranInfo[11], out nothing))
+                {
+                     tranformerInfo.Add("beforeStatus", rawTranInfo[11]);
+                }
+                else  tranformerInfo.Add("beforeStatus", "1");
 
                 nodeList.Add(tranformerInfo);
 

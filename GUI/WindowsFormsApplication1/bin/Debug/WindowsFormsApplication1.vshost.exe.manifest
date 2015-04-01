@@ -62,10 +62,14 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <dsig:DigestValue>8m2rQRVw8MVKckmRpPnisHPvfHWAPjhn6ELWqP8ngPY=</dsig:DigestValue>
 =======
         <dsig:DigestValue>xkKswvj5lalSxq1U8/pAX2MalVlxccgfGXQ5Ho9xg/w=</dsig:DigestValue>
 >>>>>>> f887fe3b6ca04923cc403d6de6024cf043bb11a7
+=======
+        <dsig:DigestValue>rfXlFpKch5T/XOXjA5JTufK46cMeV5Mdf1xZPfchEng=</dsig:DigestValue>
+>>>>>>> 8684a939bd94a38f779083e30bf57a4af064cc92
       </hash>
     </dependentAssembly>
   </dependency>
