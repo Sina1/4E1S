@@ -14,6 +14,7 @@ C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\Wind
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Users\Brett\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
@@ -30,3 +31,21 @@ C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\W
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
 C:\Users\Roshaan\Documents\gitRepo\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+=======
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.application
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BusSelectionForm.resources
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.manifest
+C:\Users\Sina\Documents\GitHub\4E1S\GUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.application
+>>>>>>> f887fe3b6ca04923cc403d6de6024cf043bb11a7

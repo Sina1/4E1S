@@ -106,7 +106,10 @@ namespace WindowsFormsApplication1
                                         
                                 }
                                 else
-                                    MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");                                
+                                    MessageBox.Show("Error!\n\nThis isn't a \".raw\" file:\n\n" + 
+                                        flileType + "\n\nPlease select a correct file type.",
+                                        "Incorrect File Type", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    //MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");                                
                             }
                         }
                     }
@@ -181,7 +184,8 @@ namespace WindowsFormsApplication1
 
                                 }
                                 else
-                                    MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");
+                                   // MessageBox.Show("Error, not a \".raw\" file: \n" + flileType + "\nPlease slecte a correct file type");
+                                    MessageBox.Show("Error!\n\nThis isn't a \".raw\" file:\n\n" + flileType + "\n\nPlease select a correct file type.", "Incorrect File Type", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -323,7 +327,8 @@ namespace WindowsFormsApplication1
             {   
                 //Adding more error checks here: 
                 if (!File.Exists(BaseCaseFile)){
-                    errStr = errStr+"\nBaseCase File does not exist at the selected location:\n"; //+ originalMap.Text);
+                    errStr = errStr + "\nThe base case you selected doesn't exist at this location!\n"; //+ originalMap.Text);
+                    //errStr = errStr+"\nBase Case File does not exist at the selected location:\n"; //+ originalMap.Text);
                     //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     foreach (char C in BaseCaseFile)
                     {
@@ -337,7 +342,8 @@ namespace WindowsFormsApplication1
                     }
                 }
                 if (!(File.Exists(newCaseFile))){
-                     errStr = errStr+"\nNewCase File does not exist at the selected location:\n";// + newMap.Text);
+                    errStr = errStr + "\nThe new base case you selected doesn't exist at this location!\n";// + newMap.Text); 
+                    //errStr = errStr+"\nNew Case File does not exist at the selected location:\n";// + newMap.Text);
                      //this.newMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
 
                      foreach (char C in filePath2)
@@ -351,7 +357,8 @@ namespace WindowsFormsApplication1
                 //MessageBox.Show(File.Exists(BaseCaseFile) ? "File exists." : "File does not exist.");
                 if (!Directory.Exists(this.destFolder))
                 {
-                     errStr = errStr+"\nThe Folder does not exist at the selected dirctory:\n";// + saveLocationFolder.Text);
+                       errStr = errStr + "\nThe folder doesn't exist at this directory!\n";// + saveLocationFolder.Text);
+                     //errStr = errStr+"\nThe Folder does not exist at the selected dirctory:\n";// + saveLocationFolder.Text);
                      //this.saveLocationFolder.BackColor = System.Drawing.SystemColors.ActiveCaption;
                         //Directory.CreateDirectory(saveFolder);
                      foreach (char c in filePath3)
@@ -380,24 +387,28 @@ namespace WindowsFormsApplication1
 
                     if (badCharStr1 != null)
                     {
-                        s1 = "\nBad Char " + badCharStr1 + " in " + "<"+ filePath1+"> for Base Case\n" ;
+                        s1 = "\nInvalid character " + badCharStr1 + " in " + "<" + filePath1 + "> for base case.\n";
+                        //s1 = "\nBad Charachter " + badCharStr1 + " in " + "<"+ filePath1+"> in Base Case\n" ;
                         errMsg = errMsg + s1;
                         //this.originalMap.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     }
                     if (badCharStr2 != null)
                     {
-                        s2 = "\nBad Char " + badCharStr2 + " in " + "<" + filePath2 + "> for New Case\n";
+                        s2 = "\nInvalid character " + badCharStr2 + " in " + "<" + filePath2 + "> for new case.\n";
+                        //s2 = "\nBad Charachter " + badCharStr2 + " in " + "<" + filePath2 + "> in New Case\n";
                         errMsg = errMsg + s2;
                     }
                     if (badCharStr3 != null)
                     {
-                        s3 = "\nBad Char " + badCharStr3 + " in " + "<" + filePath3 + "> for Folde Path\n";
+                        s3 = "\nInvalid character " + badCharStr3 + " in " + "<" + filePath3 + "> for folder path.\n";
+                        //s3 = "\nBad Charachter " + badCharStr3 + " in " + "<" + filePath3 + "> in Folde Path\n";
                         errMsg = errMsg + s3;
                     }
 
                     if (badCharStr4 != null)
                       {
-                        s4 = "\nBad Char " + badCharStr4 + " in " + "<" + saveNm + "> for File Name\n" ;
+                          s4 = "\nInvalid character " + badCharStr4 + " in " + "<" + saveNm + "> for file name.\n";  
+                        //s4 = "\nBad Charachter " + badCharStr4 + " in " + "<" + saveNm + "> in File Name\n";
                         errMsg = errMsg + s4;
                       }
                 
@@ -427,7 +438,8 @@ namespace WindowsFormsApplication1
                             this.saveLocationFolder.BackColor = System.Drawing.SystemColors.Window;
                             this.newMap.BackColor = System.Drawing.SystemColors.Window;
                             this.saveName.BackColor = System.Drawing.SystemColors.ActiveCaption;
-                            MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
+                            MessageBox.Show("Please fix errors! \n" + invFilePath + "\n" + errMsg + "\n", "File Doesn't Exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
                         }
                     }
     
@@ -450,7 +462,8 @@ namespace WindowsFormsApplication1
                         this.saveName.BackColor = System.Drawing.SystemColors.ActiveCaption;
                         else
                             this.saveName.BackColor = System.Drawing.SystemColors.Window;
-                        MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
+                        MessageBox.Show("Please fix errors! \n" + invFilePath + "\n" + errMsg + "\n", "File Doesn't Exist", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("\n\tPlease Fix Errors! \n\n" + invFilePath + "\n" + errMsg + "\n");
                     }   
             }
 
@@ -574,17 +587,45 @@ namespace WindowsFormsApplication1
 
         private void sssToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String platFromReq = "\n" +
+            String platFromReq = "\nPLATFORM REQUIREMENTS\n\n"+
+            "HARDWARE: Window PC, 4GB RAM, 2 Core CPU\n"+
+            "SOFTWARE: Window OS 7 or higher, Visio 2010, Python 3.xx installed.\n";
+            MessageBox.Show(platFromReq, "Platform Requirments", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                /*"\n" +
             "\nHARDWARE:" +
             "\nWindow PC, 4GB RAM, 2 Core CPU" +
             "\n\nSOFTWARE:" +
             "\nWindow OS 7 or higher, Visio 2010, Python 3.xx installed.\n";
-            MessageBox.Show(platFromReq);
+            MessageBox.Show(platFromReq);*/
         }
 
         private void helpTopicsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            String howToUseTheProgram = "\n" +
+            String howToUseTheProgram = "HOW TO RUN THE PROGRAM\n\n" +
+            "Step 1:\nSelect an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n" +
+            "Step 2:\nSelect a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n" +
+            "Step 3:\nDetermine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the file path to the desired save location.\n" +
+            "Step 4:\nEnter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n" +
+            "Step 5:\nCheck the “Visio File” box or the “Idv File” box if you wish to have only one of files produced.\n" +
+                      "Check both the “Visio File” box and the “Idv File” box if you wish to have both files produced.\n" +
+            "Step 6:\nClick \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n" +
+            "Step 7:\nYou can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n" +
+            "Step 8:\nA pop-up window will appear. It prompts the user to enter the busses required for comparison.\n" +
+                      "You can “Double-Click” on the bus you wish to remove from the list directly below.\n" +
+            "Step 9:\nClick “OK” to continue. The program will output a Visio file and/or an Idv file based on your selection. Click “Cancel” if you wish to return to the previous screen.\n\n";
+             MessageBox.Show(howToUseTheProgram, "How to Use the Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            /*
+            String howToUseTheProgram = "HOW TO RUN THE PROGRAM\n\n" +
+            "Step 1:\n"+ "Select an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n\n" +
+            "Step 2:\n" + "Select a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n\n" +
+            "Step 3:\n" + "Choose from the drop-down list of bus numbers required for comparison.\n\n" +
+            "Step 4:\n" + "Determine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the filepath to the desired save location.\n\n" +
+            "Step 5:\n" + "Name the Single Line Diagram. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n\n" +
+            "Step 6:\n" + "Click \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n\n" +
+            "Step 7:\n" + "You can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.";
+             MessageBox.Show(howToUseTheProgram, "How to Use the Program", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+/*
+                "\n" +
         "\nHOW TO RUN THE PROGRAM:\n" +
 "\nStep 1:\n" +
 "Select an old base *.raw file by clicking on the brows button \"Base Case\" or type the path to the location where the *.raw file is stored" +
@@ -601,7 +642,7 @@ namespace WindowsFormsApplication1
 "\nStep 7:\n" +
 "At any time click \"Cancel\" button or press <esc> key on the keyboard to cancel the program session and exit" +
 "\n";
-            MessageBox.Show(howToUseTheProgram);
+            MessageBox.Show(howToUseTheProgram);*/
         }
 
         private void userGuideToolStripMenuItem_Click(object sender, EventArgs e)
@@ -641,14 +682,79 @@ namespace WindowsFormsApplication1
 
         private void nEToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
             String fullUserGuide = "HOW TO RUN THE PROGRAM\n\n" +
+            "Step 1: 	Select an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n"+
+            "Step 2: 	Select a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n"+
+            "Step 3:	Determine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the file path to the desired save location.\n"+
+            "Step 4:	Enter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n"+
+            "Step 5:	Check the “Visio File” box or the “Idv File” box if you wish to have only one of files produced.\n"+ 
+                        "\tCheck both the “Visio File” box and the “Idv File” box if you wish to have both files produced.\n"+
+            "Step 6: 	Click \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n" +
+            "Step 7: 	You can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n" +
+            "Step 8: 	A pop-up window will appear. It prompts the user to enter the busses required for comparison.\n"+ 
+                        "\tYou can “Double-Click” on the bus you wish to remove from the list directly below.\n" +
+            "Step 9: 	Click “OK” to continue. The program will output a Visio file and/or an Idv file based on your selection. Click “Cancel” if you wish to return to the previous screen.\n\n" +
+
+
+
+            "MENU DESCRIPTION\n\n"+
+            "HELP:\n"+"The \"Help\" drop-down menu contains information on how to use the program, hardware and software requirements, a general description of the program, "+ 
+            "and contact information for technical support or troubleshooting.\n"+ 
+            "\nOPTIONS:\nProvides the user with the option to open the entire User Guide in a separate window.\n\n"+ 	
+
+            "PLATFORM REQUIREMENTS\n"+
+            "Hardware:\t Window PC, 4GB RAM, 2 Core CPU\n"+
+            "Software:\t Window OS 7 or higher, Visio 2010, Python 3.xx installed.\n"+
+
+            "\nABOUT\n"+
+            "This program is a custom tool designed to process base case *.raw files. It can identify changes between specific busses and is capable of "+ 
+            "generating a Microsoft Visio file that contains a Single Line Diagram reflecting any changes made between the two cases. The Microsoft Visio file is editable "+ 
+            "in Microsoft Visio 2010 for further modifications.\n"+
+            "All rights to this software belong to its developers and are protected by law under a group license. Permission has been granted to the AESO for use.\n"+ 
+
+            "\nTECHNICAL SUPPORT\n"+
+            "For troubleshooting and/or other technical support on the use of this software, please consult your IT department. Any firewall, virus, spyware and other "+ 
+            "security issues that may arise as a result of the use of this program must be reviewed prior to installing this program.\n"+
+            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team at xxx.xxx@xxx.com";
+            MessageBox.Show(fullUserGuide, "User Guide", MessageBoxButtons.OK, MessageBoxIcon.Information);         
+           /* String fullUserGuide = "HOW TO RUN THE PROGRAM\n\n" +
+            "Step 1: 	Select an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n\n"+
+            "Step 2: 	Select a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n\n"+
+            "Step 3:	Choose from the drop-down list of bus numbers required for comparison.\n\n"+
+            "Step 4:	Determine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the filepath to the desired save location.\n\n"+ 
+            "Step 5:	Name the Single Line Diagram. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n\n"+
+            "Step 6:	Click \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n\n"+
+            "Step 7:	You can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n\n" +
+            "MENU DESCRIPTION\n\n"+
+            "HELP:\n"+"The \"Help\" drop-down menu contains information on how to use the program, hardware and software requirements, a general description of the program, "+ 
+            "and contact information for technical support or troubleshooting.\n"+ 
+            "\nOPTIONS:\nProvides the user with the option to open the entire User Guide in a separate window.\n\n"+ 	
+
+            "PLATFORM REQUIREMENTS\n"+
+            "Hardware:\t Window PC, 4GB RAM, 2 Core CPU\n"+
+            "Software:\t Window OS 7 or higher, Visio 2010, Python 3.xx installed.\n"+
+
+            "\nABOUT\n"+
+            "This program is a custom tool designed to process base case *.raw files. It can identify changes between specific busses and is capable of "+ 
+            "generating a Microsoft Visio file that contains a Single Line Diagram reflecting any changes made between the two cases. The Microsoft Visio file is editable "+ 
+            "in Microsoft Visio 2010 for further modifications.\n"+
+            "All rights to this software belong to its developers and are protected by law under a group license. Permission has been granted to the AESO for use.\n"+ 
+
+            "\nTECHNICAL SUPPORT\n"+
+            "For troubleshooting and/or other technical support on the use of this software, please consult your IT department. Any firewall, virus, spyware and other "+ 
+            "security issues that may arise as a result of the use of this program must be reviewed prior to installing this program.\n"+
+            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team at xxx.xxx@xxx.com";
+                
+                /*
+                "HOW TO RUN THE PROGRAM\n\n" +
             "Step 1: 	Select an old base *.raw file by clicking on the brows button \"Base Case\" or type the path to the location where the *.raw file is stored\n"+
             "Step 2: 	Select a new base *.raw file by clicking on brows button \"New Case\" or type the path to its location\n"+
             "Step 3:	Select a list of busses from the old and new cases to be compared for any changes\n"+
             "Step 4:	Select a location by clicking on the \"Select\" button or type the path to for storing the change file that will contain the result of comparison.\n"+ 
             "Step 5:	Select a file name for the change file; the name must be alpha-numeric; characters \\? / ^ % > < | * are not allowed in the"+
             "file name;\n"+
-            "Step 6:	Click on \"OK\" to run the program. If any of the fields filled incorrectly or left blank, will  it will cause an error message!\n"+
+            "Step 6:	Click on \"OK\" to run the program. If any of the fields filled incorrectly or left blank, it will cause an error message!\n"+
             "Step 7:	At any time click \"Cancel\" button or press <esc> key on the keyboard to cancel the program session and exit\n" +
             "\nMENU DESCRITION:\n"+
             "HELP:\n"+"Contains info on how to use the program, hardware-software platform requirements for the program to be able to run on, general description of the program,"+ 
@@ -669,9 +775,8 @@ namespace WindowsFormsApplication1
             "For troubleshooting, and/or other technical support in relation to the use of this software please consult your IT department. Firewall, Virus, Spyware and other\n"+ 
             "security issues that may arise as a result of use of this program must be reviewed prior to installing this program.\n"+
             "For program malfunction, modification, improvements, and software upgrades please contact the developer team @: xxx.xxx@xxx.com\n\n";
-
-            MessageBox.Show(fullUserGuide);
-            
+                */
+            //MessageBox.Show(fullUserGuide);*/
         }
 
         private void toolStripComboBox3_Click(object sender, EventArgs e)
@@ -701,7 +806,13 @@ namespace WindowsFormsApplication1
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string about = "\n" +
+            string about = "\nABOUT\n\n" +
+            "This program is a custom tool designed to process base case *.raw files. It can identify changes between specific busses and is capable of " +
+            "generating a Microsoft Visio file that contains a Single Line Diagram reflecting any changes made between the two cases. The Microsoft Visio file is editable " +
+            "in Microsoft Visio 2010 for further modifications.\n" +
+            "All rights to this software belong to its developers and are protected by law under a group license. Permission has been granted to the AESO for use.\n";
+            MessageBox.Show(about, "About the Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                /*"\n" +
                 "This program is a customized software tool designed to process AESO base case files to indentify" +
                 "any changes in connections between specific busses and generate a visio file that will contain" +
                 "the single line diagram reflecting the changes between the two cases. The visio file will be editable" +
@@ -709,18 +820,24 @@ namespace WindowsFormsApplication1
 
                 "\n\nAll rights to this software belong to its developers and are protected by law under the group" +
                 "license with permission for AESO for use in their company.\n";
-            MessageBox.Show(about);
+            MessageBox.Show(about);*/
         }
 
         private void technicalSupportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string techReq = "\n" +
+            string techReq = "\nTECHNICAL SUPPORT\n\n" +
+            "For troubleshooting and/or other technical support on the use of this software, please consult your IT department. Any firewall, virus, spyware and other " +
+            "security issues that may arise as a result of the use of this program must be reviewed prior to installing this program.\n\n" +
+            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team at xxx.xxx@xxx.com";
+
+            MessageBox.Show(techReq, "Technical Support", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                /*"\n" +
            "For troubleshooting, and/or other technical support in relation to the use of this software " +
            "please consutl your IT department. Firewall, Virus, Spyware and other security issues that may" +
            "arise as a result of use of this program must be reviewed prior to installing this program." +
            "\n\nFor program malfunction, modification, improvements, and software upgrades please contact " +
            "the developer team @: xxx.xxx@xxx.com.\n";
-            MessageBox.Show(techReq);
+            MessageBox.Show(techReq);*/
 
         }
 
