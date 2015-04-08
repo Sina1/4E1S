@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
 
         }
 
-      
+     
         private static void ConvertFilesAndStore(StreamReader rawFile, bool firstRun)
         {
             string line;
@@ -176,7 +176,6 @@ namespace WindowsFormsApplication1
 
         }
         
-
         private static void BusNodeFunction(string[] rawBusInfo, bool firstRun, string fullLine)
         {
             bool inSystem = false;
@@ -328,7 +327,6 @@ namespace WindowsFormsApplication1
                 
             }
         }
-
 
         private static void GeneratorNodeFunction(string[] rawGenInfo, bool firstRun, string fullLine)
         {
