@@ -1,0 +1,307 @@
+<Master ID='50' NameU='bus' Name='bus' Prompt='' IconSize='1' AlignName='2' MatchByName='0' IconUpdate='1' PatternFlags='0' Hidden='0'>
+    <PageSheet LineStyle='0' FillStyle='0' TextStyle='0'>
+        <PageProps>
+            <PageWidth>8.26771653543307</PageWidth>
+            <PageHeight>11.69291338582677</PageHeight>
+            <ShdwOffsetX>0.1181102362204724</ShdwOffsetX>
+            <ShdwOffsetY>-0.1181102362204724</ShdwOffsetY>
+            <PageScale Unit='MM'>0.03937007874015748</PageScale>
+            <DrawingScale Unit='MM'>0.03937007874015748</DrawingScale>
+            <DrawingSizeType>0</DrawingSizeType>
+            <DrawingScaleType>0</DrawingScaleType>
+            <InhibitSnap>0</InhibitSnap>
+            <UIVisibility>0</UIVisibility>
+            <ShdwType>0</ShdwType>
+            <ShdwObliqueAngle>0</ShdwObliqueAngle>
+            <ShdwScaleFactor>1</ShdwScaleFactor>
+        </PageProps>
+    </PageSheet>
+    <Shapes>
+        <Shape ID='5' Type='Shape' LineStyle='3' FillStyle='3' TextStyle='3'>
+            <XForm>
+                <PinX>4.133858267716535</PinX>
+                <PinY>5.905511811023622</PinY>
+                <Width>1.181102362204725</Width>
+                <Height>11.41732283464567</Height>
+                <LocPinX F='Width*0.5'>0.5905511811023625</LocPinX>
+                <LocPinY F='Height*0.5'>5.708661417322835</LocPinY>
+                <Angle>0</Angle>
+                <FlipX>0</FlipX>
+                <FlipY>0</FlipY>
+                <ResizeMode>0</ResizeMode>
+            </XForm>
+            <Fill>
+                <FillForegnd>#000000</FillForegnd>
+                <FillBkgnd>#1e1e1e</FillBkgnd>
+                <FillPattern F='Inh'>1</FillPattern>
+                <ShdwForegnd F='Inh'>0</ShdwForegnd>
+                <ShdwBkgnd F='Inh'>1</ShdwBkgnd>
+                <ShdwPattern F='Inh'>0</ShdwPattern>
+                <FillForegndTrans F='Inh'>0</FillForegndTrans>
+                <FillBkgndTrans F='Inh'>0</FillBkgndTrans>
+                <ShdwForegndTrans F='Inh'>0</ShdwForegndTrans>
+                <ShdwBkgndTrans F='Inh'>0</ShdwBkgndTrans>
+                <ShapeShdwType F='Inh'>0</ShapeShdwType>
+                <ShapeShdwOffsetX F='Inh'>0</ShapeShdwOffsetX>
+                <ShapeShdwOffsetY F='Inh'>0</ShapeShdwOffsetY>
+                <ShapeShdwObliqueAngle F='Inh'>0</ShapeShdwObliqueAngle>
+                <ShapeShdwScaleFactor F='Inh'>1</ShapeShdwScaleFactor>
+            </Fill>
+            <Misc>
+                <NoObjHandles F='Inh'>0</NoObjHandles>
+                <NonPrinting F='Inh'>0</NonPrinting>
+                <NoCtlHandles F='Inh'>0</NoCtlHandles>
+                <NoAlignBox F='Inh'>0</NoAlignBox>
+                <UpdateAlignBox F='Inh'>0</UpdateAlignBox>
+                <HideText F='Inh'>0</HideText>
+                <DynFeedback F='Inh'>0</DynFeedback>
+                <GlueType F='Inh'>0</GlueType>
+                <WalkPreference F='Inh'>0</WalkPreference>
+                <BegTrigger F='No Formula'>0</BegTrigger>
+                <EndTrigger F='No Formula'>0</EndTrigger>
+                <ObjType F='Inh'>0</ObjType>
+                <Comment F='Inh'/>
+                <IsDropSource F='Inh'>0</IsDropSource>
+                <NoLiveDynamics F='Inh'>0</NoLiveDynamics>
+                <LocalizeMerge F='Inh'>0</LocalizeMerge>
+                <Calendar F='Inh'>0</Calendar>
+                <LangID F='Inh'>4105</LangID>
+                <ShapeKeywords F='Inh'/>
+                <DropOnPageScale F='Inh'>1</DropOnPageScale>
+            </Misc>
+            <Connection IX='0'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.89655172413793'>10.23622047244094</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='1'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.8448275862069'>9.645669291338582</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='2'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.74137931034483'>8.464566929133857</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='3'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.67241379310345'>7.677165354330708</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='4'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.60344827586207'>6.889763779527559</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='5'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.53448275862069'>6.102362204724409</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='6'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.46551724137931'>5.314960629921258</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='7'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.37931034482759'>4.330708661417323</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='8'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.31034482758621'>3.543307086614173</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='9'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.22413793103448'>2.559055118110237</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='10'>
+                <X F='Width*0'>0</X>
+                <Y F='Height*0.13793103448276'>1.574803149606298</Y>
+                <DirX>1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='11'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.13793103448276'>1.5748031496063</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='12'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.22413793103448'>2.559055118110236</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='13'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.31034482758621'>3.543307086614174</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='14'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.37931034482759'>4.330708661417324</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='15'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.46551724137931'>5.314960629921259</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='16'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.51724137931034'>5.905511811023621</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='17'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.56896551724138'>6.496062992125985</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='18'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.6551724137931'>7.480314960629921</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='19'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.72413793103448'>8.26771653543307</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='20'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.79310344827586'>9.055118110236222</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='21'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.86206896551724'>9.842519685039372</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Connection IX='22'>
+                <X F='Width*1'>1.181102362204725</X>
+                <Y F='Height*0.91379310344828'>10.43307086614173</Y>
+                <DirX>-1</DirX>
+                <DirY>0</DirY>
+                <Type>0</Type>
+                <AutoGen>0</AutoGen>
+                <Prompt F='No Formula'/>
+            </Connection>
+            <Geom IX='0'>
+                <NoFill>0</NoFill>
+                <NoLine>0</NoLine>
+                <NoShow>0</NoShow>
+                <NoSnap>0</NoSnap>
+                <MoveTo IX='1'>
+                    <X F='Width*0'>0</X>
+                    <Y F='Height*0'>0</Y>
+                </MoveTo>
+                <LineTo IX='2'>
+                    <X F='Width*1'>1.181102362204725</X>
+                    <Y F='Height*0'>0</Y>
+                </LineTo>
+                <LineTo IX='3'>
+                    <X F='Width*1'>1.181102362204725</X>
+                    <Y F='Height*1'>11.41732283464567</Y>
+                </LineTo>
+                <LineTo IX='4'>
+                    <X F='Width*0'>0</X>
+                    <Y F='Height*1'>11.41732283464567</Y>
+                </LineTo>
+                <LineTo IX='5'>
+                    <X F='Geometry1.X1'>0</X>
+                    <Y F='Geometry1.Y1'>0</Y>
+                </LineTo>
+            </Geom>
+        </Shape>
+    </Shapes>
+</Master>

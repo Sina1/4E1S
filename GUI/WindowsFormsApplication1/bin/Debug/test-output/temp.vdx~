@@ -1,0 +1,350 @@
+<VisioDocument xmlns='http://schemas.microsoft.com/visio/2003/core'>
+<Pages>
+<Page ID='1'>
+<PageSheet>
+<PageProps>
+<PageWidth>46.611111</PageWidth>
+<PageHeight>3.138889</PageHeight>
+</PageProps>
+</PageSheet>
+<Shapes><Shape ID='1' Type='Shape'>
+<XForm>
+<PinX>1.430556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+<Shape ID='2' Type='Shape'>
+<XForm>
+<PinX>10.180556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Para>
+<HorzAlign>1</HorzAlign>
+</Para>
+<Char>
+<Color>#000000</Color>
+<Size>0.444444</Size>
+</Char>
+<Text><pp IX='0'/><cp IX='0'/>500.00 kV
+</Text>
+<Text><pp IX='1'/><cp IX='0'/>141</Text>
+<Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+<Shape ID='3' Type='Shape'>
+<XForm>
+<PinX F='GUARD((BeginX+EndX)/2)'/>
+<PinY F='GUARD((BeginY+EndY)/2)'/>
+<Width F='GUARD(EndX-BeginX)'/>
+<Height F='GUARD(0.250000)'/>
+<Angle F='GUARD(0DA)'/>
+</XForm>
+<XForm1D>
+<BeginX F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>1.795392</BeginX>
+<BeginY F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>1.375000</BeginY>
+<EndX F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>3.220138</EndX>
+<EndY F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>1.375000</EndY>
+</XForm1D>
+<Protection>
+<LockHeight>1</LockHeight>
+<LockCalcWH>1</LockCalcWH>
+</Protection>
+<Misc>
+<NoAlignBox>1</NoAlignBox>
+<DynFeedback>2</DynFeedback>
+<GlueType>2</GlueType>
+<BegTrigger F='_XFTRIGGER(Sheet.1!EventXFMod)'/>
+<EndTrigger F='_XFTRIGGER(Sheet.2!EventXFMod)'/>
+<ObjType>2</ObjType>
+</Misc>
+<Layout>
+<ShapeRouteStyle>1</ShapeRouteStyle>
+<ConFixedCode>6</ConFixedCode>
+<ConLineRouteExt>2</ConLineRouteExt>
+<ShapeSplittable>1</ShapeSplittable>
+</Layout>
+<TextXForm>
+<TxtPinX F='SETATREF(Controls.TextPosition)'/>
+<TxtPinY F='SETATREF(Controls.TextPosition.Y)'/>
+<TxtWidth F='MAX(TEXTWIDTH(TheText),5*Char.Size)'/>
+<TxtHeight F='TEXTHEIGHT(TheText,TxtWidth)'/>
+</TextXForm>
+<Control NameU='TextPosition'>
+<X>4.013981</X>
+<Y>0.001736</Y>
+<XDyn F='Controls.TextPosition'/>
+<YDyn F='Controls.TextPosition.Y'/>
+<XCon F='IF(OR(STRSAME(SHAPETEXT(TheText),&quot;&quot;),HideText),5,0)'>5</XCon>
+<YCon>0</YCon>
+</Control>
+<Line>
+<LineWeight>0.041667</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0.000000' /><Y F='Height*0.500000' /></MoveTo>
+<NURBSTo><X F='Width*5.631613'/><Y F='Height*0.500000'/><A>0</A><B>1</B><C>0</C><D>1</D><E F='NURBS(1, 3, 0, 0, 1.000000, 0.500000, 0, 1, 4.635680, 0.500000, 0, 1, 5.631613, 0.500000, 0, 1)'/></NURBSTo>
+</Geom>
+</Shape>
+<Shape ID='4' Type='Shape'>
+<XForm>
+<PinX F='GUARD((BeginX+EndX)/2)'/>
+<PinY F='GUARD((BeginY+EndY)/2)'/>
+<Width F='GUARD(EndX-BeginX)'/>
+<Height F='GUARD(0.250000)'/>
+<Angle F='GUARD(0DA)'/>
+</XForm>
+<XForm1D>
+<BeginX F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>1.778966</BeginX>
+<BeginY F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>1.208333</BeginY>
+<EndX F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>3.183865</EndX>
+<EndY F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>1.208333</EndY>
+</XForm1D>
+<Protection>
+<LockHeight>1</LockHeight>
+<LockCalcWH>1</LockCalcWH>
+</Protection>
+<Misc>
+<NoAlignBox>1</NoAlignBox>
+<DynFeedback>2</DynFeedback>
+<GlueType>2</GlueType>
+<BegTrigger F='_XFTRIGGER(Sheet.1!EventXFMod)'/>
+<EndTrigger F='_XFTRIGGER(Sheet.2!EventXFMod)'/>
+<ObjType>2</ObjType>
+</Misc>
+<Layout>
+<ShapeRouteStyle>1</ShapeRouteStyle>
+<ConFixedCode>6</ConFixedCode>
+<ConLineRouteExt>2</ConLineRouteExt>
+<ShapeSplittable>1</ShapeSplittable>
+</Layout>
+<TextXForm>
+<TxtPinX F='SETATREF(Controls.TextPosition)'/>
+<TxtPinY F='SETATREF(Controls.TextPosition.Y)'/>
+<TxtWidth F='MAX(TEXTWIDTH(TheText),5*Char.Size)'/>
+<TxtHeight F='TEXTHEIGHT(TheText,TxtWidth)'/>
+</TextXForm>
+<Control NameU='TextPosition'>
+<X>4.025413</X>
+<Y>0.001736</Y>
+<XDyn F='Controls.TextPosition'/>
+<YDyn F='Controls.TextPosition.Y'/>
+<XCon F='IF(OR(STRSAME(SHAPETEXT(TheText),&quot;&quot;),HideText),5,0)'>5</XCon>
+<YCon>0</YCon>
+</Control>
+<Line>
+<LineWeight>0.041667</LineWeight>
+<LineColor>#FF0000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0.000000' /><Y F='Height*0.500000' /></MoveTo>
+<NURBSTo><X F='Width*5.731503'/><Y F='Height*0.500000'/><A>0</A><B>1</B><C>0</C><D>1</D><E F='NURBS(1, 3, 0, 0, 1.000000, 0.500000, 0, 1, 4.730215, 0.500000, 0, 1, 5.731503, 0.500000, 0, 1)'/></NURBSTo>
+</Geom>
+</Shape>
+<Shape ID='5' Type='Shape'>
+<XForm>
+<PinX>18.930556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Para>
+<HorzAlign>1</HorzAlign>
+</Para>
+<Char>
+<Color>#000000</Color>
+<Size>0.444444</Size>
+</Char>
+<Text><pp IX='0'/><cp IX='0'/>500.00 kV
+</Text><Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+<Shape ID='6' Type='Shape'>
+<XForm>
+<PinX F='GUARD((BeginX+EndX)/2)'/>
+<PinY F='GUARD((BeginY+EndY)/2)'/>
+<Width F='GUARD(EndX-BeginX)'/>
+<Height F='GUARD(0.250000)'/>
+<Angle F='GUARD(0DA)'/>
+</XForm>
+<XForm1D>
+<BeginX F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>10.556532</BeginX>
+<BeginY F='_WALKGLUE(BegTrigger,EndTrigger,WalkPreference)'>1.305556</BeginY>
+<EndX F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>11.990911</EndX>
+<EndY F='_WALKGLUE(EndTrigger,BegTrigger,WalkPreference)'>1.305556</EndY>
+</XForm1D>
+<Protection>
+<LockHeight>1</LockHeight>
+<LockCalcWH>1</LockCalcWH>
+</Protection>
+<Misc>
+<NoAlignBox>1</NoAlignBox>
+<DynFeedback>2</DynFeedback>
+<GlueType>2</GlueType>
+<BegTrigger F='_XFTRIGGER(Sheet.2!EventXFMod)'/>
+<EndTrigger F='_XFTRIGGER(Sheet.5!EventXFMod)'/>
+<ObjType>2</ObjType>
+</Misc>
+<Layout>
+<ShapeRouteStyle>1</ShapeRouteStyle>
+<ConFixedCode>6</ConFixedCode>
+<ConLineRouteExt>2</ConLineRouteExt>
+<ShapeSplittable>1</ShapeSplittable>
+</Layout>
+<TextXForm>
+<TxtPinX F='SETATREF(Controls.TextPosition)'/>
+<TxtPinY F='SETATREF(Controls.TextPosition.Y)'/>
+<TxtWidth F='MAX(TEXTWIDTH(TheText),5*Char.Size)'/>
+<TxtHeight F='TEXTHEIGHT(TheText,TxtWidth)'/>
+</TextXForm>
+<Control NameU='TextPosition'>
+<X>3.995018</X>
+<Y>0.001736</Y>
+<XDyn F='Controls.TextPosition'/>
+<YDyn F='Controls.TextPosition.Y'/>
+<XCon F='IF(OR(STRSAME(SHAPETEXT(TheText),&quot;&quot;),HideText),5,0)'>5</XCon>
+<YCon>0</YCon>
+</Control>
+<Line>
+<LineWeight>0.041667</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0.000000' /><Y F='Height*0.500000' /></MoveTo>
+<NURBSTo><X F='Width*5.573518'/><Y F='Height*0.500000'/><A>0</A><B>1</B><C>0</C><D>1</D><E F='NURBS(1, 3, 0, 0, 1.000000, 0.500000, 0, 1, 4.569336, 0.500000, 0, 1, 5.573518, 0.500000, 0, 1)'/></NURBSTo>
+</Geom>
+</Shape>
+<Shape ID='7' Type='Shape'>
+<XForm>
+<PinX>27.680556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Para>
+<HorzAlign>1</HorzAlign>
+</Para>
+<Char>
+<Color>#000000</Color>
+<Size>0.444444</Size>
+</Char>
+<Text><pp IX='0'/><cp IX='0'/>230.00 kV
+</Text><Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+<Shape ID='8' Type='Shape'>
+<XForm>
+<PinX>36.430556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Para>
+<HorzAlign>1</HorzAlign>
+</Para>
+<Char>
+<Color>#000000</Color>
+<Size>0.444444</Size>
+</Char>
+<Text><pp IX='0'/><cp IX='0'/>MINE kV
+</Text><Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+<Shape ID='9' Type='Shape'>
+<XForm>
+<PinX>45.180556</PinX>
+<PinY>1.305556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#000000</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+</Shapes>
+</Page>
+</Pages>
+</VisioDocument>
