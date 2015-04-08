@@ -14,6 +14,7 @@ nodesep  = '0.5'
 ranksep  = '1'
 margin   = '.1'
 rankMax = 4
+
 def main():
     #define busses, . means black, + means green, - means red
     #busList = [
@@ -144,17 +145,17 @@ def make_graphviz_string(busList,connectionList):
 def make_nodes(name, description,status,type):
     nodeString = "\t\t" + name + '[ '
     nodeString = nodeString + 'xlabel="' + name + '" fontsize=' + fontsize + ' label="" '
-    if status == '+':
-        nodeString = nodeString + 'color ="red"];\n'
-    elif status == '-':
-        nodeString = nodeString + 'color ="green"];\n'
-    else:
-        nodeString = nodeString + '];\n'
+    #if status == '+':
+    #    nodeString = nodeString + 'color =""];\n'
+    #elif status == '-':
+    nodeString = nodeString + 'color ="transparent"];\n'
+    #else:
+    #nodeString = nodeString + '];\n'
 
     return nodeString
 
 def make_connection(node1, node2, status):
-    if status == '.-':
+    if status == '-':
         return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="green"] ;\n'
     elif status == '+':
         return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="red"] ;\n'

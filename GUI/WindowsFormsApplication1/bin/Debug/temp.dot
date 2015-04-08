@@ -2,9 +2,11 @@ digraph G {
             graph [splines=ortho, nodesep=0.5 ranksep=1 margin=.1];
             edge [arrowhead=none,arrowtail=none ];
 
-            forcelabels=true;		{ rank=same 151 152 ;}
-		151[ xlabel="151" fontsize=16 label="" ];
-		152[ xlabel="152" fontsize=16 label="" ];
-		151 -> 152 [penwidth=1.5 shape=none ] ;
+            forcelabels=true;		{ rank=same 153 154 155 3006 ;}
+		153[ xlabel="153" fontsize=16 label="" color ="transparent"];
+		154[ xlabel="154" fontsize=16 label="" color ="transparent"];
+		155[ xlabel="155" fontsize=16 label="" color ="transparent"];
+		3006[ xlabel="3006" fontsize=16 label="" color ="transparent"];
+		153 -> 154 [penwidth=1.5 shape=none ] ;
 
 }
