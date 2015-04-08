@@ -61,6 +61,11 @@ namespace WindowsFormsApplication1
 
         public static void StartCompareTool(string compareFilePath1, string compareFilePath2, string[] busSet, string savePath, string saveFolder, bool produceVisio, bool produceIdv)
         {
+            //Just in case
+            stringBusList.Clear();
+            nodeList.Clear();
+            connectionList.Clear();
+            idvList.Clear();
 
             stringBusList.AddRange(busSet);
             StreamReader rawFileFirst = new StreamReader(compareFilePath1);
@@ -91,10 +96,11 @@ namespace WindowsFormsApplication1
             stringBusList.Clear();
             nodeList.Clear();
             connectionList.Clear();
+            idvList.Clear();
 
         }
 
-      
+     
         private static void ConvertFilesAndStore(StreamReader rawFile, bool firstRun)
         {
             string line;
@@ -170,11 +176,15 @@ namespace WindowsFormsApplication1
   
 
         }
+<<<<<<< HEAD
 
         private static double d(string inVar)
         {
             return double.Parse(inVar, CultureInfo.InvariantCulture);
         }
+=======
+        
+>>>>>>> fb191be999f6300f542af6bf0bda4f23ac3ff5fc
         private static void BusNodeFunction(string[] rawBusInfo, bool firstRun, string fullLine)
         {
             bool inSystem = false;
@@ -219,7 +229,8 @@ namespace WindowsFormsApplication1
                 var busInformation = new Dictionary<string, string>();
                 busInformation.Add("type", "bus");
                 busInformation.Add("name", rawBusInfo[0]);
-                busInformation.Add("description", rawBusInfo[2] + " kV");
+
+                busInformation.Add("description ", rawBusInfo[2].Substring(0, rawBusInfo[2].IndexOf(".") + 3) + " kV");
                 busInformation.Add("status", status);
                 busInformation.Add("codeFrom", rawBusInfo[3]);
 
@@ -325,7 +336,6 @@ namespace WindowsFormsApplication1
                 
             }
         }
-
 
         private static void GeneratorNodeFunction(string[] rawGenInfo, bool firstRun, string fullLine)
         {

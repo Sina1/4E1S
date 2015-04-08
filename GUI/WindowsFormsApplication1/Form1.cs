@@ -605,13 +605,13 @@ namespace WindowsFormsApplication1
             "Step 1:\nSelect an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n" +
             "Step 2:\nSelect a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n" +
             "Step 3:\nDetermine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the file path to the desired save location.\n" +
-            "Step 4:\nEnter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n" +
+            "Step 4:\nEnter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are invalid.\n" +
             "Step 5:\nCheck the “Visio File” box or the “Idv File” box if you wish to have only one of files produced.\n" +
                       "Check both the “Visio File” box and the “Idv File” box if you wish to have both files produced.\n" +
             "Step 6:\nClick \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n" +
             "Step 7:\nYou can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n" +
             "Step 8:\nA pop-up window will appear. It prompts the user to enter the busses required for comparison.\n" +
-                      "You can “Double-Click” on the bus you wish to remove from the list directly below.\n" +
+                      "You can “Double-Click” on the bus you wish to remove from the list directly below.\n Note: Only numbers can be entered into the bus list\n" +
             "Step 9:\nClick “OK” to continue. The program will output a Visio file and/or an Idv file based on your selection. Click “Cancel” if you wish to return to the previous screen.\n\n";
              MessageBox.Show(howToUseTheProgram, "How to Use the Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
             /*
@@ -684,39 +684,39 @@ namespace WindowsFormsApplication1
         {
           
             String fullUserGuide = "HOW TO RUN THE PROGRAM\n\n" +
-            "Step 1: 	Select an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n"+
-            "Step 2: 	Select a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n"+
-            "Step 3:	Determine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the file path to the desired save location.\n"+
-            "Step 4:	Enter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are forbidden.\n"+
-            "Step 5:	Check the “Visio File” box or the “Idv File” box if you wish to have only one of files produced.\n"+ 
-                        "\tCheck both the “Visio File” box and the “Idv File” box if you wish to have both files produced.\n"+
-            "Step 6: 	Click \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n" +
-            "Step 7: 	You can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n" +
-            "Step 8: 	A pop-up window will appear. It prompts the user to enter the busses required for comparison.\n"+ 
-                        "\tYou can “Double-Click” on the bus you wish to remove from the list directly below.\n" +
-            "Step 9: 	Click “OK” to continue. The program will output a Visio file and/or an Idv file based on your selection. Click “Cancel” if you wish to return to the previous screen.\n\n" +
+            "Step 1:\nSelect an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n" +
+            "Step 2:\nSelect a new base *.raw file by clicking on the \"New Case\" button or by typing the filepath to its location.\n" +
+            "Step 3:\nDetermine a location for storing the Single Line Diagram (SLD) by clicking on the \"Select\" button or by typing the file path to the desired save location.\n" +
+            "Step 4:\nEnter the name of the folder you wish to save your Visio or .Idv file. The name must be alpha-numeric. Characters \\ ? / ^ % > < | * are invalid.\n" +
+            "Step 5:\nCheck the “Visio File” box or the “Idv File” box if you wish to have only one of files produced.\n" +
+                      "Check both the “Visio File” box and the “Idv File” box if you wish to have both files produced.\n" +
+            "Step 6:\nClick \"OK\" to run the program. If any of fields are filled in incorrectly or left blank, an error message will be displayed.\n" +
+            "Step 7:\nYou can close and exit the program at any time by clicking on the \"Cancel\" button or by pressing the ESC key.\n" +
+            "Step 8:\nA pop-up window will appear. It prompts the user to enter the busses required for comparison.\n" +
+                      "You can “Double-Click” on the bus you wish to remove from the list directly below.\n Note: Only numbers can be entered into the bus list\n" +
+            "Step 9:\nClick “OK” to continue. The program will output a Visio file and/or an Idv file based on your selection. Click “Cancel” if you wish to return to the previous screen.\n\n" +
 
 
 
             "MENU DESCRIPTION\n\n"+
-            "HELP:\n"+"The \"Help\" drop-down menu contains information on how to use the program, hardware and software requirements, a general description of the program, "+ 
+            "HELP\n"+"The \"Help\" drop-down menu contains information on how to use the program, hardware and software requirements, a general description of the program, "+ 
             "and contact information for technical support or troubleshooting.\n"+ 
-            "\nOPTIONS:\nProvides the user with the option to open the entire User Guide in a separate window.\n\n"+ 	
+            "\nOPTIONS\nProvides the user with the option to open the entire User Guide in a separate window.\n\n"+ 	
 
             "PLATFORM REQUIREMENTS\n"+
             "Hardware:\t Window PC, 4GB RAM, 2 Core CPU\n"+
-            "Software:\t Window OS 7 or higher, Visio 2010, Python 3.xx installed.\n"+
+            "Software:\t Window OS 7 or higher, Visio 2010, Python 2.7 installed.\n"+
 
             "\nABOUT\n"+
             "This program is a custom tool designed to process base case *.raw files. It can identify changes between specific busses and is capable of "+ 
             "generating a Microsoft Visio file that contains a Single Line Diagram reflecting any changes made between the two cases. The Microsoft Visio file is editable "+ 
             "in Microsoft Visio 2010 for further modifications.\n"+
-            "All rights to this software belong to its developers and are protected by law under a group license. Permission has been granted to the AESO for use.\n"+ 
+            "All rights to this software belong to its developers and are protected by law under a group license.\n"+ 
 
             "\nTECHNICAL SUPPORT\n"+
             "For troubleshooting and/or other technical support on the use of this software, please consult your IT department. Any firewall, virus, spyware and other "+ 
             "security issues that may arise as a result of the use of this program must be reviewed prior to installing this program.\n"+
-            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team at xxx.xxx@xxx.com";
+            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team";
             MessageBox.Show(fullUserGuide, "User Guide", MessageBoxButtons.OK, MessageBoxIcon.Information);         
            /* String fullUserGuide = "HOW TO RUN THE PROGRAM\n\n" +
             "Step 1: 	Select an old base case *.raw file by clicking on the \"Base Case\" button or by typing the filepath to its location.\n\n"+
@@ -810,7 +810,7 @@ namespace WindowsFormsApplication1
             "This program is a custom tool designed to process base case *.raw files. It can identify changes between specific busses and is capable of " +
             "generating a Microsoft Visio file that contains a Single Line Diagram reflecting any changes made between the two cases. The Microsoft Visio file is editable " +
             "in Microsoft Visio 2010 for further modifications.\n" +
-            "All rights to this software belong to its developers and are protected by law under a group license. Permission has been granted to the AESO for use.\n";
+            "All rights to this software belong to its developers and are protected by law under a group license. \n";
             MessageBox.Show(about, "About the Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 /*"\n" +
                 "This program is a customized software tool designed to process AESO base case files to indentify" +
@@ -828,7 +828,7 @@ namespace WindowsFormsApplication1
             string techReq = "\nTECHNICAL SUPPORT\n\n" +
             "For troubleshooting and/or other technical support on the use of this software, please consult your IT department. Any firewall, virus, spyware and other " +
             "security issues that may arise as a result of the use of this program must be reviewed prior to installing this program.\n\n" +
-            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team at xxx.xxx@xxx.com";
+            "For any program malfunction(s), modification(s), improvement(s), and software upgrade(s), please contact the developer team";
 
             MessageBox.Show(techReq, "Technical Support", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 /*"\n" +
