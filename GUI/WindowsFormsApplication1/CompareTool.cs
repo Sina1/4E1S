@@ -60,6 +60,11 @@ namespace WindowsFormsApplication1
 
         public static void StartCompareTool(string compareFilePath1, string compareFilePath2, string[] busSet, string savePath, string saveFolder, bool produceVisio, bool produceIdv)
         {
+            //Just in case
+            stringBusList.Clear();
+            nodeList.Clear();
+            connectionList.Clear();
+            idvList.Clear();
 
             stringBusList.AddRange(busSet);
             StreamReader rawFileFirst = new StreamReader(compareFilePath1);
@@ -90,6 +95,7 @@ namespace WindowsFormsApplication1
             stringBusList.Clear();
             nodeList.Clear();
             connectionList.Clear();
+            idvList.Clear();
 
         }
 
@@ -215,7 +221,8 @@ namespace WindowsFormsApplication1
                 var busInformation = new Dictionary<string, string>();
                 busInformation.Add("type", "bus");
                 busInformation.Add("name", rawBusInfo[0]);
-                busInformation.Add("description", rawBusInfo[2] + " kV");
+
+                busInformation.Add("description ", rawBusInfo[2].Substring(0, rawBusInfo[2].IndexOf(".") + 3) + " kV");
                 busInformation.Add("status", status);
                 busInformation.Add("codeFrom", rawBusInfo[3]);
 
