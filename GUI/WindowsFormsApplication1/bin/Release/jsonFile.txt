@@ -1,0 +1,1 @@
+{ "filepath":"C:/Users/Roshaan/Desktop/test" , "busList": [{"type":"bus","name":"151","description":"500.00 kV","status":".","codeFrom":"1","reason":"norm"}], "connectionList": []}

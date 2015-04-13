@@ -1,0 +1,43 @@
+<VisioDocument xmlns='http://schemas.microsoft.com/visio/2003/core'>
+<Pages>
+<Page ID='1'>
+<PageSheet>
+<PageProps>
+<PageWidth>1.402778</PageWidth>
+<PageHeight>1.055556</PageHeight>
+</PageProps>
+</PageSheet>
+<Shapes><Shape ID='1' Type='Shape'>
+<XForm>
+<PinX>0.877778</PinX>
+<PinY>0.405556</PinY>
+<Width>0.750000</Width>
+<Height>0.500000</Height>
+</XForm>
+<Misc>
+<ObjType>1</ObjType>
+</Misc>
+<Para>
+<HorzAlign>1</HorzAlign>
+</Para>
+<Char>
+<Color>#000000</Color>
+<Size>0.222222</Size>
+</Char>
+<Text><pp IX='0'/><cp IX='0'/>151
+</Text><Line>
+<LineWeight>0.013889</LineWeight>
+<LineColor>#FFFFFE</LineColor>
+<LinePattern>1</LinePattern>
+</Line>
+<Geom>
+<NoFill>1</NoFill>
+<MoveTo><X F='Width*0' /><Y F='Height*0.5' /></MoveTo>
+<EllipticalArcTo><X F='Width*1' /><Y F='Height*0.5' /><A F='Width*0.5' /><B F='Height*1' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+<EllipticalArcTo><X F='Geometry1.X1' /><Y F='Geometry1.Y1' /><A F='Width*0.5' /><B F='Height*0' /><C>0</C><D F='Width/Height*1' /></EllipticalArcTo>
+</Geom>
+</Shape>
+</Shapes>
+</Page>
+</Pages>
+</VisioDocument>

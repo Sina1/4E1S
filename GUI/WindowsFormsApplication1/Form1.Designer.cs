@@ -71,7 +71,6 @@
             this.originalMap.Name = "originalMap";
             this.originalMap.Size = new System.Drawing.Size(287, 20);
             this.originalMap.TabIndex = 3;
-            this.originalMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampleTest1.raw";
             this.originalMap.TextChanged += new System.EventHandler(this.originalMap_TextChanged);
             // 
             // button2
@@ -93,7 +92,6 @@
             this.newMap.Name = "newMap";
             this.newMap.Size = new System.Drawing.Size(287, 20);
             this.newMap.TabIndex = 3;
-            this.newMap.Text = "C:\\Users\\Roshaan\\Desktop\\sampleTest1.raw";
             this.newMap.TextChanged += new System.EventHandler(this.newMap_TextChanged);
             // 
             // button3
@@ -214,7 +212,6 @@
             this.saveName.Name = "saveName";
             this.saveName.Size = new System.Drawing.Size(287, 20);
             this.saveName.TabIndex = 10;
-            this.saveName.Text = "test1";
             this.saveName.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // saveLocationFolder
@@ -225,7 +222,6 @@
             this.saveLocationFolder.Name = "saveLocationFolder";
             this.saveLocationFolder.Size = new System.Drawing.Size(287, 20);
             this.saveLocationFolder.TabIndex = 8;
-            this.saveLocationFolder.Text = "C:\\Users\\Roshaan\\Desktop\\";
             this.saveLocationFolder.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button4

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Web;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -65,32 +66,35 @@ namespace WindowsFormsApplication1
             // write text to json file
             System.IO.File.WriteAllText("jsonFile.txt", combinedJson);
 
-            Process.Start(pythonPath, "bruteForceDrawTool.py");
+            // check if python exists
+            Process pythonVersionProcess = Process.Start(pythonPath , "--version");
+            pythonVersionProcess.WaitForExit();
+            if (pythonVersionProcess.ExitCode != 0) {
+                //MessageBox.Show("Python27 not found in c:\\Python27. Exiting.");
+                MessageBox.Show("Python27 not found in c:\\Python27. Exiting.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.Application.Exit();
+            }
+            // check if file exists
+            // TODO soft code the .vdx
+            if (File.Exists(destFilePath + ".vdx"))
+            {
+                DialogResult dialogResult = MessageBox.Show("File: " + destFilePath + " already exists. Overwrite?", "Warning", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            
+
+            Process bruteForceDrawTool = Process.Start(pythonPath , "bruteForceDrawTool.py");
+            //Process process = Process.Start("cmd");  // Process.GetProcesses(); if you dont have.
+            //string fullPath = process.Modules[0].FileName;
+            //Console.Write(fullPath);
+            bruteForceDrawTool.WaitForExit();
 
 
 
-            //String filename = ""; //absolute path to visio file
-            //FakeGraphViz();
-
-
-
-            // copy fake files
-            //Process.Start("copy", "Drawing1.vsd"  + filepath + "\\" + filename);
-            //try
-            //{
-            //    File.Copy(Path.Combine(currentDirectory, "Drawing1.vsd"), Path.Combine(filepath, filename + ".vsd"));
-            // }
-            //catch (System.IO.IOException e)
-            //{
-            //   // TODO: handle this properly
-            //  MessageBox.Show("File already exists. Exiting\n" + filepath + "\\" + filename+ ".vsd", "Complete", MessageBoxButtons.OK);
-            // Application.Exit();
-            //}
-
-            //Process.Start("C:/python27/python.exe -c 'print(\"python\")\ninput(\"Press a key\")' "); // make sure that 
-            //Process.Start(visioPath + " " + filename);
-
-
+            
         }
 
         static int FakeGraphViz()

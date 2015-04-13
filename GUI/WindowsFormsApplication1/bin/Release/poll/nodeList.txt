@@ -1,0 +1,1 @@
+[{"status": ".", "name": "151", "codeFrom": "1", "reason": "norm", "type": "bus", "description": "500.00 kV"}]

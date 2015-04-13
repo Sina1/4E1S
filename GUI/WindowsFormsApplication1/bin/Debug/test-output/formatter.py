@@ -5,7 +5,7 @@ import json
 import xml
 from xml.dom.minidom import parseString
 
-os.system(' dot -Tvdx /media/sf_test-output/poll/out.txt > /media/sf_test-output/temp.vdx')
+#os.system(' dot -Tvdx /media/sf_test-output/poll/out.txt > /media/sf_test-output/temp.vdx')
 
 
 class Formatter():
@@ -15,7 +15,7 @@ class Formatter():
 	fontSize =  0.5/ 6	# for example, font size of 18 is 0.5/18
 	
 	#other 
-	__MASTER_PATH = "/media/sf_test-output/sldSymbols/masters/new/"
+	__MASTER_PATH = "sldSymbols/masters/new/"
 	filename = ""
 	inputVisioData = ""
 	nodeInfoRaw = ""
@@ -60,7 +60,7 @@ class Formatter():
 			
 			
 	# main function for this class
-	def start(self):
+	def start(self, outFile):
 		# load nodeTypeDict
 		try:
 			with open('poll/nodeInfo.txt','r') as infile:
@@ -153,7 +153,7 @@ class Formatter():
 			
 			
 		# writex xml to file
-		fp = open('out.vdx','w+')
+		fp = open(outFile,'w+')
 		fp.write(mainXMLobj.DOMTree.toxml())
 		fp.close()
 		return 1
@@ -341,7 +341,7 @@ class XMLmanip():
 #if F.start() == -1:
 #	print "formatting failed"
 
-f = Formatter('/media/sf_test-output/temp.vdx')
+#f = Formatter('/media/sf_test-output/temp.vdx')
 
 
 
@@ -350,7 +350,7 @@ f = Formatter('/media/sf_test-output/temp.vdx')
 
 
 
-f.start()
+#f.start()
 
 
 
