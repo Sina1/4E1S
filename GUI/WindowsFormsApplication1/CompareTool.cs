@@ -176,15 +176,15 @@ namespace WindowsFormsApplication1
   
 
         }
-<<<<<<< HEAD
+
 
         private static double d(string inVar)
         {
             return double.Parse(inVar, CultureInfo.InvariantCulture);
         }
-=======
+
         
->>>>>>> fb191be999f6300f542af6bf0bda4f23ac3ff5fc
+
         private static void BusNodeFunction(string[] rawBusInfo, bool firstRun, string fullLine)
         {
             bool inSystem = false;
@@ -230,7 +230,7 @@ namespace WindowsFormsApplication1
                 busInformation.Add("type", "bus");
                 busInformation.Add("name", rawBusInfo[0]);
 
-                busInformation.Add("description ", rawBusInfo[2].Substring(0, rawBusInfo[2].IndexOf(".") + 3) + " kV");
+                busInformation.Add("description", rawBusInfo[2].Substring(0, rawBusInfo[2].IndexOf(".") + 3) + " kV");
                 busInformation.Add("status", status);
                 busInformation.Add("codeFrom", rawBusInfo[3]);
 

@@ -3,9 +3,10 @@ import json
 
 config = {
             'graphvizPath' : "F:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe",
+	    #'graphvizPath' : "C:\\graphviz-ms\\release\\bin\\dot.exe",
             'destPath'     : "",
             'gveditPath'   : "F:\Program Files (x86)\Graphviz2.38\gvedit.exe",
-            'dotCommand'   : "dot -Tpng " 
+            'dotCommand'   : "dot -Tvdx " 
 
         }
 penwidth = '1.5'
@@ -94,8 +95,8 @@ def main():
     text_file.close()
     
     command = '"' + config['graphvizPath'] + '" ' + config['dotCommand'] \
-              + "temp.dot > " + config['destPath'] + ".png" 
-    
+              + "temp.dot > " + config['destPath'] + ".vdx" 
+              #+ "temp.dot > " + config['destPath'] + ".png" 
     print (gString)
     print (command)
     returnCode = os.system(command)
@@ -155,12 +156,13 @@ def make_nodes(name, description,status,type):
     return nodeString
 
 def make_connection(node1, node2, status):
+    print (status)
     if status == '-':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="green"] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="#33CC33"] ;\n'
     elif status == '+':
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="red"] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="#FF0000"] ;\n'
     else:
-        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none ] ;\n'
+        return "\t\t" + node1 + ' -> ' + node2 + ' [penwidth=' + penwidth + ' shape=none color ="black"] ;\n'
     
 def make_rank(busList):
     i = 0
