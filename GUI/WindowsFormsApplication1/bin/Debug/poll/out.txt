@@ -2,10 +2,14 @@ digraph G {
             graph [splines=ortho, nodesep=0.5 ranksep=1 margin=.1];
             edge [arrowhead=none,arrowtail=none ];
 
-            forcelabels=true;		{ rank=same 151 152 ;}
-		151[ xlabel="151" fontsize=16 label="" color ="transparent"];
-		152[ xlabel="152" fontsize=16 label="" color ="transparent"];
-		151 -> 152 [penwidth=1.5 shape=none color ="#33CC33"] ;
-		151 -> 152 [penwidth=1.5 shape=none color ="#33CC33"] ;
+            forcelabels=true;		{ rank=same 128 772 772 772 ;}
+{ rank=same 2000 ;}
+		128[ xlabel="128" fontsize=16 label="" color ="transparent"];
+		772[ xlabel="772" fontsize=16 label="" color ="transparent"];
+		772[ xlabel="772" fontsize=16 label="" color ="transparent"];
+		772[ xlabel="772" fontsize=16 label="" color ="transparent"];
+		2000[ xlabel="2000" fontsize=16 label="" color ="transparent"];
+		128 -> 772 [penwidth=1.5 shape=none color ="black"] ;
+		128 -> 2000 [penwidth=1.5 shape=none color ="#FF0000"] ;
 
 }
