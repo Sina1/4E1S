@@ -177,16 +177,30 @@ class Formatter():
                                 # if its 1D shape
                                 master == None
 
-                        # if this is a 1D shape, then it has no master. count the shapes in this shape and not  its master's shape        
+                        # if this is a 1D shape, then it has no master. count the shapes in this shape and not its master's shape        
                         if master == None:
                                 masterShape = shape
+                                IDcount = mainXMLobj.getShapeIDcount(masterShape)
+                                shapeIDcounter = shapeIDcounter + IDcount
+                                #print shapeIDcounter
+                                shape.setAttribute("ID", str(shapeIDcounter))
+                                continue
+                        # check if master has shapes or shape element
+
+                        # TODO make this more general
+                        masterShapes = master.getElementsByTagName("Shapes")
+                        if masterShapes == []:
+                                masterShapeList = masterShape.getElementsByTagName("Shape")
                         else:
-                                masterShape = mainXMLobj.getElementsByTagName("Shape")
-                        IDcount = mainXMLobj.getShapeIDcount(masterShape)
+                                masterShapeList = masterShapes[0].getElementsByTagName("Shape")
+                        IDcount = 0
+                        for item in masterShapeList :
+                                IDcount = IDcount +  mainXMLobj.getShapeIDcount(masterShape)
+
                         shapeIDcounter = shapeIDcounter + IDcount
-                        #print shapeIDcounter
+                        print shapeIDcounter
                         shape.setAttribute("ID", str(shapeIDcounter))
-                
+                        
                         
                 # write xml to file
                 fp = open(outFile,'w')
