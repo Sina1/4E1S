@@ -184,7 +184,7 @@ class Formatter():
                                 masterShape = mainXMLobj.getElementsByTagName("Shape")
                         IDcount = mainXMLobj.getShapeIDcount(masterShape)
                         shapeIDcounter = shapeIDcounter + IDcount
-                        print shapeIDcounter
+                        #print shapeIDcounter
                         shape.setAttribute("ID", str(shapeIDcounter))
                 
                         
@@ -380,14 +380,15 @@ class XMLmanip():
                 shapesList = shape.getElementsByTagName('Shapes')
                 if shapesList == []:
                         return ID
-                for Shapes in shapesList:
-                        shapeList = Shapes.getElementsByTagName('Shape')
-                        if shapeList == []:
-                                return ID
-                        for shape in shapeList:
-                                ID = ID + self.getShapeIDcount(shape)
-
+                Shapes = shapesList[0]
+                shapeList = Shapes.getElementsByTagName('Shape')
+                if shapeList == []:
+                        return ID
+                for shape in shapeList:
+                        ID = ID + self.getShapeIDcount(shape)
+                print ID
                 return ID
+        
 
         def removeTypeAttrFromShape(self,shape):
                 shape.removeAttribute("Type")
