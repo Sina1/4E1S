@@ -99,6 +99,7 @@ namespace WindowsFormsApplication1
                                             item = flileType.Substring(0, lastLocation);
                                             originalMap.Text = flileType;
                                             this.baseCase = flileType;
+                                        
                                             //break;
                                             //MessageBox.Show("The New Case file exists at:\n\n" + item + filenameStr);
                                             break;

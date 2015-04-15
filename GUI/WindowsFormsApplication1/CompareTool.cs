@@ -80,9 +80,9 @@ namespace WindowsFormsApplication1
 
             if (produceVisio)
             {
-                string visFileName = "VisioFile_" + busSet.First() + "-" + busSet.Last();
+                string saveFullPathName = Path.Combine( saveFullPath ,"VisioFile_" + busSet.First() + "-" + busSet.Last());
                 //Call to get the function Roshaan Add here
-                DrawTool dTool = new DrawTool(saveFullPath, saveFullPath); 
+                DrawTool dTool = new DrawTool(saveFullPath, saveFullPathName); 
                 dTool.drawGraph(nodeList, connectionList);
             }
 
