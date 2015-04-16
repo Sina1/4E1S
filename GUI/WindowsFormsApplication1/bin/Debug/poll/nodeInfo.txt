@@ -1,1 +1,1 @@
-{"128": "bus", "2000": "bus", "772": "generator"}
+{"151": "bus", "201": "bus", "153": "bus", "152": "bus", "154": "bus", "305": "transformer", "3005": "bus", "252": "transformer", "202": "bus", "3003": "bus", "102": "generator", "253": "transformer", "101": "generator"}

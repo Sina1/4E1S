@@ -7,7 +7,18 @@ from xml.dom.minidom import parseString
 
 #os.system(' dot -Tvdx /media/sf_test-output/poll/out.txt > /media/sf_test-output/temp.vdx')
 
-
+# define types
+class TrigData:
+        ID = ""
+        begTrigger = ""
+        endTrigger = ""
+        def __init__(self,idVar):
+                self.ID = idVar
+        def __str__(self):
+                return self.ID
+        def __repr__(self):
+                s = "ID: " + self.ID + " bed: " + self.begTrigger + " endTrigger: " + self.endTrigger  
+                return s
 class Formatter():
         
         #config
@@ -118,33 +129,40 @@ class Formatter():
                 mainXMLobj.prependNodeToMain(docSettingsNode)
                 
                 print (mainXMLobj.DOMTree.firstChild.childNodes)
+
                 
-                # insert master id to shapes, delete shape geom, insert right angle edges code, insert node name
+                # insert master id to shapes, delete shape geom, insert right angle edges code, insert node name, record begTrigger and engTrigger
                 shapeList = mainXMLobj.getShapeList()
                 mainXMLobj.renameFirstShapeID()
+                
+                
+                TrigDataList = []
+                print "now"
                 for shape in shapeList:
-                        # set starting ID to 0
-                        #ID = 0
-
                         # insert right angle code to visio file
                         mainXMLobj.rightAngle(shape)
+                        
+                        # get and set the shape names
+                        shapeName = mainXMLobj.getShapeName(shape)
+
+                        # record Shape ID and trigger data if the shape is 1-D shape
+                        if shapeName == None:
+                                begTrigger, endTrigger = mainXMLobj.getTriggerID(shape)
+                                
+                                if (begTrigger, endTrigger) != (None, None):
+                                        newTrigData = TrigData(shape.attributes["ID"].value)
+                                        newTrigData.begTrigger = begTrigger
+                                        newTrigData.endTrigger = endTrigger
+                                        TrigDataList.append(newTrigData)
+                                        
+                                continue
+                        
+                        #print shape.toxml()
                         
                         # delete shape geom and make the shape size the same as the masters
                         mainXMLobj.deleteShapeGeom(shape)
                         mainXMLobj.deleteShapeSize(shape)
-
-                        # get and set the shape names
-                        shapeName = mainXMLobj.getShapeName(shape)
-
-                        # continue if the shape is 1-D shape
-                        if shapeName == None:
-                                continue
-                                # add ID to this shape
-                                #shape.setAttribute("ID", str(ID))
-                                #ID = ID + 1
-                                
-                        #print shape.toxml()
-                                
+                        
                         # make shape type and status
                         symbolType = self.nodeTypeDict[shapeName].title()
                         symbolStatus = self.getNodeStatus(str(shapeName))
@@ -167,41 +185,59 @@ class Formatter():
 
                 # insert proper shape ID
                 shapeList = mainXMLobj.getShapeList()
-                shapeIDcounter = 0
+                shapeIDcounter = 1
+                IDlookup = {} # {old : new}
+                IDlookupReverse = {} # {new : old}
                 for shape in shapeList:
                         # check if shape is 1D shape
                         try:
-                                masterID = shape.attributes['Master']
+                                masterID = shape.attributes['Master'].value
                                 master = mainXMLobj.getMasterXMLbyID(masterID)
                         except:
                                 # if its 1D shape
                                 master == None
-
+                
                         # if this is a 1D shape, then it has no master. count the shapes in this shape and not its master's shape        
                         if master == None:
-                                masterShape = shape
-                                IDcount = mainXMLobj.getShapeIDcount(masterShape)
-                                shapeIDcounter = shapeIDcounter + IDcount
-                                #print shapeIDcounter
-                                shape.setAttribute("ID", str(shapeIDcounter))
-                                continue
-                        # check if master has shapes or shape element
-
-                        # TODO make this more general
-                        masterShapes = master.getElementsByTagName("Shapes")
-                        if masterShapes == []:
-                                masterShapeList = masterShape.getElementsByTagName("Shape")
-                        else:
-                                masterShapeList = masterShapes[0].getElementsByTagName("Shape")
-                        IDcount = 0
-                        for item in masterShapeList :
-                                IDcount = IDcount +  mainXMLobj.getShapeIDcount(masterShape)
-
-                        shapeIDcounter = shapeIDcounter + IDcount
+                                master = shape
+                        # count the number of </Shape> tags in master or shape
+                        IDcount = master.toxml().count("</Shape>")
+                        
                         print shapeIDcounter
+                        IDlookup[shape.attributes["ID"].value] = str(shapeIDcounter)
+                        IDlookupReverse[str(shapeIDcounter)] = shape.attributes["ID"].value
                         shape.setAttribute("ID", str(shapeIDcounter))
+                        shapeIDcounter = shapeIDcounter + IDcount
+
+
+                # insert proper trigger data
+                for shape in shapeList:
+                        # take only 1D shapes
+                        if "Master" in shape.attributes.keys():
+                                continue
                         
+                        # look up old connector id
+                        newID = shape.attributes["ID"].value
+                        oldID = IDlookupReverse[newID]
+                        # get old trigger Data
+                        triggerData = ""
+                        print "oldID: " + oldID
+                        for trigData in TrigDataList:
+                                if trigData.ID == oldID:
+                                        print trigData.ID
+                                        triggerData = trigData
                         
+                        # get new trigger data
+                        oldTrigBeg = triggerData.begTrigger
+                        oldTrigEnd = triggerData.endTrigger
+                        
+                        newTrigBeg = IDlookup[str(oldTrigBeg)]
+                        newTrigEnd = IDlookup[str(oldTrigEnd)]
+                        mainXMLobj.setShapeTriggers(shape, newTrigBeg,newTrigEnd)
+
+
+
+                
                 # write xml to file
                 fp = open(outFile,'w')
                 fp.write(mainXMLobj.DOMTree.toxml())
@@ -400,7 +436,7 @@ class XMLmanip():
                         return ID
                 for shape in shapeList:
                         ID = ID + self.getShapeIDcount(shape)
-                print ID
+                
                 return ID
         
 
@@ -411,14 +447,44 @@ class XMLmanip():
                 ID = str(ID)
                 masters  = self.DOMTree.firstChild.getElementsByTagName("Masters")[0]
                 for master in masters.getElementsByTagName("Master"):
-                        print master
-                        if master.attributes["ID"] == ID:
+                        if master.attributes["ID"].value == ID:
                                 return master
 
                 return None
 
-        
+        # looks for the shape ID a given shape is connecting
+        # returns begTrigger shape ID(string), endTrigger shape ID(string)
+        # returns None , if fails
+        def getTriggerID(self, shape):
+                begShapeID = ""
+                endShapeID = ""
+                # make sure that this is a 1D shape
+                if "Master" in shape.attributes.keys():
+                        return None, None
+                
+                misc = shape.getElementsByTagName("Misc")[0]
+                try:
+                        begTrigger = misc.getElementsByTagName("BegTrigger")[0].attributes["F"].value
+                        endTrigger = misc.getElementsByTagName("EndTrigger")[0].attributes["F"].value
+                        begShapeID = begTrigger.replace("_XFTRIGGER(Sheet.", "")
+                        begShapeID = begShapeID.replace("!EventXFMod)", "")
+                        endShapeID = endTrigger.replace("_XFTRIGGER(Sheet.", "")
+                        endShapeID = endShapeID.replace("!EventXFMod)", "")
+                        return begShapeID, endShapeID
+                except Exception, e:
+                        print str(e)
+                        None, None
                         
+
+
+
+        def setShapeTriggers(self, shape, beg, end):
+                begTrigger = shape.getElementsByTagName("Misc")[0].getElementsByTagName("BegTrigger")[0]
+                begTrigger.setAttribute("F", "_XFTRIGGER(Sheet." + beg + "!EventXFMod)")
+                endTrigger = shape.getElementsByTagName("Misc")[0].getElementsByTagName("EndTrigger")[0]
+                endTrigger.setAttribute("F", "_XFTRIGGER(Sheet." + end + "!EventXFMod)")
+
+                                 
 #F = Formatter('temp.py')
 #if F.start() == -1:
 #       print "formatting failed"
@@ -435,5 +501,43 @@ class XMLmanip():
 #f.start()
 
 
+############################  may be useful #######################################
+#for shape in shapeList:
+#                        # check if shape is 1D shape
+#                        try:
+#                                masterID = shape.attributes['Master'].value
+#                                master = mainXMLobj.getMasterXMLbyID(masterID)
+#                        except:
+#                                # if its 1D shape
+#                                master == None
+#
+#                        # if this is a 1D shape, then it has no master. count the shapes in this shape and not its master's shape        
+#                        if master == None:
+#                                masterShape = shape
+#                                IDcount = mainXMLobj.getShapeIDcount(masterShape)
+#                                shapeIDcounter = shapeIDcounter + IDcount
+#                                #print shapeIDcounter
+#                                shape.setAttribute("ID", str(shapeIDcounter))
+#                                continue
+#                        # check if master has shapes or shape element
+#
+#                        # TODO make this more general
+#                        masterShapes = master.getElementsByTagName("Shapes")
+#                        if masterShapes == []:
+#                                masterShapeList = masterShape.getElementsByTagName("Shape")
+#                        else:
+#                                masterShapeList = masterShapes[0].getElementsByTagName("Shape")
+#                        IDcount = 0
+#                        for masterShape in masterShapeList :
+# 
+#                                IDcount = IDcount +  mainXMLobj.getShapeIDcount(masterShape)#
+#
+#                        print IDcount
+#                        
+#                        shapeIDcounter = shapeIDcounter + IDcount
+#                        #print shapeIDcounter
+#                       shape.setAttribute("ID", str(shapeIDcounter))
+#
 
+###################################################
 
