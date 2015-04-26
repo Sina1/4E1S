@@ -86,10 +86,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l88HKAEodqNyU+Jw0PwDdZFAzhLVioBxnEUZRpBSFcw=</dsig:DigestValue>
+        <dsig:DigestValue>AwvkaS/BVvZ9X9dwKWdFElmyC0ozkEtbYPcMmN1mI0o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="formatter.py" size="12213">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mt6dHqWFKjwj4XJrwvQ2RNv2W5WJhK1HvYTAsMsSk/Y=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="WindowsFormsApplication1.exe.config" size="562">
     <hash>
       <dsig:Transforms>
