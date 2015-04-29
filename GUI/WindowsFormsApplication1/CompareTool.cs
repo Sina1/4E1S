@@ -59,7 +59,7 @@ namespace WindowsFormsApplication1
 
         } */
 
-        public static void StartCompareTool(string compareFilePath1, string compareFilePath2, string[] busSet, string savePath, string saveFolder, bool produceVisio, bool produceIdv)
+        public static void StartCompareTool(string compareFilePath1, string compareFilePath2, string[] busSet, string savePath, string saveFolder, string name, bool produceVisio, bool produceIdv)
         {
             //Just in case
             stringBusList.Clear();
@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
 
             if (produceVisio)
             {
-                string saveFullPathName = Path.Combine( saveFullPath ,"VisioFile_" + busSet.First() + "-" + busSet.Last());
+                string saveFullPathName = Path.Combine( saveFullPath ,name + "VisioFile_" + busSet.First() + "-" + busSet.Last());
                 //Call to get the function Roshaan Add here
                 DrawTool dTool = new DrawTool(saveFullPath, saveFullPathName); 
                 dTool.drawGraph(nodeList, connectionList);

@@ -37,7 +37,11 @@ namespace WindowsFormsApplication1
             Array.Sort<string>(list);
             if (list.Length != 0)
             {
-                CompareTool.StartCompareTool(firstRawPath, SectionRawPath, list, savePath, folderName, prodVisioFile, prodIdvFile);
+                CompareTool.StartCompareTool(firstRawPath, firstRawPath, list, savePath, folderName, "Before-", prodVisioFile, false);
+
+                CompareTool.StartCompareTool(firstRawPath, SectionRawPath, list, savePath, folderName, "After-", prodVisioFile, prodIdvFile);
+                
+                
                 MessageBox.Show("Your files has been successfully saved to the following location: \n\n " + savePath + "\\" + folderName, "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
