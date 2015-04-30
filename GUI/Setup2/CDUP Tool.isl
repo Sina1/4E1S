@@ -552,7 +552,7 @@
 		<row><td>LicenseAgreement</td><td>DlgLine</td><td>Line</td><td>48</td><td>234</td><td>326</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>DlgTitle</td><td>Text</td><td>13</td><td>6</td><td>292</td><td>25</td><td>65539</td><td/><td>##IDS__IsLicenseDlg_LicenseAgreement##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>ISPrintButton</td><td>PushButton</td><td>301</td><td>188</td><td>65</td><td>17</td><td>3</td><td/><td>##IDS_PRINT_BUTTON##</td><td>Agree</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>C:\Users\Sina\Documents\GitHub\archive\Disclaimer\License Agreement.rtf</td><td/></row>
+		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>C:\Users\Sina\Documents\GitHub\archive\Disclaimer\LicenseAgreement-aeso.rtf</td><td/></row>
 		<row><td>LicenseAgreement</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary1</td></row>
@@ -771,7 +771,7 @@
 		<row><td>SplashBitmap</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SplashBitmap</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_CANCEL##</td><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SplashBitmap</td><td>DlgLine</td><td>Line</td><td>48</td><td>234</td><td>326</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SplashBitmap</td><td>Image</td><td>Bitmap</td><td>13</td><td>12</td><td>349</td><td>211</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary19</td></row>
+		<row><td>SplashBitmap</td><td>Image</td><td>Bitmap</td><td>13</td><td>12</td><td>349</td><td>211</td><td>5</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary19</td></row>
 		<row><td>SplashBitmap</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 	</table>
 
@@ -1879,7 +1879,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>cdup.ico</td><td>ISX_DEFAULTCOMPONENT</td><td>CDUP.ico</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Sina\Documents\GitHub\CDUP.ico</td><td>1</td><td/></row>
-		<row><td>license_agreement.rtf</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENS~1.RTF|License Agreement.rtf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Sina\Documents\GitHub\archive\Disclaimer\License Agreement.rtf</td><td>1</td><td/></row>
+		<row><td>licenseagreement_aeso.rtf</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENS~1.RTF|LicenseAgreement-aeso.rtf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Sina\Documents\GitHub\archive\Disclaimer\LicenseAgreement-aeso.rtf</td><td>1</td><td/></row>
 		<row><td>windowsformsapplication1.pri</td><td>WindowsFormsApplication1.Primary_output</td><td>WindowsFormsApplication1.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WindowsFormsApplication1&gt;|Built</td><td>3</td><td/></row>
 	</table>
 
@@ -2643,7 +2643,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>4E1S</td><td>0</td><td/><td>-903657129</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>4E1S</td><td>0</td><td/><td>-232546016</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-903659177</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-903659177</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>-903659177</td></row>
@@ -3744,8 +3744,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-903659177</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-903659177</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-903659177</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.4E1S.com</td><td>0</td><td/><td>-903657129</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>4E1S</td><td>0</td><td/><td>-903657129</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.4E1S.com</td><td>0</td><td/><td>-232546016</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>4E1S</td><td>0</td><td/><td>-232546016</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>CDUP Tool</td><td>0</td><td/><td>-903616105</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-903659177</td></row>
 	</table>
@@ -3989,7 +3989,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{A5BE2A2C-FBFA-4E7D-A40C-A2E247026982}</td></row>
 		<row><td>ISUSSignature</td><td>{A0058002-5D0B-4C76-9136-329F867904C4}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewShortcuts,viewAppFiles,viewFeatureFiles,viewUI,viewSystemSearch,viewInstallScriptStd,viewCustomActions,viewSupportFiles,viewRelease,viewDesignPatches</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewShortcuts,viewAppFiles,viewFeatureFiles,viewUI,viewSystemSearch,viewInstallScriptStd,viewCustomActions,viewSupportFiles,viewRelease,viewDesignPatches,viewTextMessages</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>

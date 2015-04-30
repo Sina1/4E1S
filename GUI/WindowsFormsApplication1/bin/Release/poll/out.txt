@@ -2,46 +2,8 @@ digraph G {
             graph [splines=ortho, nodesep=0.5 ranksep=1 margin=.1];
             edge [arrowhead=none,arrowtail=none ];
 
-            forcelabels=true;		{ rank=same 101 102 151 152 ;}
-{ rank=same 153 154 201 202 ;}
-{ rank=same 3003 3005 101 102 ;}
-{ rank=same 252 305 252 253 ;}
-		101[ xlabel="101" fontsize=16 label="" color ="transparent"];
-		102[ xlabel="102" fontsize=16 label="" color ="transparent"];
+            forcelabels=true;		{ rank=same 151 152 ;}
 		151[ xlabel="151" fontsize=16 label="" color ="transparent"];
 		152[ xlabel="152" fontsize=16 label="" color ="transparent"];
-		153[ xlabel="153" fontsize=16 label="" color ="transparent"];
-		154[ xlabel="154" fontsize=16 label="" color ="transparent"];
-		201[ xlabel="201" fontsize=16 label="" color ="transparent"];
-		202[ xlabel="202" fontsize=16 label="" color ="transparent"];
-		3003[ xlabel="3003" fontsize=16 label="" color ="transparent"];
-		3005[ xlabel="3005" fontsize=16 label="" color ="transparent"];
-		101[ xlabel="101" fontsize=16 label="" color ="transparent"];
-		102[ xlabel="102" fontsize=16 label="" color ="transparent"];
-		252[ xlabel="252" fontsize=16 label="" color ="transparent"];
-		305[ xlabel="305" fontsize=16 label="" color ="transparent"];
-		252[ xlabel="252" fontsize=16 label="" color ="transparent"];
-		253[ xlabel="253" fontsize=16 label="" color ="transparent"];
-		101 -> 151 [penwidth=1.5 shape=none color ="black"] ;
-		151 -> 152 [penwidth=1.5 shape=none color ="black"] ;
-		151 -> 201 [penwidth=1.5 shape=none color ="black"] ;
-		151 -> 152 [penwidth=1.5 shape=none color ="#FF0000"] ;
-		151 -> 152 [penwidth=1.5 shape=none color ="#33CC33"] ;
-		152 -> 202 [penwidth=1.5 shape=none color ="black"] ;
-		152 -> 153 [penwidth=1.5 shape=none color ="black"] ;
-		153 -> 154 [penwidth=1.5 shape=none color ="black"] ;
-		201 -> 202 [penwidth=1.5 shape=none color ="black"] ;
-		3003 -> 3005 [penwidth=1.5 shape=none color ="black"] ;
-		101 -> 151 [penwidth=1.5 shape=none color ="#33CC33"] ;
-		102 -> 151 [penwidth=1.5 shape=none color ="#FF0000"] ;
-		3003 -> 3005 [penwidth=1.5 shape=none color ="#FF0000"] ;
-		101 -> 252 [penwidth=1.5 shape=none color ="black"] ;
-		252 -> 151 [penwidth=1.5 shape=none color ="black"] ;
-		152 -> 305 [penwidth=1.5 shape=none color ="black"] ;
-		305 -> 153 [penwidth=1.5 shape=none color ="black"] ;
-		101 -> 252 [penwidth=1.5 shape=none color ="#33CC33"] ;
-		252 -> 151 [penwidth=1.5 shape=none color ="#33CC33"] ;
-		102 -> 253 [penwidth=1.5 shape=none color ="#FF0000"] ;
-		253 -> 151 [penwidth=1.5 shape=none color ="#FF0000"] ;
 
 }
